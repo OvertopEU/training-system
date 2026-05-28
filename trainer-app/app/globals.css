@@ -1,0 +1,90 @@
+html,
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #050505;
+  color: #f8f8f8;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.page-shell {
+  padding: 2rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 0 3rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: #e2b84d;
+  font-size: 0.8rem;
+}
+
+h1 {
+  margin: 1rem 0 0;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+}
+
+.intro {
+  margin: 1.5rem auto 0;
+  max-width: 42rem;
+  color: #d1d1d1;
+  line-height: 1.8;
+}
+
+.content-block {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.content-block h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.content-block p,
+.content-block li {
+  color: #d1d1d1;
+  line-height: 1.8;
+}
+
+.content-block ul {
+  margin: 1rem 0 0;
+  padding-left: 1.4rem;
+}
+
+.grid-columns {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.grid-columns div {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 1.5rem;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 1.5rem;
+  }
+}

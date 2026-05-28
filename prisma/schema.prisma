@@ -1,0 +1,373 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum BookingStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  UNPAID
+  PENDING
+  PAID
+  REFUNDED
+  FAILED
+}
+
+enum PaymentOption {
+  FULL
+  DEPOSIT
+  CASH
+}
+
+enum MediaType {
+  PHOTO
+  VIDEO
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model User {
+  id              String               @id @default(cuid())
+  name            String?
+  email           String               @unique
+  emailVerified   DateTime?
+  image           String?
+  passwordHash    String?
+  role            Role                 @default(USER)
+  accounts        Account[]
+  sessions        Session[]
+  bookings        Booking[]
+  galleries       ClientGallery[]      @relation("GalleryClient")
+  favorites       Favorite[]
+  downloads       Download[]
+  notifications   Notification[]
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Booking {
+  id            String          @id @default(cuid())
+  userId        String?
+  user          User?           @relation(fields: [userId], references: [id], onDelete: SetNull)
+  categoryId    String
+  category      PortfolioCategory @relation(fields: [categoryId], references: [id])
+  packageId     String
+  package       Package         @relation(fields: [packageId], references: [id])
+  addOns        BookingAddOn[]
+  payments      Payment[]
+  invoices      Invoice[]
+  clientName    String
+  clientEmail   String
+  clientPhone   String
+  notes         String?
+  startsAt      DateTime
+  endsAt        DateTime
+  status        BookingStatus   @default(PENDING)
+  paymentOption PaymentOption
+  paymentStatus PaymentStatus   @default(UNPAID)
+  totalCents    Int
+  depositCents  Int
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@index([startsAt, endsAt])
+}
+
+model Payment {
+  id                    String        @id @default(cuid())
+  bookingId             String?
+  booking               Booking?      @relation(fields: [bookingId], references: [id], onDelete: SetNull)
+  amountCents           Int
+  currency              String        @default("GBP")
+  option                PaymentOption
+  status                PaymentStatus @default(PENDING)
+  provider              String        @default("stripe")
+  stripeCheckoutId      String?       @unique
+  stripePaymentIntentId String?       @unique
+  refundedAt            DateTime?
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+}
+
+model Package {
+  id              String     @id @default(cuid())
+  name            String
+  slug            String     @unique
+  description     String
+  priceCents      Int
+  depositCents    Int
+  durationMinutes Int        @default(90)
+  active          Boolean    @default(true)
+  bookings        Booking[]
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+}
+
+model AddOn {
+  id          String         @id @default(cuid())
+  name        String
+  description String?
+  priceCents  Int
+  active      Boolean        @default(true)
+  bookings    BookingAddOn[]
+  createdAt   DateTime       @default(now())
+}
+
+model BookingAddOn {
+  bookingId String
+  addOnId   String
+  booking   Booking @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  addOn     AddOn   @relation(fields: [addOnId], references: [id], onDelete: Cascade)
+
+  @@id([bookingId, addOnId])
+}
+
+model PortfolioCategory {
+  id          String          @id @default(cuid())
+  name        String
+  slug        String          @unique
+  description String?
+  coverUrl    String?
+  items       PortfolioItem[]
+  bookings    Booking[]
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+}
+
+model PortfolioItem {
+  id           String            @id @default(cuid())
+  title        String
+  description  String?
+  type         MediaType
+  url          String
+  thumbnailUrl String?
+  cloudinaryId String?
+  featured     Boolean           @default(false)
+  order        Int               @default(0)
+  categoryId   String
+  category     PortfolioCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  views        Int               @default(0)
+  photos       Photo[]
+  videos       Video[]
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+}
+
+model Photo {
+  id              String              @id @default(cuid())
+  portfolioItemId String?
+  portfolioItem   PortfolioItem?      @relation(fields: [portfolioItemId], references: [id], onDelete: Cascade)
+  galleryPhotos   ClientGalleryPhoto[]
+  title           String?
+  url             String
+  cloudinaryId    String?
+  width           Int?
+  height          Int?
+  createdAt       DateTime            @default(now())
+}
+
+model Video {
+  id              String         @id @default(cuid())
+  portfolioItemId String?
+  portfolioItem   PortfolioItem? @relation(fields: [portfolioItemId], references: [id], onDelete: Cascade)
+  title           String?
+  url             String
+  thumbnailUrl    String?
+  cloudinaryId    String?
+  vertical        Boolean        @default(true)
+  createdAt       DateTime       @default(now())
+}
+
+model ClientGallery {
+  id               String               @id @default(cuid())
+  slug             String               @unique
+  title            String
+  clientId         String?
+  client           User?                @relation("GalleryClient", fields: [clientId], references: [id], onDelete: SetNull)
+  clientEmail      String
+  passwordHash     String?
+  downloadsEnabled Boolean              @default(true)
+  expiresAt        DateTime?
+  photos           ClientGalleryPhoto[]
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+}
+
+model ClientGalleryPhoto {
+  id            String        @id @default(cuid())
+  galleryId     String
+  gallery       ClientGallery @relation(fields: [galleryId], references: [id], onDelete: Cascade)
+  photoId       String
+  photo         Photo         @relation(fields: [photoId], references: [id], onDelete: Cascade)
+  watermarkUrl  String?
+  downloadUrl   String?
+  order         Int           @default(0)
+  favorites     Favorite[]
+  downloads     Download[]
+  createdAt     DateTime      @default(now())
+
+  @@unique([galleryId, photoId])
+}
+
+model Favorite {
+  id             String             @id @default(cuid())
+  userId         String
+  user           User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  galleryPhotoId String
+  galleryPhoto   ClientGalleryPhoto @relation(fields: [galleryPhotoId], references: [id], onDelete: Cascade)
+  createdAt      DateTime           @default(now())
+
+  @@unique([userId, galleryPhotoId])
+}
+
+model Download {
+  id             String             @id @default(cuid())
+  userId         String?
+  user           User?              @relation(fields: [userId], references: [id], onDelete: SetNull)
+  galleryPhotoId String
+  galleryPhoto   ClientGalleryPhoto @relation(fields: [galleryPhotoId], references: [id], onDelete: Cascade)
+  ip             String?
+  createdAt      DateTime           @default(now())
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  rating    Int      @default(5)
+  review    String
+  imageUrl  String?
+  approved  Boolean  @default(false)
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model BlogPost {
+  id             String     @id @default(cuid())
+  title          String
+  slug           String     @unique
+  excerpt        String
+  content        String     @db.Text
+  coverImageUrl  String?
+  seoTitle       String?
+  seoDescription String?
+  tags           String[]
+  status         PostStatus @default(DRAFT)
+  featured       Boolean    @default(false)
+  publishedAt    DateTime?
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String   @db.Text
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Availability {
+  id          String   @id @default(cuid())
+  dayOfWeek   Int
+  startTime   String
+  endTime     String
+  slotMinutes Int      @default(90)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([dayOfWeek, startTime, endTime])
+}
+
+model BlockedDate {
+  id        String   @id @default(cuid())
+  date      DateTime
+  reason    String?
+  createdAt DateTime @default(now())
+
+  @@unique([date])
+}
+
+model AdminSetting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Invoice {
+  id            String   @id @default(cuid())
+  bookingId     String
+  booking       Booking  @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  invoiceNumber String   @unique
+  amountCents   Int
+  pdfUrl        String?
+  issuedAt      DateTime @default(now())
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      String
+  title     String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}

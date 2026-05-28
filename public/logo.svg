@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Light and Glory Studio logo">
+  <defs>
+    <radialGradient id="glow" cx="68%" cy="41%" r="38%">
+      <stop offset="0" stop-color="#f8e7a2" stop-opacity=".9"/>
+      <stop offset=".28" stop-color="#cda342" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#050505" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff7cf"/>
+      <stop offset=".42" stop-color="#cda342"/>
+      <stop offset=".72" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#b88725"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="#020202"/>
+  <circle cx="635" cy="382" r="310" fill="url(#glow)"/>
+  <path d="M292 502V341c0-42 25-71 68-71h52c20 0 36 16 36 36v12h42l43-61c15-22 39-35 66-35h27" fill="none" stroke="url(#gold)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M492 502c0-109 80-196 191-196 60 0 112 23 149 61l-47 50c-27-27-62-42-102-42-70 0-121 55-121 127 0 75 53 130 129 130 45 0 84-19 110-52v-38H687v-67h196v178h-72l-8-45c-35 38-78 57-129 57-107 0-182-72-182-163Z" fill="url(#gold)"/>
+  <path d="M486 230h92v322h110v67H486v-67h41V297h-41z" fill="url(#gold)"/>
+  <path d="M268 735h488" stroke="url(#gold)" stroke-width="3"/>
+  <text x="512" y="704" text-anchor="middle" font-family="Georgia, serif" font-size="61" letter-spacing="10" fill="#fff">light and glory studio</text>
+  <text x="512" y="808" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" letter-spacing="34" fill="#cda342">PHOTOGRAPHY</text>
+</svg>
