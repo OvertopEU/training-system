@@ -8,8 +8,16 @@ import { SiteChrome } from "@/components/site-chrome";
 const inter = Inter({ subsets: ["latin", "cyrillic"], variable: "--font-sans" });
 const playfair = Playfair_Display({ subsets: ["latin", "cyrillic"], variable: "--font-display" });
 
+function getMetadataBase() {
+  try {
+    return new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000");
+  } catch {
+    return new URL("http://localhost:3000");
+  }
+}
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: getMetadataBase(),
   title: {
     default: "Light & Glory Studio | Luxury Photography",
     template: "%s | Light & Glory Studio"
