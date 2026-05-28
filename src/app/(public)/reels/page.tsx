@@ -2,6 +2,9 @@ import { Film } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { Section } from "@/components/section";
 
+export const dynamic = "force-dynamic";
+
+
 export default async function ReelsPage() {
   const videos = await prisma.video.findMany({ orderBy: { createdAt: "desc" } });
   const entries = videos.length ? videos.map((video) => ({ kind: "video" as const, video })) : Array.from({ length: 8 }, (_, index) => ({ kind: "placeholder" as const, index }));

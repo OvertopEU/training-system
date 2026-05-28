@@ -5,6 +5,9 @@ import { prisma } from "@/lib/prisma";
 import { Section } from "@/components/section";
 import { GalleryPasswordForm } from "@/components/gallery-password-form";
 
+export const dynamic = "force-dynamic";
+
+
 export default async function ClientGalleryPage({ params }: { params: { slug: string } }) {
   const gallery = await prisma.clientGallery.findUnique({
     where: { slug: params.slug },

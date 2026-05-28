@@ -4,6 +4,9 @@ import { ArrowRight, Camera, Film, Sparkles } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { Section } from "@/components/section";
 
+export const dynamic = "force-dynamic";
+
+
 export default async function HomePage() {
   const [featured, categories, testimonials, reels] = await Promise.all([
     prisma.portfolioItem.findMany({ where: { featured: true }, include: { category: true }, take: 6, orderBy: { order: "asc" } }),

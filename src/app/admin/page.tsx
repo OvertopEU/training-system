@@ -3,6 +3,9 @@ import { prisma } from "@/lib/prisma";
 import { money } from "@/lib/utils";
 import { AdminModule } from "@/components/admin-module";
 
+export const dynamic = "force-dynamic";
+
+
 export default async function AdminDashboardPage() {
   const [bookings, upcoming, payments, users, galleries, downloads] = await Promise.all([
     prisma.booking.count(),

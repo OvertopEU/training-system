@@ -2,6 +2,9 @@ import { prisma } from "@/lib/prisma";
 import { Section } from "@/components/section";
 import { BookingForm } from "@/components/booking-form";
 
+export const dynamic = "force-dynamic";
+
+
 export default async function BookingPage() {
   const [categories, packages, addOns] = await Promise.all([
     prisma.portfolioCategory.findMany(),

@@ -3,6 +3,9 @@ import { prisma } from "@/lib/prisma";
 import { money } from "@/lib/utils";
 import { Section } from "@/components/section";
 
+export const dynamic = "force-dynamic";
+
+
 export default async function PricingPage() {
   const packages = await prisma.package.findMany({ where: { active: true }, orderBy: { priceCents: "asc" } });
   return (

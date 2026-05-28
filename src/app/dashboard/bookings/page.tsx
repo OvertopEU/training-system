@@ -5,6 +5,9 @@ import { prisma } from "@/lib/prisma";
 import { money } from "@/lib/utils";
 import { Section } from "@/components/section";
 
+export const dynamic = "force-dynamic";
+
+
 export default async function MyBookingsPage() {
   const session = await getServerSession(authOptions);
   if (!session?.user?.email) redirect("/login");
