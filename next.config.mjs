@@ -1,5 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      "/blog",
+      "/blog/:path*",
+      "/booking",
+      "/portfolio",
+      "/pricing",
+      "/reels",
+      "/testimonials",
+      "/contact",
+      "/login",
+      "/register",
+      "/privacy",
+      "/terms",
+      "/behind-the-scenes"
+    ].map((source) => ({
+      source,
+      destination: "/trainer?lang=bg",
+      permanent: false
+    }));
+  },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "res.cloudinary.com" },
