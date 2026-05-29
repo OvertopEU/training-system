@@ -356,12 +356,12 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-40 border-b border-emerald-300/10 bg-black/70 backdrop-blur-xl">
-        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-3 sm:gap-4 sm:px-6 lg:px-8">
           <Link href={href(lang)} className="flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center rounded-md border border-emerald-300/30 bg-emerald-300/10">
               <Dumbbell size={20} className="text-emerald-200" />
             </span>
-            <span className="font-display text-base tracking-[.14em] text-white sm:text-lg">TRAINING SYSTEM</span>
+            <span className="hidden font-display text-base tracking-[.14em] text-white sm:block sm:text-lg">TRAINING SYSTEM</span>
           </Link>
           <div className="hidden items-center gap-6 text-sm text-white/70 lg:flex">
             {copy.nav.map(([label, id]) => (
@@ -371,19 +371,19 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
             ))}
           </div>
           <div className="flex items-center gap-2">
-            <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[.04] p-1 text-xs text-white/65 sm:flex">
-              <Globe2 size={14} className="ml-2 text-emerald-200" />
+            <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/[.04] p-1 text-xs text-white/65">
+              <Globe2 size={14} className="ml-1 text-emerald-200 sm:ml-2" />
               {(["bg", "en"] as Lang[]).map((item) => (
                 <Link
                   key={item}
                   href={href(item)}
-                  className={`rounded-full px-3 py-1.5 uppercase transition ${item === lang ? "bg-emerald-200 text-black" : "hover:text-white"}`}
+                  className={`rounded-full px-2.5 py-1.5 uppercase transition sm:px-3 ${item === lang ? "bg-emerald-200 text-black" : "hover:text-white"}`}
                 >
                   {item}
                 </Link>
               ))}
             </div>
-            <Link href={href(lang, "booking")} className="rounded-full border border-emerald-200/40 px-4 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200 hover:text-black">
+            <Link href={href(lang, "booking")} className="rounded-full border border-emerald-200/40 px-3 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200 hover:text-black sm:px-4">
               {copy.headerCta}
             </Link>
           </div>
