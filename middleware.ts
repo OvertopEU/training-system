@@ -16,8 +16,19 @@ const photographyRoutes = [
   "/testimonials"
 ];
 
-function isPhotographyRoute(path: string) {
-  return photographyRoutes.some((route) => path === route || path.startsWith(`${route}/`));
+const photographyApiRoutes = [
+  "/api/admin",
+  "/api/bookings",
+  "/api/categories",
+  "/api/contact",
+  "/api/galleries",
+  "/api/payments",
+  "/api/portfolio",
+  "/api/uploads"
+];
+
+function matchesRoute(path: string, routes: string[]) {
+  return routes.some((route) => path === route || path.startsWith(`${route}/`));
 }
 
 export default withAuth(
@@ -25,8 +36,8 @@ export default withAuth(
     const path = req.nextUrl.pathname;
     const role = req.nextauth.token?.role;
 
-    if (isPhotographyRoute(path)) {
-      return NextResponse.redirect(new URL("/trainer", req.url));
+    if (matchesRoute(path, photographyRoutes) || matchesRoute(path, photographyApiRoutes) || path.startsWith("/dashboard")) {
+      return new NextResponse("Not found", { status: 404 });
     }
 
     if (path.startsWith("/admin") && role !== "ADMIN") {
@@ -59,6 +70,14 @@ export const config = {
     "/reels/:path*",
     "/terms/:path*",
     "/testimonials/:path*",
+    "/api/admin/:path*",
+    "/api/bookings/:path*",
+    "/api/categories/:path*",
+    "/api/contact/:path*",
+    "/api/galleries/:path*",
+    "/api/payments/:path*",
+    "/api/portfolio/:path*",
+    "/api/uploads/:path*",
     "/admin/:path*",
     "/dashboard/:path*"
   ]
