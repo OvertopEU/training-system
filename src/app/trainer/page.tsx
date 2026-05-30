@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,7 +13,6 @@ import {
   Flame,
   Globe2,
   HeartPulse,
-  MessageSquare,
   Monitor,
   ShieldCheck,
   Target,
@@ -23,18 +22,43 @@ import {
   Wallet
 } from "lucide-react";
 import { Section } from "@/components/section";
+import { TrainerBookingForm } from "@/components/trainer-booking-form";
 
 type Lang = "bg" | "en";
 
 export const metadata: Metadata = {
+  applicationName: "TS",
   title: {
-    absolute: "Training System | Personal training and nutrition"
+    absolute: "TS | Training System"
   },
-  description: "Standalone trainer website for boxing coaching, online fitness instructions, nutrition plans, booking, deposits and payments.",
+  description: "Personal training, boxing, online fitness guidance, nutrition plans and booking.",
+  alternates: {
+    canonical: "/",
+    languages: {
+      bg: "/",
+      en: "/trainer?lang=en"
+    }
+  },
   openGraph: {
-    title: "Training System",
+    title: "TS | Training System",
     description: "Personal training, boxing, online fitness guidance, nutrition plans and booking.",
-    images: []
+    url: "/",
+    siteName: "TS",
+    type: "website",
+    images: [
+      {
+        url: "/trainer/coach-boxer-cover.jpg",
+        width: 1080,
+        height: 1350,
+        alt: "TS personal trainer boxing coach"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TS | Training System",
+    description: "Personal training, boxing, online fitness guidance, nutrition plans and booking.",
+    images: ["/trainer/coach-boxer-cover.jpg"]
   },
   icons: {
     icon: "/trainer-favicon.svg"
@@ -69,139 +93,135 @@ const promoImages = {
 
 const content = {
   bg: {
-    langLabel: "Език",
+    langLabel: "Ð•Ð·Ð¸Ðº",
     nav: [
-      ["За мен", "about"],
-      ["Услуги", "services"],
-      ["Буукинг", "booking"],
-      ["Плащане", "payment"]
+      ["Ð—Ð° Ð¼ÐµÐ½", "about"],
+      ["Ð£ÑÐ»ÑƒÐ³Ð¸", "services"],
+      ["Ð‘ÑƒÑƒÐºÐ¸Ð½Ð³", "booking"],
+      ["ÐŸÐ»Ð°Ñ‰Ð°Ð½Ðµ", "payment"]
     ],
-    headerCta: "Запази",
-    heroEyebrow: "тренировки, бокс и правилно хранене",
-    heroTitle: "Персонален план за тяло, сила и дисциплина",
-    heroText: "Самостоятелна система за лични бокс тренировки, онлайн фитнес инструкции, хранителни режими, буукинг, депозит и плащане.",
-    heroPrimary: "Запази консултация",
-    heroSecondary: "Виж услугите",
-    focusLabel: "днешен фокус",
-    focusTitle: "Бокс + хранене",
+    headerCta: "Ð—Ð°Ð¿Ð°Ð·Ð¸",
+    heroEyebrow: "Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ¸, Ð±Ð¾ÐºÑ Ð¸ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð½Ð¾ Ñ…Ñ€Ð°Ð½ÐµÐ½Ðµ",
+    heroTitle: "ÐŸÐµÑ€ÑÐ¾Ð½Ð°Ð»ÐµÐ½ Ð¿Ð»Ð°Ð½ Ð·Ð° Ñ‚ÑÐ»Ð¾, ÑÐ¸Ð»Ð° Ð¸ Ð´Ð¸ÑÑ†Ð¸Ð¿Ð»Ð¸Ð½Ð°",
+    heroText: "Ð¡Ð°Ð¼Ð¾ÑÑ‚Ð¾ÑÑ‚ÐµÐ»Ð½Ð° ÑÐ¸ÑÑ‚ÐµÐ¼Ð° Ð·Ð° Ð»Ð¸Ñ‡Ð½Ð¸ Ð±Ð¾ÐºÑ Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ¸, Ð¾Ð½Ð»Ð°Ð¹Ð½ Ñ„Ð¸Ñ‚Ð½ÐµÑ Ð¸Ð½ÑÑ‚Ñ€ÑƒÐºÑ†Ð¸Ð¸, Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÐµÐ»Ð½Ð¸ Ñ€ÐµÐ¶Ð¸Ð¼Ð¸, Ð±ÑƒÑƒÐºÐ¸Ð½Ð³, Ð´ÐµÐ¿Ð¾Ð·Ð¸Ñ‚ Ð¸ Ð¿Ð»Ð°Ñ‰Ð°Ð½Ðµ.",
+    heroPrimary: "Ð—Ð°Ð¿Ð°Ð·Ð¸ ÐºÐ¾Ð½ÑÑƒÐ»Ñ‚Ð°Ñ†Ð¸Ñ",
+    heroSecondary: "Ð’Ð¸Ð¶ ÑƒÑÐ»ÑƒÐ³Ð¸Ñ‚Ðµ",
+    focusTitle: "Ð‘Ð¾ÐºÑ + Ñ…Ñ€Ð°Ð½ÐµÐ½Ðµ",
     stats: [
-      { value: "12+", label: "седмични сесии" },
-      { value: "3", label: "нива на натоварване" },
-      { value: "24/7", label: "онлайн насоки" }
+      { value: "12+", label: "ÑÐµÐ´Ð¼Ð¸Ñ‡Ð½Ð¸ ÑÐµÑÐ¸Ð¸" },
+      { value: "3", label: "Ð½Ð¸Ð²Ð° Ð½Ð° Ð½Ð°Ñ‚Ð¾Ð²Ð°Ñ€Ð²Ð°Ð½Ðµ" },
+      { value: "24/7", label: "Ð¾Ð½Ð»Ð°Ð¹Ð½ Ð½Ð°ÑÐ¾ÐºÐ¸" }
     ],
-    focusItems: ["Техника преди тежест", "Онлайн инструкции"],
-    coverLabel: "promo cover",
-    coverTitle: "Личен треньор по бокс",
-    coverText: "Самостоятелен промо кадър за първо впечатление: сила, дисциплина и спортна идентичност.",
-    coverTags: ["boxing", "fitness", "nutrition"],
+    focusItems: ["Ð¢ÐµÑ…Ð½Ð¸ÐºÐ° Ð¿Ñ€ÐµÐ´Ð¸ Ñ‚ÐµÐ¶ÐµÑÑ‚", "ÐžÐ½Ð»Ð°Ð¹Ð½ Ð¸Ð½ÑÑ‚Ñ€ÑƒÐºÑ†Ð¸Ð¸"],
+    coverTitle: "Ð¢Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ¸ Ð¿Ð¾ Ð±Ð¾ÐºÑ",
     aboutEyebrow: "about",
-    aboutTitle: "За треньора и тренировъчната общност",
-    soloTitle: "Личен подход",
-    soloText: "20+ години опит в бокса, полупрофесионален път до професионален ринг, редица постижения и победи с международен опит в над 50 държави. Втори спорт: лека атлетика с 8 национални титли и европейска квота. Допълнително: ски инструктор и завършена Национална спортна академия с пълно отличие, първо място и най-висок успех.",
-    groupTitle: "Групови тренировки",
-    groupText: "Среда за хора, които искат движение, бокс техника, мотивация и постоянство в общ ритъм.",
+    aboutTitle: "Ð—Ð° Ñ‚Ñ€ÐµÐ½ÑŒÐ¾Ñ€Ð° Ð¸ Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÑŠÑ‡Ð½Ð°Ñ‚Ð° Ð¾Ð±Ñ‰Ð½Ð¾ÑÑ‚",
+    soloTitle: "Ð›Ð¸Ñ‡ÐµÐ½ Ð¿Ð¾Ð´Ñ…Ð¾Ð´",
+    soloText: "20+ Ð³Ð¾Ð´Ð¸Ð½Ð¸ Ð¾Ð¿Ð¸Ñ‚ Ð² Ð±Ð¾ÐºÑÐ°, Ð¿Ð¾Ð»ÑƒÐ¿Ñ€Ð¾Ñ„ÐµÑÐ¸Ð¾Ð½Ð°Ð»ÐµÐ½ Ð¿ÑŠÑ‚ Ð´Ð¾ Ð¿Ñ€Ð¾Ñ„ÐµÑÐ¸Ð¾Ð½Ð°Ð»ÐµÐ½ Ñ€Ð¸Ð½Ð³, Ñ€ÐµÐ´Ð¸Ñ†Ð° Ð¿Ð¾ÑÑ‚Ð¸Ð¶ÐµÐ½Ð¸Ñ Ð¸ Ð¿Ð¾Ð±ÐµÐ´Ð¸ Ñ Ð¼ÐµÐ¶Ð´ÑƒÐ½Ð°Ñ€Ð¾Ð´ÐµÐ½ Ð¾Ð¿Ð¸Ñ‚ Ð² Ð½Ð°Ð´ 50 Ð´ÑŠÑ€Ð¶Ð°Ð²Ð¸. Ð’Ñ‚Ð¾Ñ€Ð¸ ÑÐ¿Ð¾Ñ€Ñ‚: Ð»ÐµÐºÐ° Ð°Ñ‚Ð»ÐµÑ‚Ð¸ÐºÐ° Ñ 8 Ð½Ð°Ñ†Ð¸Ð¾Ð½Ð°Ð»Ð½Ð¸ Ñ‚Ð¸Ñ‚Ð»Ð¸ Ð¸ ÐµÐ²Ñ€Ð¾Ð¿ÐµÐ¹ÑÐºÐ° ÐºÐ²Ð¾Ñ‚Ð°. Ð”Ð¾Ð¿ÑŠÐ»Ð½Ð¸Ñ‚ÐµÐ»Ð½Ð¾: ÑÐºÐ¸ Ð¸Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð¸ Ð·Ð°Ð²ÑŠÑ€ÑˆÐµÐ½Ð° ÐÐ°Ñ†Ð¸Ð¾Ð½Ð°Ð»Ð½Ð° ÑÐ¿Ð¾Ñ€Ñ‚Ð½Ð° Ð°ÐºÐ°Ð´ÐµÐ¼Ð¸Ñ Ñ Ð¿ÑŠÐ»Ð½Ð¾ Ð¾Ñ‚Ð»Ð¸Ñ‡Ð¸Ðµ, Ð¿ÑŠÑ€Ð²Ð¾ Ð¼ÑÑÑ‚Ð¾ Ð¸ Ð½Ð°Ð¹-Ð²Ð¸ÑÐ¾Ðº ÑƒÑÐ¿ÐµÑ….",
+    groupTitle: "Ð“Ñ€ÑƒÐ¿Ð¾Ð²Ð¸ Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ¸",
+    groupText: "Ð¡Ñ€ÐµÐ´Ð° Ð·Ð° Ñ…Ð¾Ñ€Ð°, ÐºÐ¾Ð¸Ñ‚Ð¾ Ð¸ÑÐºÐ°Ñ‚ Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ðµ, Ð±Ð¾ÐºÑ Ñ‚ÐµÑ…Ð½Ð¸ÐºÐ°, Ð¼Ð¾Ñ‚Ð¸Ð²Ð°Ñ†Ð¸Ñ Ð¸ Ð¿Ð¾ÑÑ‚Ð¾ÑÐ½ÑÑ‚Ð²Ð¾ Ð² Ð¾Ð±Ñ‰ Ñ€Ð¸Ñ‚ÑŠÐ¼.",
     groupBadge: "group training",
-    servicesEyebrow: "услуги",
-    servicesTitle: "Основни направления",
+    servicesEyebrow: "ÑƒÑÐ»ÑƒÐ³Ð¸",
+    servicesTitle: "ÐžÑÐ½Ð¾Ð²Ð½Ð¸ Ð½Ð°Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ñ",
     services: [
       {
         icon: icons.boxing,
-        title: "Личен треньор по бокс",
-        text: "Индивидуална работа върху стойка, удари, защита, движение, реакция и кондиция.",
-        points: ["техника и позиция", "работа с лапи", "бокс кондиция"]
+        title: "Ð¢Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ¸ Ð¿Ð¾ Ð±Ð¾ÐºÑ",
+        text: "Ð˜Ð½Ð´Ð¸Ð²Ð¸Ð´ÑƒÐ°Ð»Ð½Ð° Ñ€Ð°Ð±Ð¾Ñ‚Ð° Ð²ÑŠÑ€Ñ…Ñƒ ÑÑ‚Ð¾Ð¹ÐºÐ°, ÑƒÐ´Ð°Ñ€Ð¸, Ð·Ð°Ñ‰Ð¸Ñ‚Ð°, Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ðµ, Ñ€ÐµÐ°ÐºÑ†Ð¸Ñ Ð¸ ÐºÐ¾Ð½Ð´Ð¸Ñ†Ð¸Ñ.",
+        points: ["Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð»Ð½Ð¸ Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ¸", "Ð³Ñ€ÑƒÐ¿Ð¾Ð²Ð¸ Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ¸", "Ð¿Ð¾Ð´Ð³Ð¾Ñ‚Ð¾Ð²ÐºÐ¸ Ð·Ð° ÑÑŠÑÑ‚ÐµÐ·Ð°Ð½Ð¸Ðµ", "Ñ‚ÐµÑ…Ð½Ð¸ÐºÐ° Ð¸ ÐºÐ¾Ð½Ð´Ð¸Ñ†Ð¸Ð¾Ð½Ð½Ð¸ Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ¸"]
       },
       {
         icon: icons.online,
-        title: "Онлайн фитнес треньор",
-        text: "Получаваш инструкции, седмичен план и корекции онлайн, без задължително присъствие в зала.",
-        points: ["упражнения с инструкции", "седмичен график", "обратна връзка"]
+        title: "ÐžÐ½Ð»Ð°Ð¹Ð½ Ñ„Ð¸Ñ‚Ð½ÐµÑ Ñ‚Ñ€ÐµÐ½ÑŒÐ¾Ñ€",
+        text: "ÐŸÐ¾Ð»ÑƒÑ‡Ð°Ð²Ð°Ñˆ Ð¸Ð½ÑÑ‚Ñ€ÑƒÐºÑ†Ð¸Ð¸, ÑÐµÐ´Ð¼Ð¸Ñ‡ÐµÐ½ Ð¿Ð»Ð°Ð½ Ð¸ ÐºÐ¾Ñ€ÐµÐºÑ†Ð¸Ð¸ Ð¾Ð½Ð»Ð°Ð¹Ð½, Ð±ÐµÐ· Ð·Ð°Ð´ÑŠÐ»Ð¶Ð¸Ñ‚ÐµÐ»Ð½Ð¾ Ð¿Ñ€Ð¸ÑÑŠÑÑ‚Ð²Ð¸Ðµ Ð² Ð·Ð°Ð»Ð°.",
+        points: ["ÑƒÐ¿Ñ€Ð°Ð¶Ð½ÐµÐ½Ð¸Ñ Ñ Ð¸Ð½ÑÑ‚Ñ€ÑƒÐºÑ†Ð¸Ð¸", "ÑÐµÐ´Ð¼Ð¸Ñ‡ÐµÐ½ Ð³Ñ€Ð°Ñ„Ð¸Ðº"]
       },
       {
         icon: icons.nutrition,
-        title: "Личен диетичен режим",
-        text: "Правилно хранене според целта, ежедневието, предпочитанията и реалните ти навици.",
-        points: ["калории и макроси", "примерни менюта", "седмични корекции"]
+        title: "Ð›Ð¸Ñ‡ÐµÐ½ Ð´Ð¸ÐµÑ‚Ð¸Ñ‡ÐµÐ½ Ñ€ÐµÐ¶Ð¸Ð¼",
+        text: "ÐŸÑ€Ð°Ð²Ð¸Ð»Ð½Ð¾ Ñ…Ñ€Ð°Ð½ÐµÐ½Ðµ ÑÐ¿Ð¾Ñ€ÐµÐ´ Ñ†ÐµÐ»Ñ‚Ð°, ÐµÐ¶ÐµÐ´Ð½ÐµÐ²Ð¸ÐµÑ‚Ð¾, Ð¿Ñ€ÐµÐ´Ð¿Ð¾Ñ‡Ð¸Ñ‚Ð°Ð½Ð¸ÑÑ‚Ð° Ð¸ Ñ€ÐµÐ°Ð»Ð½Ð¸Ñ‚Ðµ Ñ‚Ð¸ Ð½Ð°Ð²Ð¸Ñ†Ð¸.",
+        points: ["ÐºÐ°Ð»Ð¾Ñ€Ð¸Ð¸ Ð¸ Ð¼Ð°ÐºÑ€Ð¾ÑÐ¸", "Ð¿Ñ€Ð¸Ð¼ÐµÑ€Ð½Ð¸ Ð¼ÐµÐ½ÑŽÑ‚Ð°", "ÑÐµÐ´Ð¼Ð¸Ñ‡Ð½Ð¸ ÐºÐ¾Ñ€ÐµÐºÑ†Ð¸Ð¸"]
       }
     ],
-    programsEyebrow: "програми",
-    programsTitle: "Режими според целта",
+    programsEyebrow: "Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¸",
+    programsTitle: "Ð ÐµÐ¶Ð¸Ð¼Ð¸ ÑÐ¿Ð¾Ñ€ÐµÐ´ Ñ†ÐµÐ»Ñ‚Ð°",
     programs: [
       {
         icon: icons.strength,
-        title: "Сила и форма",
-        text: "Структурирани силови тренировки за мускулен тонус, стабилност и видим прогрес без хаотично натоварване.",
-        details: ["3-5 тренировки седмично", "прогресивно натоварване", "корекция на техника"]
+        title: "Ð¡Ð¸Ð»Ð° Ð¸ Ñ„Ð¾Ñ€Ð¼Ð°",
+        text: "Ð¡Ñ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ð¸Ñ€Ð°Ð½Ð¸ ÑÐ¸Ð»Ð¾Ð²Ð¸ Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ¸ Ð·Ð° Ð¼ÑƒÑÐºÑƒÐ»ÐµÐ½ Ñ‚Ð¾Ð½ÑƒÑ, ÑÑ‚Ð°Ð±Ð¸Ð»Ð½Ð¾ÑÑ‚ Ð¸ Ð²Ð¸Ð´Ð¸Ð¼ Ð¿Ñ€Ð¾Ð³Ñ€ÐµÑ Ð±ÐµÐ· Ñ…Ð°Ð¾Ñ‚Ð¸Ñ‡Ð½Ð¾ Ð½Ð°Ñ‚Ð¾Ð²Ð°Ñ€Ð²Ð°Ð½Ðµ.",
+        details: ["3-5 Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ¸ ÑÐµÐ´Ð¼Ð¸Ñ‡Ð½Ð¾", "Ð¿Ñ€Ð¾Ð³Ñ€ÐµÑÐ¸Ð²Ð½Ð¾ Ð½Ð°Ñ‚Ð¾Ð²Ð°Ñ€Ð²Ð°Ð½Ðµ", "ÐºÐ¾Ñ€ÐµÐºÑ†Ð¸Ñ Ð½Ð° Ñ‚ÐµÑ…Ð½Ð¸ÐºÐ°"]
       },
       {
         icon: icons.conditioning,
-        title: "Издръжливост и кондиция",
-        text: "Функционални сесии с кардио, мобилност и работа в интервали за по-добра енергия и устойчивост.",
-        details: ["HIIT блокове", "аеробна база", "възстановяване"]
+        title: "Ð˜Ð·Ð´Ñ€ÑŠÐ¶Ð»Ð¸Ð²Ð¾ÑÑ‚ Ð¸ ÐºÐ¾Ð½Ð´Ð¸Ñ†Ð¸Ñ",
+        text: "Ð¤ÑƒÐ½ÐºÑ†Ð¸Ð¾Ð½Ð°Ð»Ð½Ð¸ ÑÐµÑÐ¸Ð¸ Ñ ÐºÐ°Ñ€Ð´Ð¸Ð¾, Ð¼Ð¾Ð±Ð¸Ð»Ð½Ð¾ÑÑ‚ Ð¸ Ñ€Ð°Ð±Ð¾Ñ‚Ð° Ð² Ð¸Ð½Ñ‚ÐµÑ€Ð²Ð°Ð»Ð¸ Ð·Ð° Ð¿Ð¾-Ð´Ð¾Ð±Ñ€Ð° ÐµÐ½ÐµÑ€Ð³Ð¸Ñ Ð¸ ÑƒÑÑ‚Ð¾Ð¹Ñ‡Ð¸Ð²Ð¾ÑÑ‚.",
+        details: ["HIIT Ð±Ð»Ð¾ÐºÐ¾Ð²Ðµ", "Ð°ÐµÑ€Ð¾Ð±Ð½Ð° Ð±Ð°Ð·Ð°", "Ð²ÑŠÐ·ÑÑ‚Ð°Ð½Ð¾Ð²ÑÐ²Ð°Ð½Ðµ"]
       },
       {
         icon: icons.instructions,
-        title: "Онлайн инструкции",
-        text: "План с ясно подредени упражнения, серии, повторения, темпо и бележки за изпълнение.",
-        details: ["видео насоки", "седмичен отчет", "корекции онлайн"]
+        title: "ÐžÐ½Ð»Ð°Ð¹Ð½ Ð¸Ð½ÑÑ‚Ñ€ÑƒÐºÑ†Ð¸Ð¸",
+        text: "ÐŸÐ»Ð°Ð½ Ñ ÑÑÐ½Ð¾ Ð¿Ð¾Ð´Ñ€ÐµÐ´ÐµÐ½Ð¸ ÑƒÐ¿Ñ€Ð°Ð¶Ð½ÐµÐ½Ð¸Ñ, ÑÐµÑ€Ð¸Ð¸, Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€ÐµÐ½Ð¸Ñ, Ñ‚ÐµÐ¼Ð¿Ð¾ Ð¸ Ð±ÐµÐ»ÐµÐ¶ÐºÐ¸ Ð·Ð° Ð¸Ð·Ð¿ÑŠÐ»Ð½ÐµÐ½Ð¸Ðµ.",
+        details: ["Ð²Ð¸Ð´ÐµÐ¾ Ð½Ð°ÑÐ¾ÐºÐ¸", "ÑÐµÐ´Ð¼Ð¸Ñ‡ÐµÐ½ Ð¾Ñ‚Ñ‡ÐµÑ‚", "ÐºÐ¾Ñ€ÐµÐºÑ†Ð¸Ð¸ Ð¾Ð½Ð»Ð°Ð¹Ð½"]
       }
     ],
-    bookingEyebrow: "буукинг",
-    bookingTitle: "Записване за тренировка или онлайн режим",
-    bookingCardTitle: "Избери услуга, цел и удобен график.",
-    bookingCardText: "Буукинг секцията е отделна за тренировъчните услуги: бокс, онлайн фитнес инструкции или диетичен режим. След заявка се потвърждава час, депозит и начин на комуникация.",
-    bookingItems: ["Първа консултация", "Индивидуална тренировка", "Онлайн режим", "Хранителен план"],
+    bookingEyebrow: "Ð±ÑƒÑƒÐºÐ¸Ð½Ð³",
+    bookingTitle: "Ð—Ð°Ð¿Ð¸ÑÐ²Ð°Ð½Ðµ Ð·Ð° Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ° Ð¸Ð»Ð¸ Ð¾Ð½Ð»Ð°Ð¹Ð½ Ñ€ÐµÐ¶Ð¸Ð¼",
+    bookingCardTitle: "Ð˜Ð·Ð±ÐµÑ€Ð¸ ÑƒÑÐ»ÑƒÐ³Ð°, Ñ†ÐµÐ» Ð¸ ÑƒÐ´Ð¾Ð±ÐµÐ½ Ð³Ñ€Ð°Ñ„Ð¸Ðº.",
+    bookingCardText: "Ð‘ÑƒÑƒÐºÐ¸Ð½Ð³ ÑÐµÐºÑ†Ð¸ÑÑ‚Ð° Ðµ Ð¾Ñ‚Ð´ÐµÐ»Ð½Ð° Ð·Ð° Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÑŠÑ‡Ð½Ð¸Ñ‚Ðµ ÑƒÑÐ»ÑƒÐ³Ð¸: Ð±Ð¾ÐºÑ, Ð¾Ð½Ð»Ð°Ð¹Ð½ Ñ„Ð¸Ñ‚Ð½ÐµÑ Ð¸Ð½ÑÑ‚Ñ€ÑƒÐºÑ†Ð¸Ð¸ Ð¸Ð»Ð¸ Ð´Ð¸ÐµÑ‚Ð¸Ñ‡ÐµÐ½ Ñ€ÐµÐ¶Ð¸Ð¼. Ð¡Ð»ÐµÐ´ Ð·Ð°ÑÐ²ÐºÐ° ÑÐµ Ð¿Ð¾Ñ‚Ð²ÑŠÑ€Ð¶Ð´Ð°Ð²Ð° Ñ‡Ð°Ñ, Ð´ÐµÐ¿Ð¾Ð·Ð¸Ñ‚ Ð¸ Ð½Ð°Ñ‡Ð¸Ð½ Ð½Ð° ÐºÐ¾Ð¼ÑƒÐ½Ð¸ÐºÐ°Ñ†Ð¸Ñ.",
+    bookingItems: ["ÐŸÑŠÑ€Ð²Ð° ÐºÐ¾Ð½ÑÑƒÐ»Ñ‚Ð°Ñ†Ð¸Ñ", "Ð˜Ð½Ð´Ð¸Ð²Ð¸Ð´ÑƒÐ°Ð»Ð½Ð° Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ°", "ÐžÐ½Ð»Ð°Ð¹Ð½ Ñ€ÐµÐ¶Ð¸Ð¼", "Ð¥Ñ€Ð°Ð½Ð¸Ñ‚ÐµÐ»ÐµÐ½ Ð¿Ð»Ð°Ð½"],
     form: {
-      name: "Име",
-      namePlaceholder: "Твоето име",
-      contact: "Телефон или имейл",
-      contactPlaceholder: "Контакт",
-      service: "Услуга",
-      servicePlaceholder: "Избери услуга",
-      serviceOptions: ["Личен треньор по бокс", "Онлайн фитнес треньор", "Личен диетичен режим"],
-      day: "Предпочитан ден",
-      dayPlaceholder: "Например: вторник",
-      goal: "Цел",
-      goalPlaceholder: "Сила, отслабване, бокс техника, хранене...",
-      submit: "Изпрати заявка"
+      name: "Ð˜Ð¼Ðµ",
+      namePlaceholder: "Ð¢Ð²Ð¾ÐµÑ‚Ð¾ Ð¸Ð¼Ðµ",
+      contact: "Ð¢ÐµÐ»ÐµÑ„Ð¾Ð½ Ð¸Ð»Ð¸ Ð¸Ð¼ÐµÐ¹Ð»",
+      contactPlaceholder: "ÐšÐ¾Ð½Ñ‚Ð°ÐºÑ‚",
+      service: "Ð£ÑÐ»ÑƒÐ³Ð°",
+      servicePlaceholder: "Ð˜Ð·Ð±ÐµÑ€Ð¸ ÑƒÑÐ»ÑƒÐ³Ð°",
+      serviceOptions: ["Ð¢Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ¸ Ð¿Ð¾ Ð±Ð¾ÐºÑ", "ÐžÐ½Ð»Ð°Ð¹Ð½ Ñ„Ð¸Ñ‚Ð½ÐµÑ Ñ‚Ñ€ÐµÐ½ÑŒÐ¾Ñ€", "Ð›Ð¸Ñ‡ÐµÐ½ Ð´Ð¸ÐµÑ‚Ð¸Ñ‡ÐµÐ½ Ñ€ÐµÐ¶Ð¸Ð¼"],
+      day: "ÐŸÑ€ÐµÐ´Ð¿Ð¾Ñ‡Ð¸Ñ‚Ð°Ð½ Ð´ÐµÐ½",
+      dayPlaceholder: "ÐÐ°Ð¿Ñ€Ð¸Ð¼ÐµÑ€: Ð²Ñ‚Ð¾Ñ€Ð½Ð¸Ðº",
+      goal: "Ð¦ÐµÐ»",
+      goalPlaceholder: "Ð¡Ð¸Ð»Ð°, Ð¾Ñ‚ÑÐ»Ð°Ð±Ð²Ð°Ð½Ðµ, Ð±Ð¾ÐºÑ Ñ‚ÐµÑ…Ð½Ð¸ÐºÐ°, Ñ…Ñ€Ð°Ð½ÐµÐ½Ðµ...",
+      submit: "Ð—Ð°Ð¿Ð°Ð·Ð¸ Ð¸ Ð¿Ð»Ð°Ñ‚Ð¸ Ð´ÐµÐ¿Ð¾Ð·Ð¸Ñ‚"
     },
-    nutritionEyebrow: "хранене",
-    nutritionTitle: "Личен диетичен режим за правилно хранене",
-    nutritionCardTitle: "Без крайности. С ясни правила.",
-    nutritionCardText: "Режимът се изгражда около храните, които можеш да купиш, приготвиш и повториш. Целта е контрол върху калориите, достатъчно протеин, стабилна енергия и по-малко импровизация.",
+    nutritionEyebrow: "Ñ…Ñ€Ð°Ð½ÐµÐ½Ðµ",
+    nutritionTitle: "Ð›Ð¸Ñ‡ÐµÐ½ Ð´Ð¸ÐµÑ‚Ð¸Ñ‡ÐµÐ½ Ñ€ÐµÐ¶Ð¸Ð¼ Ð·Ð° Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð½Ð¾ Ñ…Ñ€Ð°Ð½ÐµÐ½Ðµ",
+    nutritionCardTitle: "Ð‘ÐµÐ· ÐºÑ€Ð°Ð¹Ð½Ð¾ÑÑ‚Ð¸. Ð¡ ÑÑÐ½Ð¸ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°.",
+    nutritionCardText: "Ð ÐµÐ¶Ð¸Ð¼ÑŠÑ‚ ÑÐµ Ð¸Ð·Ð³Ñ€Ð°Ð¶Ð´Ð° Ð¾ÐºÐ¾Ð»Ð¾ Ñ…Ñ€Ð°Ð½Ð¸Ñ‚Ðµ, ÐºÐ¾Ð¸Ñ‚Ð¾ Ð¼Ð¾Ð¶ÐµÑˆ Ð´Ð° ÐºÑƒÐ¿Ð¸Ñˆ, Ð¿Ñ€Ð¸Ð³Ð¾Ñ‚Ð²Ð¸Ñˆ Ð¸ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñˆ. Ð¦ÐµÐ»Ñ‚Ð° Ðµ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð» Ð²ÑŠÑ€Ñ…Ñƒ ÐºÐ°Ð»Ð¾Ñ€Ð¸Ð¸Ñ‚Ðµ, Ð´Ð¾ÑÑ‚Ð°Ñ‚ÑŠÑ‡Ð½Ð¾ Ð¿Ñ€Ð¾Ñ‚ÐµÐ¸Ð½, ÑÑ‚Ð°Ð±Ð¸Ð»Ð½Ð° ÐµÐ½ÐµÑ€Ð³Ð¸Ñ Ð¸ Ð¿Ð¾-Ð¼Ð°Ð»ÐºÐ¾ Ð¸Ð¼Ð¿Ñ€Ð¾Ð²Ð¸Ð·Ð°Ñ†Ð¸Ñ.",
     nutrition: [
-      { title: "Баланс на макроси", text: "Ясен дневен прием на протеин, въглехидрати и мазнини според целта и графика." },
-      { title: "Реални храни", text: "Меню с достъпни продукти, лесна подготовка и варианти за дни с повече движение." },
-      { title: "Навици, не крайности", text: "Плавни промени, които можеш да поддържаш, без краткосрочни диети и изтощение." },
-      { title: "Проследяване", text: "Седмични корекции според тегло, обиколки, сила, сън и усещане за енергия." }
+      { title: "Ð‘Ð°Ð»Ð°Ð½Ñ Ð½Ð° Ð¼Ð°ÐºÑ€Ð¾ÑÐ¸", text: "Ð¯ÑÐµÐ½ Ð´Ð½ÐµÐ²ÐµÐ½ Ð¿Ñ€Ð¸ÐµÐ¼ Ð½Ð° Ð¿Ñ€Ð¾Ñ‚ÐµÐ¸Ð½, Ð²ÑŠÐ³Ð»ÐµÑ…Ð¸Ð´Ñ€Ð°Ñ‚Ð¸ Ð¸ Ð¼Ð°Ð·Ð½Ð¸Ð½Ð¸ ÑÐ¿Ð¾Ñ€ÐµÐ´ Ñ†ÐµÐ»Ñ‚Ð° Ð¸ Ð³Ñ€Ð°Ñ„Ð¸ÐºÐ°." },
+      { title: "Ð ÐµÐ°Ð»Ð½Ð¸ Ñ…Ñ€Ð°Ð½Ð¸", text: "ÐœÐµÐ½ÑŽ Ñ Ð´Ð¾ÑÑ‚ÑŠÐ¿Ð½Ð¸ Ð¿Ñ€Ð¾Ð´ÑƒÐºÑ‚Ð¸, Ð»ÐµÑÐ½Ð° Ð¿Ð¾Ð´Ð³Ð¾Ñ‚Ð¾Ð²ÐºÐ° Ð¸ Ð²Ð°Ñ€Ð¸Ð°Ð½Ñ‚Ð¸ Ð·Ð° Ð´Ð½Ð¸ Ñ Ð¿Ð¾Ð²ÐµÑ‡Ðµ Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ðµ." },
+      { title: "ÐÐ°Ð²Ð¸Ñ†Ð¸, Ð½Ðµ ÐºÑ€Ð°Ð¹Ð½Ð¾ÑÑ‚Ð¸", text: "ÐŸÐ»Ð°Ð²Ð½Ð¸ Ð¿Ñ€Ð¾Ð¼ÐµÐ½Ð¸, ÐºÐ¾Ð¸Ñ‚Ð¾ Ð¼Ð¾Ð¶ÐµÑˆ Ð´Ð° Ð¿Ð¾Ð´Ð´ÑŠÑ€Ð¶Ð°Ñˆ, Ð±ÐµÐ· ÐºÑ€Ð°Ñ‚ÐºÐ¾ÑÑ€Ð¾Ñ‡Ð½Ð¸ Ð´Ð¸ÐµÑ‚Ð¸ Ð¸ Ð¸Ð·Ñ‚Ð¾Ñ‰ÐµÐ½Ð¸Ðµ." },
+      { title: "ÐŸÑ€Ð¾ÑÐ»ÐµÐ´ÑÐ²Ð°Ð½Ðµ", text: "Ð¡ÐµÐ´Ð¼Ð¸Ñ‡Ð½Ð¸ ÐºÐ¾Ñ€ÐµÐºÑ†Ð¸Ð¸ ÑÐ¿Ð¾Ñ€ÐµÐ´ Ñ‚ÐµÐ³Ð»Ð¾, Ð¾Ð±Ð¸ÐºÐ¾Ð»ÐºÐ¸, ÑÐ¸Ð»Ð°, ÑÑŠÐ½ Ð¸ ÑƒÑÐµÑ‰Ð°Ð½Ðµ Ð·Ð° ÐµÐ½ÐµÑ€Ð³Ð¸Ñ." }
     ],
-    weekEyebrow: "седмица",
-    weekTitle: "Примерна структура на тренировъчен режим",
+    weekEyebrow: "ÑÐµÐ´Ð¼Ð¸Ñ†Ð°",
+    weekTitle: "ÐŸÑ€Ð¸Ð¼ÐµÑ€Ð½Ð° ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ð° Ð½Ð° Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÑŠÑ‡ÐµÐ½ Ñ€ÐµÐ¶Ð¸Ð¼",
     week: [
-      ["Понеделник", "Сила: долна част + ядро", "60 мин"],
-      ["Вторник", "Бокс техника + кондиция", "50 мин"],
-      ["Сряда", "Мобилност и активно възстановяване", "35 мин"],
-      ["Четвъртък", "Сила: горна част + гръб", "60 мин"],
-      ["Петък", "Онлайн отчет + корекции", "30 мин"],
-      ["Събота", "Пълен комплекс", "55 мин"]
+      ["ÐŸÐ¾Ð½ÐµÐ´ÐµÐ»Ð½Ð¸Ðº", "Ð¡Ð¸Ð»Ð°: Ð´Ð¾Ð»Ð½Ð° Ñ‡Ð°ÑÑ‚ + ÑÐ´Ñ€Ð¾", "60 Ð¼Ð¸Ð½"],
+      ["Ð’Ñ‚Ð¾Ñ€Ð½Ð¸Ðº", "Ð‘Ð¾ÐºÑ Ñ‚ÐµÑ…Ð½Ð¸ÐºÐ° + ÐºÐ¾Ð½Ð´Ð¸Ñ†Ð¸Ñ", "50 Ð¼Ð¸Ð½"],
+      ["Ð¡Ñ€ÑÐ´Ð°", "ÐœÐ¾Ð±Ð¸Ð»Ð½Ð¾ÑÑ‚ Ð¸ Ð°ÐºÑ‚Ð¸Ð²Ð½Ð¾ Ð²ÑŠÐ·ÑÑ‚Ð°Ð½Ð¾Ð²ÑÐ²Ð°Ð½Ðµ", "35 Ð¼Ð¸Ð½"],
+      ["Ð§ÐµÑ‚Ð²ÑŠÑ€Ñ‚ÑŠÐº", "Ð¡Ð¸Ð»Ð°: Ð³Ð¾Ñ€Ð½Ð° Ñ‡Ð°ÑÑ‚ + Ð³Ñ€ÑŠÐ±", "60 Ð¼Ð¸Ð½"],
+      ["ÐŸÐµÑ‚ÑŠÐº", "ÐžÐ½Ð»Ð°Ð¹Ð½ Ð¾Ñ‚Ñ‡ÐµÑ‚ + ÐºÐ¾Ñ€ÐµÐºÑ†Ð¸Ð¸", "30 Ð¼Ð¸Ð½"],
+      ["Ð¡ÑŠÐ±Ð¾Ñ‚Ð°", "ÐŸÑŠÐ»ÐµÐ½ ÐºÐ¾Ð¼Ð¿Ð»ÐµÐºÑ", "55 Ð¼Ð¸Ð½"]
     ],
-    methodEyebrow: "метод",
-    methodTitle: "Процес с контрол, не просто мотивация",
+    methodEyebrow: "Ð¼ÐµÑ‚Ð¾Ð´",
+    methodTitle: "ÐŸÑ€Ð¾Ñ†ÐµÑ Ñ ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð», Ð½Ðµ Ð¿Ñ€Ð¾ÑÑ‚Ð¾ Ð¼Ð¾Ñ‚Ð¸Ð²Ð°Ñ†Ð¸Ñ",
     process: [
-      { icon: icons.assessment, title: "Оценка", text: "Започваме с цел, опит, свободно време, ограничения и текущи навици." },
-      { icon: icons.plan, title: "План", text: "Получаваш структура за тренировки, хранене и възстановяване." },
-      { icon: icons.progress, title: "Прогрес", text: "Следим резултатите и настройваме плана, за да вървиш стабилно напред." }
+      { icon: icons.assessment, title: "ÐžÑ†ÐµÐ½ÐºÐ°", text: "Ð—Ð°Ð¿Ð¾Ñ‡Ð²Ð°Ð¼Ðµ Ñ Ñ†ÐµÐ», Ð¾Ð¿Ð¸Ñ‚, ÑÐ²Ð¾Ð±Ð¾Ð´Ð½Ð¾ Ð²Ñ€ÐµÐ¼Ðµ, Ð¾Ð³Ñ€Ð°Ð½Ð¸Ñ‡ÐµÐ½Ð¸Ñ Ð¸ Ñ‚ÐµÐºÑƒÑ‰Ð¸ Ð½Ð°Ð²Ð¸Ñ†Ð¸." },
+      { icon: icons.plan, title: "ÐŸÐ»Ð°Ð½", text: "ÐŸÐ¾Ð»ÑƒÑ‡Ð°Ð²Ð°Ñˆ ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ð° Ð·Ð° Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ¸, Ñ…Ñ€Ð°Ð½ÐµÐ½Ðµ Ð¸ Ð²ÑŠÐ·ÑÑ‚Ð°Ð½Ð¾Ð²ÑÐ²Ð°Ð½Ðµ." },
+      { icon: icons.progress, title: "ÐŸÑ€Ð¾Ð³Ñ€ÐµÑ", text: "Ð¡Ð»ÐµÐ´Ð¸Ð¼ Ñ€ÐµÐ·ÑƒÐ»Ñ‚Ð°Ñ‚Ð¸Ñ‚Ðµ Ð¸ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹Ð²Ð°Ð¼Ðµ Ð¿Ð»Ð°Ð½Ð°, Ð·Ð° Ð´Ð° Ð²ÑŠÑ€Ð²Ð¸Ñˆ ÑÑ‚Ð°Ð±Ð¸Ð»Ð½Ð¾ Ð½Ð°Ð¿Ñ€ÐµÐ´." }
     ],
-    paymentEyebrow: "депозит и плащане",
-    paymentTitle: "Потвърждение преди старт",
+    paymentEyebrow: "Ð´ÐµÐ¿Ð¾Ð·Ð¸Ñ‚ Ð¸ Ð¿Ð»Ð°Ñ‰Ð°Ð½Ðµ",
+    paymentTitle: "ÐŸÐ¾Ñ‚Ð²ÑŠÑ€Ð¶Ð´ÐµÐ½Ð¸Ðµ Ð¿Ñ€ÐµÐ´Ð¸ ÑÑ‚Ð°Ñ€Ñ‚",
     paymentItems: [
-      { icon: icons.deposit, title: "Депозит", text: "20% депозит за потвърждение на час или старт на онлайн режим." },
-      { icon: icons.payment, title: "Плащане", text: "Подготвена секция за карта, банков превод или друг метод по избор." },
-      { icon: icons.confirm, title: "Потвърждение", text: "След плащане клиентът получава потвърждение и следващи стъпки." }
+      { icon: icons.deposit, title: "Ð”ÐµÐ¿Ð¾Ð·Ð¸Ñ‚", text: "20% Ð´ÐµÐ¿Ð¾Ð·Ð¸Ñ‚ Ð·Ð° Ð¿Ð¾Ñ‚Ð²ÑŠÑ€Ð¶Ð´ÐµÐ½Ð¸Ðµ Ð½Ð° Ñ‡Ð°Ñ Ð¸Ð»Ð¸ ÑÑ‚Ð°Ñ€Ñ‚ Ð½Ð° Ð¾Ð½Ð»Ð°Ð¹Ð½ Ñ€ÐµÐ¶Ð¸Ð¼." },
+      { icon: icons.payment, title: "ÐŸÐ»Ð°Ñ‰Ð°Ð½Ðµ", text: "ÐŸÐ¾Ð´Ð³Ð¾Ñ‚Ð²ÐµÐ½Ð° ÑÐµÐºÑ†Ð¸Ñ Ð·Ð° ÐºÐ°Ñ€Ñ‚Ð°, Ð±Ð°Ð½ÐºÐ¾Ð² Ð¿Ñ€ÐµÐ²Ð¾Ð´ Ð¸Ð»Ð¸ Ð´Ñ€ÑƒÐ³ Ð¼ÐµÑ‚Ð¾Ð´ Ð¿Ð¾ Ð¸Ð·Ð±Ð¾Ñ€." },
+      { icon: icons.confirm, title: "ÐŸÐ¾Ñ‚Ð²ÑŠÑ€Ð¶Ð´ÐµÐ½Ð¸Ðµ", text: "Ð¡Ð»ÐµÐ´ Ð¿Ð»Ð°Ñ‰Ð°Ð½Ðµ ÐºÐ»Ð¸ÐµÐ½Ñ‚ÑŠÑ‚ Ð¿Ð¾Ð»ÑƒÑ‡Ð°Ð²Ð° Ð¿Ð¾Ñ‚Ð²ÑŠÑ€Ð¶Ð´ÐµÐ½Ð¸Ðµ Ð¸ ÑÐ»ÐµÐ´Ð²Ð°Ñ‰Ð¸ ÑÑ‚ÑŠÐ¿ÐºÐ¸." }
     ],
-    depositTitle: "Депозит 20%",
-    depositText: "Запазва час или активира изготвянето на онлайн тренировъчен и хранителен режим.",
-    depositCta: "Към буукинг",
-    footer: "Тренировки, онлайн инструкции, бокс подготовка, хранителни режими и плащане."
+    depositTitle: "Ð”ÐµÐ¿Ð¾Ð·Ð¸Ñ‚ 20%",
+    depositText: "Ð—Ð°Ð¿Ð°Ð·Ð²Ð° Ñ‡Ð°Ñ Ð¸Ð»Ð¸ Ð°ÐºÑ‚Ð¸Ð²Ð¸Ñ€Ð° Ð¸Ð·Ð³Ð¾Ñ‚Ð²ÑÐ½ÐµÑ‚Ð¾ Ð½Ð° Ð¾Ð½Ð»Ð°Ð¹Ð½ Ñ‚Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÑŠÑ‡ÐµÐ½ Ð¸ Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÐµÐ»ÐµÐ½ Ñ€ÐµÐ¶Ð¸Ð¼.",
+    depositCta: "ÐšÑŠÐ¼ Ð±ÑƒÑƒÐºÐ¸Ð½Ð³",
+    footer: "Ð¢Ñ€ÐµÐ½Ð¸Ñ€Ð¾Ð²ÐºÐ¸, Ð¾Ð½Ð»Ð°Ð¹Ð½ Ð¸Ð½ÑÑ‚Ñ€ÑƒÐºÑ†Ð¸Ð¸, Ð±Ð¾ÐºÑ Ð¿Ð¾Ð´Ð³Ð¾Ñ‚Ð¾Ð²ÐºÐ°, Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÐµÐ»Ð½Ð¸ Ñ€ÐµÐ¶Ð¸Ð¼Ð¸ Ð¸ Ð¿Ð»Ð°Ñ‰Ð°Ð½Ðµ."
   },
   en: {
     langLabel: "Language",
@@ -217,7 +237,6 @@ const content = {
     heroText: "A standalone system for private boxing sessions, online fitness instructions, nutrition plans, booking, deposits and payment.",
     heroPrimary: "Book a consultation",
     heroSecondary: "View services",
-    focusLabel: "today's focus",
     focusTitle: "Boxing + nutrition",
     stats: [
       { value: "12+", label: "weekly sessions" },
@@ -225,10 +244,7 @@ const content = {
       { value: "24/7", label: "online guidance" }
     ],
     focusItems: ["Technique before load", "Online instructions"],
-    coverLabel: "promo cover",
-    coverTitle: "Personal boxing coach",
-    coverText: "A solo promo image for first impact: strength, discipline and athletic identity.",
-    coverTags: ["boxing", "fitness", "nutrition"],
+    coverTitle: "Boxing training",
     aboutEyebrow: "about",
     aboutTitle: "About the coach and training community",
     soloTitle: "Personal approach",
@@ -241,15 +257,15 @@ const content = {
     services: [
       {
         icon: icons.boxing,
-        title: "Personal boxing coach",
+        title: "Boxing training",
         text: "One-to-one work on stance, punches, defense, movement, reaction and conditioning.",
-        points: ["technique and stance", "pad work", "boxing conditioning"]
+        points: ["personal training", "group training", "competition preparation", "technique and conditioning training"]
       },
       {
         icon: icons.online,
         title: "Online fitness coach",
         text: "Get instructions, a weekly plan and online corrections without needing to be present in a gym.",
-        points: ["guided exercises", "weekly schedule", "feedback"]
+        points: ["guided exercises", "weekly schedule"]
       },
       {
         icon: icons.nutrition,
@@ -292,12 +308,12 @@ const content = {
       contactPlaceholder: "Contact",
       service: "Service",
       servicePlaceholder: "Choose a service",
-      serviceOptions: ["Personal boxing coach", "Online fitness coach", "Personal nutrition plan"],
+      serviceOptions: ["Boxing training", "Online fitness coach", "Personal nutrition plan"],
       day: "Preferred day",
       dayPlaceholder: "Example: Tuesday",
       goal: "Goal",
       goalPlaceholder: "Strength, fat loss, boxing technique, nutrition...",
-      submit: "Send request"
+      submit: "Book and pay deposit"
     },
     nutritionEyebrow: "nutrition",
     nutritionTitle: "Personal nutrition plan for better eating",
@@ -346,7 +362,11 @@ function getLang(searchParams?: { lang?: string | string[] }): Lang {
 }
 
 function href(lang: Lang, id?: string) {
-  return `/trainer?lang=${lang}${id ? `#${id}` : ""}`;
+  if (lang === "bg") {
+    return `/${id ? `#${id}` : ""}`;
+  }
+
+  return `/trainer?lang=en${id ? `#${id}` : ""}`;
 }
 
 export default function TrainerPage({ searchParams }: { searchParams?: { lang?: string | string[] } }) {
@@ -408,47 +428,27 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
           </div>
 
           <div className="relative">
-            <div className="relative min-h-[620px] overflow-hidden rounded-lg border border-emerald-200/20 bg-[linear-gradient(145deg,rgba(16,185,129,.18),rgba(255,255,255,.045)_42%,rgba(0,0,0,.72)),radial-gradient(circle_at_50%_18%,rgba(255,255,255,.16),transparent_30%)] p-5 shadow-[0_30px_100px_rgba(0,0,0,.5)]">
-              <div className="absolute inset-5 rounded-md border border-dashed border-white/18 bg-black/25" />
-              <Image
-                src={promoImages.cover}
-                alt={copy.coverTitle}
-                fill
-                priority
-                sizes="(min-width: 1024px) 42vw, 100vw"
-                className="object-cover object-[50%_18%]"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.24)_46%,rgba(0,0,0,.82)),linear-gradient(90deg,rgba(0,0,0,.55),transparent_48%)]" />
-              <div className="absolute left-8 top-8 rounded-full border border-emerald-200/35 bg-black/50 px-4 py-2 text-xs uppercase tracking-[.28em] text-emerald-100">
-                {copy.coverLabel}
+            <div className="overflow-hidden rounded-lg border border-emerald-200/20 bg-white/[.04] shadow-[0_30px_100px_rgba(0,0,0,.5)]">
+              <div className="relative aspect-[4/5] min-h-[520px]">
+                <Image
+                  src={promoImages.cover}
+                  alt={copy.coverTitle}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="object-cover object-[50%_18%]"
+                />
               </div>
-              <div className="absolute right-8 top-8 grid h-14 w-14 place-items-center rounded-full border border-white/15 bg-white/[.06]">
-                <Activity className="text-emerald-200" size={24} />
-              </div>
-              <div className="absolute inset-x-8 bottom-8">
-                <div className="mb-5 grid gap-2 sm:grid-cols-3">
-                  {copy.stats.map((item) => (
-                    <div key={item.label} className="rounded-md border border-white/10 bg-black/55 p-3 backdrop-blur">
-                      <p className="font-display text-2xl text-emerald-100">{item.value}</p>
-                      <p className="mt-1 text-[10px] uppercase tracking-[.18em] text-white/55">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="rounded-md border border-white/10 bg-black/60 p-5 backdrop-blur">
-                  <p className="text-xs uppercase tracking-[.28em] text-white/45">{copy.focusLabel}</p>
-                  <h2 className="mt-2 font-display text-4xl text-white">{copy.coverTitle}</h2>
-                  <p className="mt-3 text-sm leading-7 text-white/64">{copy.coverText}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {copy.coverTags.map((tag) => (
-                      <span key={tag} className="rounded-full border border-emerald-200/25 px-3 py-1 text-xs uppercase tracking-[.18em] text-emerald-100">
-                        {tag}
-                      </span>
-                    ))}
+              <div className="grid gap-2 border-t border-white/10 bg-black/55 p-4 sm:grid-cols-3">
+                {copy.stats.map((item) => (
+                  <div key={item.label} className="rounded-md border border-white/10 bg-white/[.04] p-3">
+                    <p className="font-display text-2xl text-emerald-100">{item.value}</p>
+                    <p className="mt-1 text-[10px] uppercase tracking-[.18em] text-white/55">{item.label}</p>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
-            <div className="absolute -bottom-5 left-6 right-6 grid gap-2 md:grid-cols-2">
+            <div className="mt-3 grid gap-2 md:grid-cols-2">
               {copy.focusItems.map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-md border border-white/10 bg-black/80 px-4 py-3 text-xs text-white/75 backdrop-blur">
                   <Flame className="shrink-0 text-emerald-200" size={16} />
@@ -471,17 +471,16 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
                 sizes="(min-width: 1024px) 36vw, 100vw"
                 className="object-cover object-[50%_28%]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-              <div className="absolute bottom-0 p-6">
-                <p className="text-xs uppercase tracking-[.28em] text-emerald-100">solo</p>
-                <h3 className="mt-2 font-display text-4xl">{copy.soloTitle}</h3>
-                <p className="mt-3 text-sm leading-7 text-white/68">{copy.soloText}</p>
-              </div>
+            </div>
+            <div className="border-t border-white/10 p-6">
+              <p className="text-xs uppercase tracking-[.28em] text-emerald-100">solo</p>
+              <h3 className="mt-2 font-display text-4xl">{copy.soloTitle}</h3>
+              <p className="mt-3 text-sm leading-7 text-white/68">{copy.soloText}</p>
             </div>
           </article>
 
-          <article className="rounded-lg border border-white/10 bg-white/[.04] p-4">
-            <div className="grid gap-4 md:grid-cols-2">
+          <article className="overflow-hidden rounded-lg border border-white/10 bg-white/[.04]">
+            <div className="grid gap-4 p-4 md:grid-cols-2">
               {promoImages.groups.map((src, index) => (
                 <div key={src} className={`relative overflow-hidden rounded-md ${index === 0 ? "md:col-span-2 aspect-[16/9]" : "aspect-[4/3]"}`}>
                   <Image
@@ -491,16 +490,13 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
                     sizes={index === 0 ? "(min-width: 1024px) 56vw, 100vw" : "(min-width: 1024px) 28vw, 50vw"}
                     className="object-cover object-center transition duration-700 hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-transparent" />
-                  {index === 0 ? (
-                    <div className="absolute bottom-0 p-5">
-                      <p className="text-xs uppercase tracking-[.28em] text-emerald-100">{copy.groupBadge}</p>
-                      <h3 className="mt-2 font-display text-4xl">{copy.groupTitle}</h3>
-                      <p className="mt-3 max-w-xl text-sm leading-7 text-white/68">{copy.groupText}</p>
-                    </div>
-                  ) : null}
                 </div>
               ))}
+            </div>
+            <div className="border-t border-white/10 p-6">
+              <p className="text-xs uppercase tracking-[.28em] text-emerald-100">{copy.groupBadge}</p>
+              <h3 className="mt-2 font-display text-4xl">{copy.groupTitle}</h3>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-white/68">{copy.groupText}</p>
             </div>
           </article>
         </div>
@@ -562,38 +558,7 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
             </div>
           </div>
 
-          <form className="rounded-lg border border-white/10 bg-white/[.04] p-6">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="grid gap-2 text-sm text-white/70">
-                {copy.form.name}
-                <input className="rounded-md border border-white/10 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-emerald-200" name="name" placeholder={copy.form.namePlaceholder} />
-              </label>
-              <label className="grid gap-2 text-sm text-white/70">
-                {copy.form.contact}
-                <input className="rounded-md border border-white/10 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-emerald-200" name="contact" placeholder={copy.form.contactPlaceholder} />
-              </label>
-              <label className="grid gap-2 text-sm text-white/70">
-                {copy.form.service}
-                <select className="rounded-md border border-white/10 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-emerald-200" name="service" defaultValue="">
-                  <option value="" disabled>{copy.form.servicePlaceholder}</option>
-                  {copy.form.serviceOptions.map((option) => (
-                    <option key={option}>{option}</option>
-                  ))}
-                </select>
-              </label>
-              <label className="grid gap-2 text-sm text-white/70">
-                {copy.form.day}
-                <input className="rounded-md border border-white/10 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-emerald-200" name="day" placeholder={copy.form.dayPlaceholder} />
-              </label>
-            </div>
-            <label className="mt-4 grid gap-2 text-sm text-white/70">
-              {copy.form.goal}
-              <textarea className="min-h-28 rounded-md border border-white/10 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-emerald-200" name="goal" placeholder={copy.form.goalPlaceholder} />
-            </label>
-            <button className="mt-5 inline-flex items-center gap-2 rounded-full bg-emerald-200 px-6 py-3 text-sm font-medium text-black transition hover:bg-white" type="submit">
-              {copy.form.submit} <MessageSquare size={16} />
-            </button>
-          </form>
+          <TrainerBookingForm copy={copy.form} lang={lang} />
         </div>
       </Section>
 

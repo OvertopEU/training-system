@@ -18,18 +18,42 @@ function getMetadataBase() {
 
 export const metadata: Metadata = {
   metadataBase: getMetadataBase(),
+  applicationName: "TS",
   title: {
-    default: "Light & Glory Studio | Luxury Photography",
-    template: "%s | Light & Glory Studio"
+    default: "TS | Training System",
+    template: "%s | TS"
   },
-  description: "Premium cinematic photography, private galleries, booking, reels, and editorial urban storytelling.",
+  description: "Personal training, boxing, online fitness guidance, nutrition plans and booking.",
+  alternates: {
+    canonical: "/",
+    languages: {
+      bg: "/",
+      en: "/trainer?lang=en"
+    }
+  },
   openGraph: {
-    title: "Light & Glory Studio",
-    description: "Luxury cinematic photography platform.",
-    images: ["/logo.png"]
+    title: "TS | Training System",
+    description: "Personal training, boxing, online fitness guidance, nutrition plans and booking.",
+    url: "/",
+    siteName: "TS",
+    type: "website",
+    images: [
+      {
+        url: "/trainer/coach-boxer-cover.jpg",
+        width: 1080,
+        height: 1350,
+        alt: "TS personal trainer boxing coach"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TS | Training System",
+    description: "Personal training, boxing, online fitness guidance, nutrition plans and booking.",
+    images: ["/trainer/coach-boxer-cover.jpg"]
   },
   icons: {
-    icon: "/favicon.svg"
+    icon: "/trainer-favicon.svg"
   }
 };
 

@@ -17,7 +17,7 @@ const nextConfig = {
       "/behind-the-scenes"
     ].map((source) => ({
       source,
-      destination: "/trainer?lang=bg",
+      destination: "/",
       permanent: false
     }));
   },
