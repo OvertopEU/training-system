@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   title: {
     absolute: "TS | Training System"
   },
-  description: "Personal training, boxing, online fitness guidance, nutrition plans and booking.",
+  description: "Персонални тренировки по бокс, онлайн фитнес насоки, хранителни режими и записване.",
   alternates: {
     canonical: "/",
     languages: {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "TS | Training System",
-    description: "Personal training, boxing, online fitness guidance, nutrition plans and booking.",
+    description: "Персонални тренировки по бокс, онлайн фитнес насоки, хранителни режими и записване.",
     url: "/",
     siteName: "TS",
     type: "website",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TS | Training System",
-    description: "Personal training, boxing, online fitness guidance, nutrition plans and booking.",
+    description: "Персонални тренировки по бокс, онлайн фитнес насоки, хранителни режими и записване.",
     images: ["/trainer/coach-boxer-cover.jpg"]
   },
   icons: {
