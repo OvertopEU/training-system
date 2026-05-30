@@ -26,11 +26,20 @@ export const metadata = {
   }
 };
 
+async function getHomePortfolioData() {
+  try {
+    return await Promise.all([
+      prisma.portfolioItem.findMany({ include: { category: true }, orderBy: [{ order: "asc" }, { createdAt: "desc" }] }),
+      prisma.portfolioCategory.findMany({ orderBy: { name: "asc" } })
+    ]);
+  } catch (error) {
+    console.error("Homepage portfolio data unavailable", error);
+    return [[], []];
+  }
+}
+
 export default async function PhotographyHomePage() {
-  const [items, categories] = await Promise.all([
-    prisma.portfolioItem.findMany({ include: { category: true }, orderBy: [{ order: "asc" }, { createdAt: "desc" }] }),
-    prisma.portfolioCategory.findMany({ orderBy: { name: "asc" } })
-  ]);
+  const [items, categories] = await getHomePortfolioData();
 
   return (
     <>
