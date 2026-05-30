@@ -83,6 +83,7 @@ const icons = {
 const promoImages = {
   cover: "/trainer/coach-boxer-cover.jpg",
   solo: "/trainer/coach-flex.jpg",
+  gym: "/trainer/gym-training-session.jpg",
   groups: [
     "/trainer/group-promo-bags.jpg",
     "/trainer/group-promo-team.jpg",
@@ -114,9 +115,9 @@ const content = {
     ],
     focusItems: ["Техника преди тежест", "Онлайн инструкции"],
     coverTitle: "Тренировки по бокс",
-    videoEyebrow: "promo video",
-    videoTitle: "30 секунди от тренировъчния процес",
-    videoText: "Кратък пример от реална работа: движение, дистанция, защита и контрол в спаринг среда.",
+    gymPhotoEyebrow: "тренировъчна среда",
+    gymPhotoTitle: "Работа в зала с реален ритъм",
+    gymPhotoText: "Тренировките се изграждат около техника, дистанция, контрол и постоянно движение в работна среда.",
     aboutEyebrow: "about",
     aboutTitle: "За треньора и тренировъчната общност",
     soloTitle: "Личен подход",
@@ -248,9 +249,9 @@ const content = {
     ],
     focusItems: ["Technique before load", "Online instructions"],
     coverTitle: "Boxing training",
-    videoEyebrow: "promo video",
-    videoTitle: "30 seconds from the training process",
-    videoText: "A short sample from real work: movement, distance, defense and control in a sparring environment.",
+    gymPhotoEyebrow: "training environment",
+    gymPhotoTitle: "Gym work with real training rhythm",
+    gymPhotoText: "Training is built around technique, distance, control and consistent movement in a working gym environment.",
     aboutEyebrow: "about",
     aboutTitle: "About the coach and training community",
     soloTitle: "Personal approach",
@@ -466,31 +467,6 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
         </div>
       </section>
 
-      <Section eyebrow={copy.videoEyebrow} title={copy.videoTitle} className="scroll-mt-24">
-        <div className="grid gap-6 lg:grid-cols-[1.35fr_.65fr] lg:items-center">
-          <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[.04]">
-            <video
-              className="aspect-video w-full bg-black object-cover"
-              src="/trainer/training-promo.mp4"
-              poster="/trainer/training-promo-poster.jpg"
-              controls
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            />
-          </div>
-          <div className="rounded-lg border border-white/10 bg-white/[.04] p-6">
-            <p className="text-sm leading-7 text-white/68">{copy.videoText}</p>
-            <div className="mt-6 grid gap-2">
-              {copy.focusItems.map((item) => (
-                <p key={item} className="rounded-md border border-white/10 px-3 py-2 text-sm text-white/70">{item}</p>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Section>
-
       <Section eyebrow={copy.aboutEyebrow} title={copy.aboutTitle} className="scroll-mt-24" id="about">
         <div className="grid gap-6 lg:grid-cols-[.8fr_1.2fr]">
           <article className="overflow-hidden rounded-lg border border-white/10 bg-white/[.04]">
@@ -530,6 +506,28 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
               <p className="mt-3 max-w-2xl text-sm leading-7 text-white/68">{copy.groupText}</p>
             </div>
           </article>
+        </div>
+      </Section>
+
+      <Section eyebrow={copy.gymPhotoEyebrow} title={copy.gymPhotoTitle} className="scroll-mt-24">
+        <div className="grid gap-6 lg:grid-cols-[1.25fr_.75fr] lg:items-center">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-lg border border-emerald-200/20 bg-black">
+            <Image
+              src={promoImages.gym}
+              alt={copy.gymPhotoTitle}
+              fill
+              sizes="(min-width: 1024px) 64vw, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
+          <div className="rounded-lg border border-white/10 bg-white/[.04] p-6">
+            <p className="text-sm leading-7 text-white/68">{copy.gymPhotoText}</p>
+            <div className="mt-6 grid gap-2">
+              {copy.focusItems.map((item) => (
+                <p key={item} className="rounded-md border border-white/10 px-3 py-2 text-sm text-white/70">{item}</p>
+              ))}
+            </div>
+          </div>
         </div>
       </Section>
 
