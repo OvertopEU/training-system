@@ -73,3 +73,5 @@ ADMIN_PASSWORD="ChangeMe123!"
 ## Deployment Notes
 
 Configure Stripe to send events to `/api/webhooks/stripe`, set `NEXT_PUBLIC_SITE_URL` to the production domain, run `prisma migrate deploy`, and seed only when creating the first environment.
+
+For the trainer checkout setup, see `docs/trainer-payments-setup.md`.

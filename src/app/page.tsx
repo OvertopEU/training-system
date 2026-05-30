@@ -1,2 +1,2 @@
-export { metadata } from "./trainer/page";
-export { default } from "./trainer/page";
+export { metadata } from "./(public)/page";
+export { default } from "./(public)/page";

@@ -7,7 +7,8 @@ const trainerCheckoutSchema = z.object({
   contact: z.string().min(6),
   service: z.string().min(2),
   day: z.string().min(2),
-  goal: z.string().max(2000).optional()
+  goal: z.string().max(2000).optional(),
+  lang: z.enum(["bg", "en"]).default("bg")
 });
 
 function getDepositAmount() {
@@ -39,29 +40,42 @@ function getLineItem(service: string) {
 }
 
 export async function POST(request: Request) {
-  const parsed = trainerCheckoutSchema.safeParse(await request.json());
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+  }
+
+  const parsed = trainerCheckoutSchema.safeParse(body);
   if (!parsed.success) {
     return NextResponse.json({ error: "Invalid booking details" }, { status: 400 });
   }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
   const customerEmail = z.string().email().safeParse(parsed.data.contact);
+  const trainerUrl = parsed.data.lang === "en" ? `${siteUrl}/trainer?lang=en` : `${siteUrl}/trainer`;
 
-  const checkout = await assertStripe().checkout.sessions.create({
-    mode: "payment",
-    customer_email: customerEmail.success ? customerEmail.data : undefined,
-    line_items: [getLineItem(parsed.data.service)],
-    metadata: {
-      source: "trainer",
-      clientName: parsed.data.name,
-      contact: parsed.data.contact,
-      service: parsed.data.service,
-      preferredDay: parsed.data.day,
-      goal: parsed.data.goal ?? ""
-    },
-    success_url: `${siteUrl}/trainer?lang=bg&payment=success&session_id={CHECKOUT_SESSION_ID}#booking`,
-    cancel_url: `${siteUrl}/trainer?lang=bg&payment=cancelled#booking`
-  });
+  try {
+    const checkout = await assertStripe().checkout.sessions.create({
+      mode: "payment",
+      customer_email: customerEmail.success ? customerEmail.data : undefined,
+      line_items: [getLineItem(parsed.data.service)],
+      metadata: {
+        source: "trainer",
+        clientName: parsed.data.name,
+        contact: parsed.data.contact,
+        service: parsed.data.service,
+        preferredDay: parsed.data.day,
+        goal: parsed.data.goal ?? "",
+        lang: parsed.data.lang
+      },
+      success_url: `${trainerUrl}${parsed.data.lang === "en" ? "&" : "?"}payment=success&session_id={CHECKOUT_SESSION_ID}#booking`,
+      cancel_url: `${trainerUrl}${parsed.data.lang === "en" ? "&" : "?"}payment=cancelled#booking`
+    });
 
-  return NextResponse.json({ url: checkout.url });
+    return NextResponse.json({ url: checkout.url });
+  } catch {
+    return NextResponse.json({ error: "Could not start payment" }, { status: 500 });
+  }
 }

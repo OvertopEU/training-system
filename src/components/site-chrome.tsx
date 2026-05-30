@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { MessageCircle } from "lucide-react";
 import { CinematicShell } from "@/components/cinematic-shell";
 
 const photoNav = [
@@ -13,6 +14,9 @@ const photoNav = [
   ["Blog", "/blog"],
   ["Contact", "/contact"]
 ];
+
+const whatsappUrl = "https://wa.me/447719799244";
+const whatsappDisplay = "07719 799244";
 
 export function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -42,6 +46,16 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
             <Link href="/login" className="text-sm text-white/70 transition hover:text-white">
               Login
             </Link>
+            <Link
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Contact on WhatsApp"
+              className="hidden items-center gap-2 rounded-full border border-gold-200/30 px-4 py-2 text-sm text-gold-100 transition hover:bg-gold-200 hover:text-black sm:inline-flex"
+            >
+              <MessageCircle size={18} />
+              WhatsApp
+            </Link>
             <Link href="/booking" className="rounded-full border border-gold-200/40 px-4 py-2 text-sm text-gold-100 shadow-gold transition hover:bg-gold-200 hover:text-black">
               Book
             </Link>
@@ -49,6 +63,15 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
         </nav>
       </header>
       <main className="pt-20">{children}</main>
+      <Link
+        href={whatsappUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white"
+      >
+        <MessageCircle size={18} />
+        <span>WhatsApp {whatsappDisplay}</span>
+      </Link>
       <footer className="border-t border-gold-300/10 bg-black px-4 py-12">
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1fr_2fr_1fr]">
           <Image src="/logo.png" alt="Light & Glory Studio" width={130} height={130} />
@@ -59,6 +82,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
           <div className="flex flex-col gap-2 text-sm text-white/60">
             <Link href="/privacy">Privacy</Link>
             <Link href="/terms">Terms</Link>
+            <Link href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp: {whatsappDisplay}</Link>
             <Link href={process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/light.and.glory.studio/"}>Instagram</Link>
           </div>
         </div>

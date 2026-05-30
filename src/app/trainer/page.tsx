@@ -13,6 +13,7 @@ import {
   Flame,
   Globe2,
   HeartPulse,
+  MessageCircle,
   Monitor,
   ShieldCheck,
   Target,
@@ -84,6 +85,7 @@ const promoImages = {
   cover: "/trainer/coach-boxer-cover.jpg",
   solo: "/trainer/coach-flex.jpg",
   gym: "/trainer/gym-training-session.jpg",
+  skiCertificate: "/trainer/ski-instructor-certificate.jpg",
   groups: [
     "/trainer/group-promo-bags.jpg",
     "/trainer/group-promo-team.jpg",
@@ -91,6 +93,9 @@ const promoImages = {
     "/trainer/group-ring-class.jpg"
   ]
 };
+
+const whatsappUrl = "https://wa.me/447719799244";
+const whatsappDisplay = "07719 799244";
 
 const content = {
   bg: {
@@ -107,6 +112,7 @@ const content = {
     heroText: "Самостоятелна система за лични бокс тренировки, онлайн фитнес инструкции, хранителни режими, буукинг, депозит и плащане.",
     heroPrimary: "Запази консултация",
     heroSecondary: "Виж услугите",
+    whatsappCta: "Пиши в WhatsApp",
     focusTitle: "Бокс + хранене",
     stats: [
       { value: "12+", label: "седмични сесии" },
@@ -125,6 +131,15 @@ const content = {
     groupTitle: "Групови тренировки",
     groupText: "Среда за хора, които искат движение, бокс техника, мотивация и постоянство в общ ритъм.",
     groupBadge: "group training",
+    certificateEyebrow: "qualification",
+    certificateTitle: "Ski instructor recognition",
+    certificateText: "Translated summary of a certificate issued by the National Sports Academy “Vasil Levski”, Vitosha Educational-Sport Center “Prof. Ivan Staykov”. The recognition was awarded to Svetoslav Milushev for the highest academic result in Group I: Excellent 5.55.",
+    certificateDetails: [
+      "Institution: National Sports Academy “Vasil Levski”",
+      "Program context: ski instructor training, Vitosha",
+      "Location: Kupena Hut",
+      "Date: 17 January 2016"
+    ],
     servicesEyebrow: "услуги",
     servicesTitle: "Основни направления",
     services: [
@@ -174,6 +189,7 @@ const content = {
     bookingCardTitle: "Избери услуга, цел и удобен график.",
     bookingCardText: "Буукинг секцията е отделна за тренировъчните услуги: бокс, онлайн фитнес инструкции или диетичен режим. След заявка се потвърждава час, депозит и начин на комуникация.",
     bookingItems: ["Първа консултация", "Индивидуална тренировка", "Онлайн режим", "Хранителен план"],
+    directContact: `За директна връзка пиши в WhatsApp: ${whatsappDisplay}.`,
     form: {
       name: "Име",
       namePlaceholder: "Твоето име",
@@ -225,6 +241,8 @@ const content = {
     depositTitle: "Депозит 20%",
     depositText: "Запазва час или активира изготвянето на онлайн тренировъчен и хранителен режим.",
     depositCta: "Към буукинг",
+    paymentSuccess: "Плащането е прието. Ще получиш потвърждение и следващи стъпки.",
+    paymentCancelled: "Плащането беше прекъснато. Можеш да опиташ отново, когато си готов.",
     footer: "Тренировки, онлайн инструкции, бокс подготовка, хранителни режими и плащане."
   },
   en: {
@@ -241,6 +259,7 @@ const content = {
     heroText: "A standalone system for private boxing sessions, online fitness instructions, nutrition plans, booking, deposits and payment.",
     heroPrimary: "Book a consultation",
     heroSecondary: "View services",
+    whatsappCta: "Message on WhatsApp",
     focusTitle: "Boxing + nutrition",
     stats: [
       { value: "12+", label: "weekly sessions" },
@@ -259,6 +278,15 @@ const content = {
     groupTitle: "Group training",
     groupText: "A training environment for people who want movement, boxing technique, motivation and consistency.",
     groupBadge: "group training",
+    certificateEyebrow: "qualification",
+    certificateTitle: "Ski instructor recognition",
+    certificateText: "Translated summary of a certificate issued by the National Sports Academy “Vasil Levski”, Vitosha Educational-Sport Center “Prof. Ivan Staykov”. The recognition was awarded to Svetoslav Milushev for the highest academic result in Group I: Excellent 5.55.",
+    certificateDetails: [
+      "Institution: National Sports Academy “Vasil Levski”",
+      "Program context: ski instructor training, Vitosha",
+      "Location: Kupena Hut",
+      "Date: 17 January 2016"
+    ],
     servicesEyebrow: "services",
     servicesTitle: "Core directions",
     services: [
@@ -308,6 +336,7 @@ const content = {
     bookingCardTitle: "Choose a service, goal and schedule.",
     bookingCardText: "The booking area is dedicated to training services: boxing, online fitness instructions or a nutrition plan. After submitting, the time, deposit and communication method are confirmed.",
     bookingItems: ["Initial consultation", "Private session", "Online plan", "Nutrition plan"],
+    directContact: `For direct contact, message on WhatsApp: ${whatsappDisplay}.`,
     form: {
       name: "Name",
       namePlaceholder: "Your name",
@@ -359,13 +388,25 @@ const content = {
     depositTitle: "20% deposit",
     depositText: "Reserves a session or activates the creation of an online training and nutrition plan.",
     depositCta: "Go to booking",
+    paymentSuccess: "Payment received. You will get confirmation and next steps.",
+    paymentCancelled: "Payment was cancelled. You can try again when you are ready.",
     footer: "Training, online instructions, boxing preparation, nutrition plans and payment."
   }
 };
 
-function getLang(searchParams?: { lang?: string | string[] }): Lang {
+type TrainerSearchParams = {
+  lang?: string | string[];
+  payment?: string | string[];
+};
+
+function getLang(searchParams?: TrainerSearchParams): Lang {
   const lang = Array.isArray(searchParams?.lang) ? searchParams?.lang[0] : searchParams?.lang;
   return lang === "en" ? "en" : "bg";
+}
+
+function getPaymentStatus(searchParams?: TrainerSearchParams) {
+  const payment = Array.isArray(searchParams?.payment) ? searchParams?.payment[0] : searchParams?.payment;
+  return payment === "success" || payment === "cancelled" ? payment : null;
 }
 
 function href(lang: Lang, id?: string) {
@@ -376,9 +417,10 @@ function href(lang: Lang, id?: string) {
   return `/trainer?lang=en${id ? `#${id}` : ""}`;
 }
 
-export default function TrainerPage({ searchParams }: { searchParams?: { lang?: string | string[] } }) {
+export default function TrainerPage({ searchParams }: { searchParams?: TrainerSearchParams }) {
   const lang = getLang(searchParams);
   const copy = content[lang];
+  const paymentStatus = getPaymentStatus(searchParams);
 
   return (
     <>
@@ -413,6 +455,16 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
             <Link href={href(lang, "booking")} className="rounded-full border border-emerald-200/40 px-3 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200 hover:text-black sm:px-4">
               {copy.headerCta}
             </Link>
+            <Link
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={copy.whatsappCta}
+              className="hidden items-center gap-2 rounded-full border border-emerald-200/40 px-3 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200 hover:text-black sm:inline-flex"
+            >
+              <MessageCircle size={17} />
+              WhatsApp
+            </Link>
           </div>
         </nav>
       </header>
@@ -430,6 +482,9 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
               </Link>
               <Link href={href(lang, "services")} className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-200/30 px-6 py-3 text-sm font-medium text-emerald-100 transition hover:bg-emerald-200 hover:text-black">
                 {copy.heroSecondary}
+              </Link>
+              <Link href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-white transition hover:border-emerald-200 hover:text-emerald-100">
+                {copy.whatsappCta} <MessageCircle size={16} />
               </Link>
             </div>
           </div>
@@ -509,6 +564,30 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
         </div>
       </Section>
 
+      <Section eyebrow={copy.certificateEyebrow} title={copy.certificateTitle} className="scroll-mt-24">
+        <div className="grid gap-6 lg:grid-cols-[.75fr_1.25fr] lg:items-center">
+          <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[.04] p-3">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-black">
+              <Image
+                src={promoImages.skiCertificate}
+                alt={copy.certificateTitle}
+                fill
+                sizes="(min-width: 1024px) 34vw, 100vw"
+                className="object-cover object-center"
+              />
+            </div>
+          </div>
+          <div className="rounded-lg border border-white/10 bg-white/[.04] p-6">
+            <p className="text-sm leading-7 text-white/68">{copy.certificateText}</p>
+            <div className="mt-6 grid gap-2">
+              {copy.certificateDetails.map((item) => (
+                <p key={item} className="rounded-md border border-white/10 px-3 py-2 text-sm text-white/70">{item}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
       <Section eyebrow={copy.gymPhotoEyebrow} title={copy.gymPhotoTitle} className="scroll-mt-24">
         <div className="grid gap-6 lg:grid-cols-[1.25fr_.75fr] lg:items-center">
           <div className="relative aspect-[16/9] overflow-hidden rounded-lg border border-emerald-200/20 bg-black">
@@ -572,11 +651,19 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
       </Section>
 
       <Section eyebrow={copy.bookingEyebrow} title={copy.bookingTitle} className="scroll-mt-24" id="booking">
+        {paymentStatus ? (
+          <div className={`mb-6 rounded-lg border px-4 py-3 text-sm ${paymentStatus === "success" ? "border-emerald-200/40 bg-emerald-200/10 text-emerald-50" : "border-white/15 bg-white/[.04] text-white/70"}`}>
+            {paymentStatus === "success" ? copy.paymentSuccess : copy.paymentCancelled}
+          </div>
+        ) : null}
         <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
           <div className="rounded-lg border border-emerald-200/25 bg-black/35 p-7">
             <CalendarCheck className="text-emerald-200" size={36} />
             <h3 className="mt-6 font-display text-4xl">{copy.bookingCardTitle}</h3>
             <p className="mt-5 text-base leading-8 text-white/68">{copy.bookingCardText}</p>
+            <Link href={whatsappUrl} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-emerald-200/35 px-5 py-2.5 text-sm text-emerald-100 transition hover:bg-emerald-200 hover:text-black">
+              {copy.whatsappCta} <MessageCircle size={16} />
+            </Link>
             <div className="mt-6 grid gap-3 text-sm text-white/70">
               {copy.bookingItems.map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-md border border-white/10 px-4 py-3">
@@ -657,10 +744,16 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
             <div>
               <p className="font-display text-3xl">{copy.depositTitle}</p>
               <p className="mt-2 text-sm leading-7 text-white/65">{copy.depositText}</p>
+              <p className="mt-2 text-sm leading-7 text-white/65">{copy.directContact}</p>
             </div>
-            <Link href={href(lang, "booking")} className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-200 px-6 py-3 text-sm font-medium text-black transition hover:bg-white">
-              {copy.depositCta} <ArrowRight size={16} />
-            </Link>
+            <div className="flex flex-wrap gap-3">
+              <Link href={href(lang, "booking")} className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-200 px-6 py-3 text-sm font-medium text-black transition hover:bg-white">
+                {copy.depositCta} <ArrowRight size={16} />
+              </Link>
+              <Link href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-200/35 px-6 py-3 text-sm font-medium text-emerald-100 transition hover:bg-emerald-200 hover:text-black">
+                {copy.whatsappCta} <MessageCircle size={16} />
+              </Link>
+            </div>
           </div>
         </div>
       </Section>
@@ -671,6 +764,15 @@ export default function TrainerPage({ searchParams }: { searchParams?: { lang?: 
           <p>{copy.footer}</p>
         </div>
       </footer>
+      <Link
+        href={whatsappUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white"
+      >
+        <MessageCircle size={18} />
+        <span>WhatsApp {whatsappDisplay}</span>
+      </Link>
     </>
   );
 }

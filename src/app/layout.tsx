@@ -18,12 +18,12 @@ function getMetadataBase() {
 
 export const metadata: Metadata = {
   metadataBase: getMetadataBase(),
-  applicationName: "TS",
+  applicationName: "Light & Glory Studio",
   title: {
-    default: "TS | Training System",
-    template: "%s | TS"
+    default: "Light & Glory Studio",
+    template: "%s | Light & Glory Studio"
   },
-  description: "Персонални тренировки по бокс, онлайн фитнес насоки, хранителни режими и записване.",
+  description: "Luxury urban photography, private client galleries, secure bookings, and cinematic visual storytelling.",
   alternates: {
     canonical: "/",
     languages: {
@@ -32,28 +32,28 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "TS | Training System",
-    description: "Персонални тренировки по бокс, онлайн фитнес насоки, хранителни режими и записване.",
+    title: "Light & Glory Studio",
+    description: "Luxury urban photography, private client galleries, secure bookings, and cinematic visual storytelling.",
     url: "/",
-    siteName: "TS",
+    siteName: "Light & Glory Studio",
     type: "website",
     images: [
       {
-        url: "/trainer/coach-boxer-cover.jpg",
-        width: 1080,
-        height: 1350,
-        alt: "TS personal trainer boxing coach"
+        url: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=1400&q=80",
+        width: 1400,
+        height: 933,
+        alt: "Luxury urban photography"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "TS | Training System",
-    description: "Персонални тренировки по бокс, онлайн фитнес насоки, хранителни режими и записване.",
-    images: ["/trainer/coach-boxer-cover.jpg"]
+    title: "Light & Glory Studio",
+    description: "Luxury urban photography, private client galleries, secure bookings, and cinematic visual storytelling.",
+    images: ["https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=1400&q=80"]
   },
   icons: {
-    icon: "/trainer-favicon.svg"
+    icon: "/favicon.svg"
   }
 };
 

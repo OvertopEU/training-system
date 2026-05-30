@@ -43,7 +43,8 @@ export function TrainerBookingForm({ copy, lang }: { copy: TrainerFormCopy; lang
       contact: form.get("contact")?.toString().trim() ?? "",
       service: form.get("service")?.toString().trim() ?? "",
       day: form.get("day")?.toString().trim() ?? "",
-      goal: form.get("goal")?.toString().trim() ?? ""
+      goal: form.get("goal")?.toString().trim() ?? "",
+      lang
     };
 
     if (!payload.name || !payload.contact || !payload.service || !payload.day) {
@@ -54,12 +55,21 @@ export function TrainerBookingForm({ copy, lang }: { copy: TrainerFormCopy; lang
     setIsSubmitting(true);
     setMessage(messages[lang].starting);
 
-    const response = await fetch("/api/trainer/checkout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    });
-    const data = await response.json();
+    let data: { url?: string; error?: string } = {};
+    let response: Response;
+
+    try {
+      response = await fetch("/api/trainer/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      data = await response.json();
+    } catch {
+      setIsSubmitting(false);
+      setMessage(messages[lang].failed);
+      return;
+    }
 
     if (!response.ok || !data.url) {
       setIsSubmitting(false);
