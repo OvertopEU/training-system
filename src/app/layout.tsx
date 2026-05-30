@@ -21,17 +21,20 @@ export const metadata: Metadata = {
     default: "TS | Training System",
     template: "%s | TS"
   },
-  description: "Персонални тренировки по бокс, онлайн фитнес насоки, хранителни режими и записване.",
+  description: "Personal boxing training, online fitness coaching, nutrition plans and booking.",
   alternates: {
     canonical: "/",
     languages: {
-      bg: "/",
-      en: "/trainer?lang=en"
+      en: "/",
+      bg: "/trainer?lang=bg",
+      de: "/trainer?lang=de",
+      fr: "/trainer?lang=fr",
+      es: "/trainer?lang=es"
     }
   },
   openGraph: {
     title: "TS | Training System",
-    description: "Персонални тренировки по бокс, онлайн фитнес насоки, хранителни режими и записване.",
+    description: "Personal boxing training, online fitness coaching, nutrition plans and booking.",
     url: "/",
     siteName: "TS",
     type: "website",
@@ -47,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TS | Training System",
-    description: "Персонални тренировки по бокс, онлайн фитнес насоки, хранителни режими и записване.",
+    description: "Personal boxing training, online fitness coaching, nutrition plans and booking.",
     images: ["/trainer/coach-boxer-cover.jpg"]
   },
   icons: {
@@ -57,7 +60,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="bg" className="dark">
+    <html lang="en" className="dark">
       <body className={cn(inter.variable, playfair.variable, "font-sans antialiased")}>
         <main>{children}</main>
       </body>

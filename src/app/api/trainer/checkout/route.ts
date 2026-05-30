@@ -2,13 +2,16 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { assertStripe } from "@/lib/stripe";
 
+const supportedLangs = ["en", "bg", "de", "fr", "es"] as const;
+type TrainerLang = (typeof supportedLangs)[number];
+
 const trainerCheckoutSchema = z.object({
   name: z.string().min(2),
   contact: z.string().min(6),
   service: z.string().min(2),
   day: z.string().min(2),
   goal: z.string().max(2000).optional(),
-  lang: z.enum(["bg", "en"]).default("bg")
+  lang: z.enum(supportedLangs).default("en")
 });
 
 function getDepositAmount() {
@@ -39,6 +42,14 @@ function getLineItem(service: string) {
   };
 }
 
+function getTrainerUrl(siteUrl: string, lang: TrainerLang) {
+  return lang === "en" ? `${siteUrl}/trainer` : `${siteUrl}/trainer?lang=${lang}`;
+}
+
+function appendQuery(url: string, query: string) {
+  return `${url}${url.includes("?") ? "&" : "?"}${query}`;
+}
+
 export async function POST(request: Request) {
   let body: unknown;
   try {
@@ -54,7 +65,7 @@ export async function POST(request: Request) {
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
   const customerEmail = z.string().email().safeParse(parsed.data.contact);
-  const trainerUrl = parsed.data.lang === "en" ? `${siteUrl}/trainer?lang=en` : `${siteUrl}/trainer`;
+  const trainerUrl = getTrainerUrl(siteUrl, parsed.data.lang);
 
   try {
     const checkout = await assertStripe().checkout.sessions.create({
@@ -70,8 +81,8 @@ export async function POST(request: Request) {
         goal: parsed.data.goal ?? "",
         lang: parsed.data.lang
       },
-      success_url: `${trainerUrl}${parsed.data.lang === "en" ? "&" : "?"}payment=success&session_id={CHECKOUT_SESSION_ID}#booking`,
-      cancel_url: `${trainerUrl}${parsed.data.lang === "en" ? "&" : "?"}payment=cancelled#booking`
+      success_url: `${appendQuery(trainerUrl, "payment=success&session_id={CHECKOUT_SESSION_ID}")}#booking`,
+      cancel_url: `${appendQuery(trainerUrl, "payment=cancelled")}#booking`
     });
 
     return NextResponse.json({ url: checkout.url });

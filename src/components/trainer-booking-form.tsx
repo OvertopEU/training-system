@@ -18,6 +18,8 @@ type TrainerFormCopy = {
   submit: string;
 };
 
+type TrainerLang = "en" | "bg" | "de" | "fr" | "es";
+
 const messages = {
   bg: {
     starting: "Подготвям плащане...",
@@ -28,10 +30,25 @@ const messages = {
     starting: "Preparing payment...",
     failed: "Could not start payment. Please try again.",
     invalid: "Please complete all required fields."
+  },
+  de: {
+    starting: "Zahlung wird vorbereitet...",
+    failed: "Zahlung konnte nicht gestartet werden. Bitte versuche es erneut.",
+    invalid: "Bitte fülle alle Pflichtfelder aus."
+  },
+  fr: {
+    starting: "Preparation du paiement...",
+    failed: "Impossible de lancer le paiement. Reessaie.",
+    invalid: "Merci de remplir tous les champs obligatoires."
+  },
+  es: {
+    starting: "Preparando el pago...",
+    failed: "No se pudo iniciar el pago. Intentalo de nuevo.",
+    invalid: "Completa todos los campos obligatorios."
   }
 };
 
-export function TrainerBookingForm({ copy, lang }: { copy: TrainerFormCopy; lang: "bg" | "en" }) {
+export function TrainerBookingForm({ copy, lang }: { copy: TrainerFormCopy; lang: TrainerLang }) {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 

@@ -26,24 +26,27 @@ import {
 import { Section } from "@/components/section";
 import { TrainerBookingForm } from "@/components/trainer-booking-form";
 
-type Lang = "bg" | "en";
+type Lang = "en" | "bg" | "de" | "fr" | "es";
 
 export const metadata: Metadata = {
   applicationName: "TS",
   title: {
     absolute: "TS | Training System"
   },
-  description: "Персонални тренировки по бокс, онлайн фитнес насоки, хранителни режими и записване.",
+  description: "Personal boxing training, online fitness coaching, nutrition plans and booking.",
   alternates: {
     canonical: "/",
     languages: {
-      bg: "/",
-      en: "/trainer?lang=en"
+      en: "/",
+      bg: "/trainer?lang=bg",
+      de: "/trainer?lang=de",
+      fr: "/trainer?lang=fr",
+      es: "/trainer?lang=es"
     }
   },
   openGraph: {
     title: "TS | Training System",
-    description: "Персонални тренировки по бокс, онлайн фитнес насоки, хранителни режими и записване.",
+    description: "Personal boxing training, online fitness coaching, nutrition plans and booking.",
     url: "/",
     siteName: "TS",
     type: "website",
@@ -59,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TS | Training System",
-    description: "Персонални тренировки по бокс, онлайн фитнес насоки, хранителни режими и записване.",
+    description: "Personal boxing training, online fitness coaching, nutrition plans and booking.",
     images: ["/trainer/coach-boxer-cover.jpg"]
   },
   icons: {
@@ -396,6 +399,204 @@ const content = {
   }
 };
 
+const supportedLangs = ["en", "bg", "de", "fr", "es"] as const;
+const defaultLang: Lang = "en";
+type TrainerCopy = typeof content.en;
+
+const localizedContent: Record<Lang, TrainerCopy> = {
+  en: content.en,
+  bg: content.bg,
+  de: {
+    ...content.en,
+    langLabel: "Sprache",
+    nav: [
+      ["Uber mich", "about"],
+      ["Leistungen", "services"],
+      ["Buchung", "booking"],
+      ["Zahlung", "payment"]
+    ],
+    headerCta: "Buchen",
+    heroEyebrow: "Boxen, Fitness und Ernahrung",
+    heroTitle: "Training mit Struktur, Intensitat und messbarem Fortschritt.",
+    heroText:
+      "Personliches Coaching fur Kunden in England: Boxtechnik, Kraft, Kondition, Online-Programme und Ernahrungsplane mit klarer Kommunikation.",
+    heroPrimary: "Training buchen",
+    heroSecondary: "WhatsApp Kontakt",
+    whatsappCta: "Auf WhatsApp schreiben",
+    stats: [
+      { value: "1:1", label: "Personal Coaching" },
+      { value: "Online", label: "Training und Ernahrung" },
+      { value: "20%", label: "Buchungsdepot" }
+    ],
+    focusItems: ["Boxtechnik", "Kraft und Kondition", "Online Coaching", "Ernahrungsplanung"],
+    bookingEyebrow: "Buchung",
+    bookingTitle: "Wahle ein Training oder starte mit einem Online-Plan.",
+    bookingCardTitle: "Direkte Kommunikation",
+    bookingCardText:
+      "Sende deine Daten, dein Ziel und deinen bevorzugten Tag. Danach erhaltst du Bestatigung und die nachsten Schritte.",
+    bookingItems: [
+      "WhatsApp Kontakt fur schnelle Abstimmung",
+      "20% Depot fur Buchung oder Planstart",
+      "Klare Bestatigung nach Zahlung"
+    ],
+    directContact: `Direkt: ${whatsappDisplay}`,
+    form: {
+      ...content.en.form,
+      name: "Name",
+      namePlaceholder: "Dein Name",
+      contact: "WhatsApp oder E-Mail",
+      contactPlaceholder: "+44 ... oder E-Mail",
+      service: "Leistung",
+      servicePlaceholder: "Leistung wahlen",
+      day: "Bevorzugter Tag",
+      dayPlaceholder: "Zum Beispiel: Dienstag",
+      goal: "Ziel",
+      goalPlaceholder: "Boxen, Fitness, Gewichtsverlust, Ernahrung...",
+      submit: "20% Depot bezahlen",
+      serviceOptions: ["Personal Training", "Boxtraining", "Online Trainingsplan", "Ernahrungsplan", "Komplettes Paket"]
+    },
+    paymentEyebrow: "Zahlung",
+    paymentTitle: "Ein einfaches Depot, damit der Termin bestatigt ist.",
+    paymentItems: [
+      { icon: icons.deposit, title: "20% Depot", text: "Sichert deine Buchung oder startet die Erstellung deines Online-Plans." },
+      { icon: icons.payment, title: "Sichere Zahlung", text: "Zahlung lauft uber Stripe Checkout mit Karte und digitaler Bestatigung." },
+      { icon: icons.confirm, title: "Nachste Schritte", text: "Nach der Zahlung melde ich mich mit Zeit, Plan und Vorbereitung." }
+    ],
+    depositTitle: "20% Depot",
+    depositText: "Reserviert eine Einheit oder aktiviert die Erstellung eines Online-Trainings- und Ernahrungsplans.",
+    depositCta: "Zur Buchung",
+    paymentSuccess: "Zahlung erhalten. Du bekommst Bestatigung und nachste Schritte.",
+    paymentCancelled: "Die Zahlung wurde abgebrochen. Du kannst es erneut versuchen, wenn du bereit bist.",
+    footer: "Training, Online-Anleitung, Boxvorbereitung, Ernahrungsplane und Zahlung."
+  },
+  fr: {
+    ...content.en,
+    langLabel: "Langue",
+    nav: [
+      ["Profil", "about"],
+      ["Services", "services"],
+      ["Reservation", "booking"],
+      ["Paiement", "payment"]
+    ],
+    headerCta: "Reserver",
+    heroEyebrow: "Boxe, fitness et nutrition",
+    heroTitle: "Un entrainement structure, intense et mesurable.",
+    heroText:
+      "Coaching personnel pour clients en Angleterre: technique de boxe, force, condition physique, programmes en ligne et plans nutritionnels avec communication claire.",
+    heroPrimary: "Reserver une seance",
+    heroSecondary: "Contact WhatsApp",
+    whatsappCta: "Ecrire sur WhatsApp",
+    stats: [
+      { value: "1:1", label: "Coaching prive" },
+      { value: "Online", label: "Training et nutrition" },
+      { value: "20%", label: "Acompte" }
+    ],
+    focusItems: ["Technique de boxe", "Force et condition", "Coaching en ligne", "Plan nutritionnel"],
+    bookingEyebrow: "Reservation",
+    bookingTitle: "Choisis une seance ou commence avec un plan en ligne.",
+    bookingCardTitle: "Contact direct",
+    bookingCardText:
+      "Envoie tes coordonnees, ton objectif et ton jour prefere. Tu recevras ensuite une confirmation et les prochaines etapes.",
+    bookingItems: [
+      "Contact WhatsApp pour organiser rapidement",
+      "Acompte de 20% pour reserver ou lancer le plan",
+      "Confirmation claire apres paiement"
+    ],
+    directContact: `Direct: ${whatsappDisplay}`,
+    form: {
+      ...content.en.form,
+      name: "Nom",
+      namePlaceholder: "Ton nom",
+      contact: "WhatsApp ou e-mail",
+      contactPlaceholder: "+44 ... ou e-mail",
+      service: "Service",
+      servicePlaceholder: "Choisis un service",
+      day: "Jour prefere",
+      dayPlaceholder: "Exemple: mardi",
+      goal: "Objectif",
+      goalPlaceholder: "Boxe, fitness, perte de poids, nutrition...",
+      submit: "Payer l'acompte de 20%",
+      serviceOptions: ["Personal training", "Boxe", "Programme en ligne", "Plan nutritionnel", "Pack complet"]
+    },
+    paymentEyebrow: "Paiement",
+    paymentTitle: "Un acompte simple pour confirmer la reservation.",
+    paymentItems: [
+      { icon: icons.deposit, title: "Acompte 20%", text: "Reserve ta seance ou lance la creation de ton plan en ligne." },
+      { icon: icons.payment, title: "Paiement securise", text: "Paiement via Stripe Checkout avec carte et confirmation digitale." },
+      { icon: icons.confirm, title: "Prochaines etapes", text: "Apres paiement, je confirme l'horaire, le plan et la preparation." }
+    ],
+    depositTitle: "Acompte 20%",
+    depositText: "Reserve une seance ou active la creation d'un plan d'entrainement et nutrition en ligne.",
+    depositCta: "Aller a la reservation",
+    paymentSuccess: "Paiement recu. Tu recevras une confirmation et les prochaines etapes.",
+    paymentCancelled: "Le paiement a ete annule. Tu peux reessayer quand tu es pret.",
+    footer: "Entrainement, coaching en ligne, preparation boxe, plans nutritionnels et paiement."
+  },
+  es: {
+    ...content.en,
+    langLabel: "Idioma",
+    nav: [
+      ["Sobre mi", "about"],
+      ["Servicios", "services"],
+      ["Reserva", "booking"],
+      ["Pago", "payment"]
+    ],
+    headerCta: "Reservar",
+    heroEyebrow: "Boxeo, fitness y nutricion",
+    heroTitle: "Entrenamiento con estructura, intensidad y progreso medible.",
+    heroText:
+      "Coaching personal para clientes en Inglaterra: tecnica de boxeo, fuerza, condicion fisica, planes online y nutricion con comunicacion clara.",
+    heroPrimary: "Reservar entrenamiento",
+    heroSecondary: "Contacto WhatsApp",
+    whatsappCta: "Escribir por WhatsApp",
+    stats: [
+      { value: "1:1", label: "Coaching personal" },
+      { value: "Online", label: "Training y nutricion" },
+      { value: "20%", label: "Deposito" }
+    ],
+    focusItems: ["Tecnica de boxeo", "Fuerza y condicion", "Coaching online", "Plan nutricional"],
+    bookingEyebrow: "Reserva",
+    bookingTitle: "Elige una sesion o empieza con un plan online.",
+    bookingCardTitle: "Contacto directo",
+    bookingCardText:
+      "Envia tus datos, tu objetivo y tu dia preferido. Despues recibiras confirmacion y los siguientes pasos.",
+    bookingItems: [
+      "Contacto por WhatsApp para organizar rapido",
+      "Deposito del 20% para reservar o iniciar el plan",
+      "Confirmacion clara despues del pago"
+    ],
+    directContact: `Directo: ${whatsappDisplay}`,
+    form: {
+      ...content.en.form,
+      name: "Nombre",
+      namePlaceholder: "Tu nombre",
+      contact: "WhatsApp o email",
+      contactPlaceholder: "+44 ... o email",
+      service: "Servicio",
+      servicePlaceholder: "Elige un servicio",
+      day: "Dia preferido",
+      dayPlaceholder: "Ejemplo: martes",
+      goal: "Objetivo",
+      goalPlaceholder: "Boxeo, fitness, perdida de peso, nutricion...",
+      submit: "Pagar deposito del 20%",
+      serviceOptions: ["Entrenamiento personal", "Boxeo", "Plan online", "Plan nutricional", "Paquete completo"]
+    },
+    paymentEyebrow: "Pago",
+    paymentTitle: "Un deposito sencillo para confirmar la reserva.",
+    paymentItems: [
+      { icon: icons.deposit, title: "Deposito 20%", text: "Reserva tu sesion o inicia la creacion de tu plan online." },
+      { icon: icons.payment, title: "Pago seguro", text: "Pago con Stripe Checkout, tarjeta y confirmacion digital." },
+      { icon: icons.confirm, title: "Siguientes pasos", text: "Despues del pago confirmo horario, plan y preparacion." }
+    ],
+    depositTitle: "Deposito 20%",
+    depositText: "Reserva una sesion o activa la creacion de un plan online de entrenamiento y nutricion.",
+    depositCta: "Ir a reserva",
+    paymentSuccess: "Pago recibido. Recibiras confirmacion y siguientes pasos.",
+    paymentCancelled: "El pago fue cancelado. Puedes intentarlo de nuevo cuando estes listo.",
+    footer: "Entrenamiento, coaching online, preparacion de boxeo, planes nutricionales y pago."
+  }
+};
+
 type TrainerSearchParams = {
   lang?: string | string[];
   payment?: string | string[];
@@ -403,7 +604,7 @@ type TrainerSearchParams = {
 
 function getLang(searchParams?: TrainerSearchParams): Lang {
   const lang = Array.isArray(searchParams?.lang) ? searchParams?.lang[0] : searchParams?.lang;
-  return lang === "en" ? "en" : "bg";
+  return supportedLangs.includes(lang as Lang) ? (lang as Lang) : defaultLang;
 }
 
 function getPaymentStatus(searchParams?: TrainerSearchParams) {
@@ -412,16 +613,14 @@ function getPaymentStatus(searchParams?: TrainerSearchParams) {
 }
 
 function href(lang: Lang, id?: string) {
-  if (lang === "bg") {
-    return `/${id ? `#${id}` : ""}`;
-  }
-
-  return `/trainer?lang=en${id ? `#${id}` : ""}`;
+  const base = lang === defaultLang ? "/" : "/trainer";
+  const query = lang === defaultLang ? "" : `?lang=${lang}`;
+  return `${base}${query}${id ? `#${id}` : ""}`;
 }
 
 export default function TrainerPage({ searchParams }: { searchParams?: TrainerSearchParams }) {
   const lang = getLang(searchParams);
-  const copy = content[lang];
+  const copy = localizedContent[lang];
   const paymentStatus = getPaymentStatus(searchParams);
 
   return (
@@ -444,7 +643,7 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/[.04] p-1 text-xs text-white/65">
               <Globe2 size={14} className="ml-1 text-emerald-200 sm:ml-2" />
-              {(["bg", "en"] as Lang[]).map((item) => (
+              {supportedLangs.map((item) => (
                 <Link
                   key={item}
                   href={href(item)}
