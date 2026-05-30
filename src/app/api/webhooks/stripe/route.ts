@@ -1,7 +1,6 @@
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
-import { prisma } from "@/lib/prisma";
 import { assertStripe } from "@/lib/stripe";
 import { sendEmail } from "@/lib/email";
 
@@ -28,7 +27,6 @@ export async function POST(request: Request) {
 
   if (event.type === "checkout.session.completed") {
     const session = event.data.object as Stripe.Checkout.Session;
-    const bookingId = session.metadata?.bookingId;
     const isTrainerPayment = session.metadata?.source === "trainer";
 
     if (isTrainerPayment) {
@@ -49,18 +47,6 @@ export async function POST(request: Request) {
             </div>
           `
         });
-      }
-    }
-
-    if (bookingId) {
-      const payment = await prisma.payment.update({
-        where: { stripeCheckoutId: session.id },
-        data: { status: "PAID", stripePaymentIntentId: session.payment_intent?.toString() },
-        include: { booking: true }
-      });
-      await prisma.booking.update({ where: { id: bookingId }, data: { paymentStatus: "PAID" } });
-      if (payment.booking) {
-        await sendEmail({ to: payment.booking.clientEmail, subject: "Payment confirmed", html: `<p>Your Light & Glory payment has been confirmed.</p>` });
       }
     }
   }

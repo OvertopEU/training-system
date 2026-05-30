@@ -12,7 +12,7 @@ export async function sendEmail({
   subject: string;
   html: string;
 }) {
-  const from = process.env.EMAIL_FROM ?? "Light & Glory Studio <hello@lightandglory.studio>";
+  const from = process.env.EMAIL_FROM ?? "Training System <hello@training-system.org>";
   if (resend) {
     return resend.emails.send({ from, to, subject, html });
   }
@@ -32,5 +32,5 @@ export async function sendEmail({
 }
 
 export function bookingEmail(name: string, startsAt: Date) {
-  return `<div style="background:#050505;color:#fff;padding:32px;font-family:Arial"><h1 style="color:#e4c766">Light & Glory Studio</h1><p>Hello ${name}, your booking request for ${startsAt.toLocaleString()} has been received.</p></div>`;
+  return `<div style="background:#050505;color:#fff;padding:32px;font-family:Arial"><h1 style="color:#86efac">Training System</h1><p>Hello ${name}, your booking request for ${startsAt.toLocaleString()} has been received.</p></div>`;
 }
