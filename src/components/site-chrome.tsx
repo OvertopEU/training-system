@@ -21,7 +21,7 @@ const phoneUrl = "tel:+447719799244";
 
 export function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isTrainerArea = pathname === "/trainer" || pathname.startsWith("/trainer/");
+  const isTrainerArea = pathname === "/" || pathname === "/trainer" || pathname.startsWith("/trainer/");
 
   if (isTrainerArea) {
     return <main>{children}</main>;
