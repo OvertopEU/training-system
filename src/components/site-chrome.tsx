@@ -15,8 +15,9 @@ const photoNav = [
   ["Contact", "/contact"]
 ];
 
-const whatsappUrl = "https://wa.me/447719799244";
-const whatsappDisplay = "07719 799244";
+const whatsappUrl = "https://api.whatsapp.com/send?phone=447719799244";
+const whatsappDisplay = "+44 7719 799244";
+const phoneUrl = "tel:+447719799244";
 
 export function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -83,6 +84,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
             <Link href="/privacy">Privacy</Link>
             <Link href="/terms">Terms</Link>
             <Link href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp: {whatsappDisplay}</Link>
+            <Link href={phoneUrl}>Call: {whatsappDisplay}</Link>
             <Link href={process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/light.and.glory.studio/"}>Instagram</Link>
           </div>
         </div>

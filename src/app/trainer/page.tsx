@@ -94,8 +94,8 @@ const promoImages = {
   ]
 };
 
-const whatsappUrl = "https://wa.me/447719799244";
-const whatsappDisplay = "07719 799244";
+const whatsappUrl = "https://api.whatsapp.com/send?phone=447719799244";
+const whatsappDisplay = "+44 7719 799244";
 
 const content = {
   bg: {
