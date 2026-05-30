@@ -55,6 +55,9 @@ export default function HomePage() {
       <a className="floating-whatsapp" href="https://api.whatsapp.com/send?phone=447719799244" target="_blank" rel="noreferrer">
         WhatsApp +44 7719 799244
       </a>
+      <a className="floating-call" href="tel:+447719799244">
+        Call +44 7719 799244
+      </a>
     </main>
   );
 }

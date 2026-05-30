@@ -15,6 +15,7 @@ import {
   HeartPulse,
   MessageCircle,
   Monitor,
+  Phone,
   ShieldCheck,
   Target,
   Timer,
@@ -96,6 +97,7 @@ const promoImages = {
 
 const whatsappUrl = "https://api.whatsapp.com/send?phone=447719799244";
 const whatsappDisplay = "+44 7719 799244";
+const phoneUrl = "tel:+447719799244";
 
 const content = {
   bg: {
@@ -768,10 +770,17 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
         href={whatsappUrl}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white"
+        className="fixed bottom-20 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white"
       >
         <MessageCircle size={18} />
         <span>WhatsApp {whatsappDisplay}</span>
+      </Link>
+      <Link
+        href={phoneUrl}
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-emerald-200 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white"
+      >
+        <Phone size={18} />
+        <span>Call {whatsappDisplay}</span>
       </Link>
     </>
   );

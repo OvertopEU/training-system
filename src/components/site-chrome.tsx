@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Phone } from "lucide-react";
 import { CinematicShell } from "@/components/cinematic-shell";
 
 const photoNav = [
@@ -68,10 +68,17 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
         href={whatsappUrl}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white"
+        className="fixed bottom-20 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white"
       >
         <MessageCircle size={18} />
         <span>WhatsApp {whatsappDisplay}</span>
+      </Link>
+      <Link
+        href={phoneUrl}
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-gold-200 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white"
+      >
+        <Phone size={18} />
+        <span>Call {whatsappDisplay}</span>
       </Link>
       <footer className="border-t border-gold-300/10 bg-black px-4 py-12">
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1fr_2fr_1fr]">

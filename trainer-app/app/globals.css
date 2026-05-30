@@ -68,15 +68,24 @@ h1 {
   padding: 0.8rem 1.1rem;
 }
 
-.floating-whatsapp {
+.floating-whatsapp,
+.floating-call {
   position: fixed;
   right: 1.25rem;
-  bottom: 1.25rem;
   z-index: 50;
-  background: #22c55e;
   color: #031006;
   padding: 0.9rem 1.15rem;
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+}
+
+.floating-whatsapp {
+  bottom: 5.25rem;
+  background: #22c55e;
+}
+
+.floating-call {
+  bottom: 1.25rem;
+  background: #f8d477;
 }
 
 .content-block {
