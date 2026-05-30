@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { prisma } from "@/lib/prisma";
-import { PortfolioGrid } from "@/components/portfolio-grid";
 import { Section } from "@/components/section";
-
-export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Light & Glory Studio",
@@ -26,21 +22,7 @@ export const metadata = {
   }
 };
 
-async function getHomePortfolioData() {
-  try {
-    return await Promise.all([
-      prisma.portfolioItem.findMany({ include: { category: true }, orderBy: [{ order: "asc" }, { createdAt: "desc" }] }),
-      prisma.portfolioCategory.findMany({ orderBy: { name: "asc" } })
-    ]);
-  } catch (error) {
-    console.error("Homepage portfolio data unavailable", error);
-    return [[], []];
-  }
-}
-
-export default async function PhotographyHomePage() {
-  const [items, categories] = await getHomePortfolioData();
-
+export default function PhotographyHomePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-black text-white">
@@ -76,7 +58,21 @@ export default async function PhotographyHomePage() {
       </section>
 
       <Section eyebrow="portfolio" title="Featured work">
-        <PortfolioGrid items={items} categories={categories} />
+        <div className="grid gap-5 md:grid-cols-3">
+          {[
+            ["Editorial portraits", "Cinematic light, atmosphere, and carefully directed presence."],
+            ["Brand stories", "Visual campaigns shaped for social, web, and premium presentation."],
+            ["Private galleries", "Secure client delivery, favorites, downloads, and polished handoff."]
+          ].map(([title, text]) => (
+            <article key={title} className="rounded-lg border border-white/10 bg-white/[.04] p-6">
+              <p className="font-display text-3xl text-white">{title}</p>
+              <p className="mt-4 text-sm leading-7 text-white/65">{text}</p>
+            </article>
+          ))}
+        </div>
+        <Link href="/portfolio" className="mt-8 inline-flex rounded-full border border-gold-200/40 px-5 py-3 text-sm text-gold-100 transition hover:bg-gold-200 hover:text-black">
+          Open portfolio
+        </Link>
       </Section>
 
       <Section eyebrow="about" title="Photography with cinematic clarity">
