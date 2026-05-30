@@ -19,6 +19,25 @@ function getDepositAmount() {
   return amount;
 }
 
+function getLineItem(service: string) {
+  const price = process.env.TRAINER_DEPOSIT_PRICE_ID;
+  if (price) {
+    return { price, quantity: 1 };
+  }
+
+  return {
+    quantity: 1,
+    price_data: {
+      currency: process.env.TRAINER_PAYMENT_CURRENCY ?? "gbp",
+      unit_amount: getDepositAmount(),
+      product_data: {
+        name: "Training System deposit",
+        description: `Deposit for ${service}`
+      }
+    }
+  };
+}
+
 export async function POST(request: Request) {
   const parsed = trainerCheckoutSchema.safeParse(await request.json());
   if (!parsed.success) {
@@ -26,26 +45,12 @@ export async function POST(request: Request) {
   }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-  const currency = process.env.TRAINER_PAYMENT_CURRENCY ?? "gbp";
-  const amount = getDepositAmount();
   const customerEmail = z.string().email().safeParse(parsed.data.contact);
 
   const checkout = await assertStripe().checkout.sessions.create({
     mode: "payment",
     customer_email: customerEmail.success ? customerEmail.data : undefined,
-    line_items: [
-      {
-        quantity: 1,
-        price_data: {
-          currency,
-          unit_amount: amount,
-          product_data: {
-            name: `Training deposit - ${parsed.data.service}`,
-            description: "Deposit for training booking"
-          }
-        }
-      }
-    ],
+    line_items: [getLineItem(parsed.data.service)],
     metadata: {
       source: "trainer",
       clientName: parsed.data.name,
@@ -54,8 +59,8 @@ export async function POST(request: Request) {
       preferredDay: parsed.data.day,
       goal: parsed.data.goal ?? ""
     },
-    success_url: `${siteUrl}/?payment=success#booking`,
-    cancel_url: `${siteUrl}/?payment=cancelled#booking`
+    success_url: `${siteUrl}/trainer?lang=bg&payment=success&session_id={CHECKOUT_SESSION_ID}#booking`,
+    cancel_url: `${siteUrl}/trainer?lang=bg&payment=cancelled#booking`
   });
 
   return NextResponse.json({ url: checkout.url });
