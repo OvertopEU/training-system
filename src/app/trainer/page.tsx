@@ -89,7 +89,6 @@ const promoImages = {
   cover: "/trainer/coach-boxer-cover.jpg",
   solo: "/trainer/coach-flex.jpg",
   gym: "/trainer/gym-training-session.jpg",
-  skiCertificate: "/trainer/ski-instructor-certificate.jpg",
   groups: [
     "/trainer/group-promo-bags.jpg",
     "/trainer/group-promo-team.jpg",
@@ -132,19 +131,10 @@ const content = {
     aboutEyebrow: "about",
     aboutTitle: "За треньора и тренировъчната общност",
     soloTitle: "Личен подход",
-    soloText: "20+ години опит в бокса, полупрофесионален път до професионален ринг, редица постижения и победи с международен опит в над 50 държави. Втори спорт: лека атлетика с 8 национални титли и европейска квота. Допълнително: ски инструктор и завършена Национална спортна академия с пълно отличие, първо място и най-висок успех.",
+    soloText: "20+ години опит в бокса, полупрофесионален път до професионален ринг, редица постижения и победи с международен опит в над 50 държави. Втори спорт: лека атлетика с 8 национални титли и европейска квота. Допълнително: ски инструктор, с признание от Национална спортна академия “Васил Левски”, ВУСБ “Проф. Иван Стайков” - Витоша, за най-висок успех в I група: Отличен 5.55, дата 17.01.2016.",
     groupTitle: "Групови тренировки",
     groupText: "Среда за хора, които искат движение, бокс техника, мотивация и постоянство в общ ритъм.",
     groupBadge: "group training",
-    certificateEyebrow: "qualification",
-    certificateTitle: "Ski instructor recognition",
-    certificateText: "Translated summary of a certificate issued by the National Sports Academy “Vasil Levski”, Vitosha Educational-Sport Center “Prof. Ivan Staykov”. The recognition was awarded to Svetoslav Milushev for the highest academic result in Group I: Excellent 5.55.",
-    certificateDetails: [
-      "Institution: National Sports Academy “Vasil Levski”",
-      "Program context: ski instructor training, Vitosha",
-      "Location: Kupena Hut",
-      "Date: 17 January 2016"
-    ],
     servicesEyebrow: "услуги",
     servicesTitle: "Основни направления",
     services: [
@@ -279,19 +269,10 @@ const content = {
     aboutEyebrow: "about",
     aboutTitle: "About the coach and training community",
     soloTitle: "Personal approach",
-    soloText: "20+ years of boxing experience, a semi-professional path up to the professional ring, multiple achievements and wins with international experience across 50+ countries. Second sport: athletics with 8 national titles and a European quota. Also a ski instructor and graduate of the National Sports Academy with full honors, first place and the highest academic result.",
+    soloText: "20+ years of boxing experience, a semi-professional path up to the professional ring, multiple achievements and wins with international experience across 50+ countries. Second sport: athletics with 8 national titles and a European quota. Also a ski instructor, with recognition from the National Sports Academy “Vasil Levski”, Vitosha Educational-Sport Center “Prof. Ivan Staykov”, for the highest academic result in Group I: Excellent 5.55, dated 17 January 2016.",
     groupTitle: "Group training",
     groupText: "A training environment for people who want movement, boxing technique, motivation and consistency.",
     groupBadge: "group training",
-    certificateEyebrow: "qualification",
-    certificateTitle: "Ski instructor recognition",
-    certificateText: "Translated summary of a certificate issued by the National Sports Academy “Vasil Levski”, Vitosha Educational-Sport Center “Prof. Ivan Staykov”. The recognition was awarded to Svetoslav Milushev for the highest academic result in Group I: Excellent 5.55.",
-    certificateDetails: [
-      "Institution: National Sports Academy “Vasil Levski”",
-      "Program context: ski instructor training, Vitosha",
-      "Location: Kupena Hut",
-      "Date: 17 January 2016"
-    ],
     servicesEyebrow: "services",
     servicesTitle: "Core directions",
     services: [
@@ -762,30 +743,6 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
               <p className="mt-3 max-w-2xl text-sm leading-7 text-white/68">{copy.groupText}</p>
             </div>
           </article>
-        </div>
-      </Section>
-
-      <Section eyebrow={copy.certificateEyebrow} title={copy.certificateTitle} className="scroll-mt-24">
-        <div className="grid gap-6 lg:grid-cols-[.75fr_1.25fr] lg:items-center">
-          <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[.04] p-3">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-black">
-              <Image
-                src={promoImages.skiCertificate}
-                alt={copy.certificateTitle}
-                fill
-                sizes="(min-width: 1024px) 34vw, 100vw"
-                className="object-cover object-center"
-              />
-            </div>
-          </div>
-          <div className="rounded-lg border border-white/10 bg-white/[.04] p-6">
-            <p className="text-sm leading-7 text-white/68">{copy.certificateText}</p>
-            <div className="mt-6 grid gap-2">
-              {copy.certificateDetails.map((item) => (
-                <p key={item} className="rounded-md border border-white/10 px-3 py-2 text-sm text-white/70">{item}</p>
-              ))}
-            </div>
-          </div>
         </div>
       </Section>
 
