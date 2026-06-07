@@ -7,6 +7,7 @@ import {
   ArrowRight,
   CalendarCheck,
   CheckCircle2,
+  ChevronDown,
   ClipboardList,
   CreditCard,
   Dumbbell,
@@ -15,7 +16,6 @@ import {
   HeartPulse,
   MessageCircle,
   Monitor,
-  Phone,
   ShieldCheck,
   Target,
   Timer,
@@ -99,7 +99,6 @@ const promoImages = {
 
 const whatsappUrl = "https://api.whatsapp.com/send?phone=447719799244";
 const whatsappDisplay = "+44 7719 799244";
-const phoneUrl = "tel:+447719799244";
 
 const content = {
   bg: {
@@ -111,9 +110,9 @@ const content = {
       ["Плащане", "payment"]
     ],
     headerCta: "Запази",
-    heroEyebrow: "тренировки, бокс и правилно хранене",
-    heroTitle: "Персонален план за тяло, сила и дисциплина",
-    heroText: "Самостоятелна система за лични бокс тренировки, онлайн фитнес инструкции, хранителни режими, буукинг, депозит и плащане.",
+    heroEyebrow: "Тренирай, храни се, спи, повтори.",
+    heroTitle: "Персонален план за сила, тяло и дисциплина. Структура за успех.",
+    heroText: "Самостоятелна система за фитнес режим, хранителен режим, хранителни планове и бокс тренировки. С моя опит и вашето желание резултатите са неизбежна част от процеса.",
     heroPrimary: "Запази консултация",
     heroSecondary: "Виж услугите",
     whatsappCta: "Пиши в WhatsApp",
@@ -131,7 +130,7 @@ const content = {
     aboutEyebrow: "about",
     aboutTitle: "За треньора и тренировъчната общност",
     soloTitle: "Личен подход",
-    soloText: "20+ години опит в бокса, полупрофесионален път до професионален ринг, редица постижения и победи с международен опит в над 50 държави. Втори спорт: лека атлетика с 8 национални титли и европейска квота. Допълнително: ски инструктор, с признание от Национална спортна академия “Васил Левски”, ВУСБ “Проф. Иван Стайков” - Витоша, за най-висок академичен успех.",
+    soloText: "20+ години опит в бокса, полупрофесионален път до професионален ринг, редица постижения и победи с международен опит в над 50 държави. Втори спорт: лека атлетика с 8 национални титли и европейска квота.",
     groupTitle: "Групови тренировки",
     groupText: "Среда за хора, които искат движение, бокс техника, мотивация и постоянство в общ ритъм.",
     groupBadge: "group training",
@@ -249,9 +248,9 @@ const content = {
       ["Payment", "payment"]
     ],
     headerCta: "Book",
-    heroEyebrow: "training, boxing and nutrition",
-    heroTitle: "A personal plan for strength, body and discipline",
-    heroText: "A standalone system for private boxing sessions, online fitness instructions, nutrition plans, booking, deposits and payment.",
+    heroEyebrow: "Train, eat, sleep, repeat.",
+    heroTitle: "A personal plan for strength, body and discipline. A structure for success.",
+    heroText: "A standalone system for fitness regime, food diet, nutrition plans and boxing sessions. With my experience and your desire, results become an inevitable part of the process.",
     heroPrimary: "Book a consultation",
     heroSecondary: "View services",
     whatsappCta: "Message on WhatsApp",
@@ -269,7 +268,7 @@ const content = {
     aboutEyebrow: "about",
     aboutTitle: "About the coach and training community",
     soloTitle: "Personal approach",
-    soloText: "20+ years of boxing experience, a semi-professional path up to the professional ring, multiple achievements and wins with international experience across 50+ countries. Second sport: athletics with 8 national titles and a European quota. Also a ski instructor, with recognition from the National Sports Academy “Vasil Levski”, Vitosha Educational-Sport Center “Prof. Ivan Staykov”, for the highest academic result.",
+    soloText: "20+ years of boxing experience, a semi-professional path up to the professional ring, multiple achievements and wins with international experience across 50+ countries. Second sport: athletics with 8 national titles and a European quota.",
     groupTitle: "Group training",
     groupText: "A training environment for people who want movement, boxing technique, motivation and consistency.",
     groupBadge: "group training",
@@ -397,10 +396,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       ["Zahlung", "payment"]
     ],
     headerCta: "Buchen",
-    heroEyebrow: "Boxen, Fitness und Ernahrung",
-    heroTitle: "Training mit Struktur, Intensitat und messbarem Fortschritt.",
-    heroText:
-      "Personliches Coaching fur Kunden in England: Boxtechnik, Kraft, Kondition, Online-Programme und Ernahrungsplane mit klarer Kommunikation.",
+    heroEyebrow: "Trainieren, essen, schlafen, wiederholen.",
+    heroTitle: "Ein personlicher Plan fur Kraft, Korper und Disziplin. Eine Struktur fur Erfolg.",
+    heroText: "Ein eigenstandiges System fur Fitnessroutine, Ernahrung, Ernahrungsplane und Boxeinheiten. Mit meiner Erfahrung und deinem Willen werden Ergebnisse ein unvermeidbarer Teil des Prozesses.",
     heroPrimary: "Training buchen",
     heroSecondary: "WhatsApp Kontakt",
     whatsappCta: "Auf WhatsApp schreiben",
@@ -460,10 +458,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       ["Paiement", "payment"]
     ],
     headerCta: "Reserver",
-    heroEyebrow: "Boxe, fitness et nutrition",
-    heroTitle: "Un entrainement structure, intense et mesurable.",
-    heroText:
-      "Coaching personnel pour clients en Angleterre: technique de boxe, force, condition physique, programmes en ligne et plans nutritionnels avec communication claire.",
+    heroEyebrow: "S'entrainer, manger, dormir, recommencer.",
+    heroTitle: "Un plan personnel pour la force, le corps et la discipline. Une structure pour reussir.",
+    heroText: "Un systeme complet pour le programme fitness, l'alimentation, les plans nutritionnels et les seances de boxe. Avec mon experience et votre envie, les resultats deviennent une partie inevitable du processus.",
     heroPrimary: "Reserver une seance",
     heroSecondary: "Contact WhatsApp",
     whatsappCta: "Ecrire sur WhatsApp",
@@ -523,10 +520,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       ["Pago", "payment"]
     ],
     headerCta: "Reservar",
-    heroEyebrow: "Boxeo, fitness y nutricion",
-    heroTitle: "Entrenamiento con estructura, intensidad y progreso medible.",
-    heroText:
-      "Coaching personal para clientes en Inglaterra: tecnica de boxeo, fuerza, condicion fisica, planes online y nutricion con comunicacion clara.",
+    heroEyebrow: "Entrena, come, duerme, repite.",
+    heroTitle: "Un plan personal para fuerza, cuerpo y disciplina. Una estructura para el exito.",
+    heroText: "Un sistema independiente para rutina fitness, dieta alimentaria, planes de nutricion y sesiones de boxeo. Con mi experiencia y tu deseo, los resultados se vuelven una parte inevitable del proceso.",
     heroPrimary: "Reservar entrenamiento",
     heroSecondary: "Contacto WhatsApp",
     whatsappCta: "Escribir por WhatsApp",
@@ -607,13 +603,38 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-40 border-b border-emerald-300/10 bg-black/70 backdrop-blur-xl">
-        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-3 sm:gap-4 sm:px-6 lg:px-8">
-          <Link href={href(lang)} className="flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center rounded-md border border-emerald-300/30 bg-emerald-300/10">
+        <nav className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-2 px-3 py-2 sm:min-h-20 sm:gap-4 sm:px-6 lg:px-8">
+          <Link href={href(lang)} className="flex shrink-0 items-center gap-3">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md border border-emerald-300/30 bg-emerald-300/10">
               <Dumbbell size={20} className="text-emerald-200" />
             </span>
             <span className="hidden font-display text-base tracking-[.14em] text-white sm:block sm:text-lg">TRAINING SYSTEM</span>
           </Link>
+          <details className="relative lg:hidden">
+            <summary className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-3 py-2 text-sm text-white transition hover:border-emerald-200/40">
+              Menu <ChevronDown size={16} />
+            </summary>
+            <div className="fixed left-3 right-3 top-16 rounded-2xl border border-white/10 bg-black/95 p-4 shadow-2xl sm:absolute sm:left-auto sm:right-0 sm:top-full sm:mt-2 sm:w-[18rem]">
+              <div className="grid gap-2">
+                {copy.nav.map(([label, id]) => (
+                  <Link key={id} href={href(lang, id)} className="rounded-full px-4 py-2 text-sm text-white transition hover:bg-white/10">
+                    {label}
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {supportedLangs.map((item) => (
+                  <Link
+                    key={item}
+                    href={href(item)}
+                    className={`rounded-full px-3 py-2 text-xs uppercase transition ${item === lang ? "bg-emerald-200 text-black" : "border border-white/10 hover:bg-white/10 text-white/70"}`}
+                  >
+                    {item}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </details>
           <div className="hidden items-center gap-6 text-sm text-white/70 lg:flex">
             {copy.nav.map(([label, id]) => (
               <Link key={id} href={href(lang, id)} className="transition hover:text-emerald-200">
@@ -621,8 +642,8 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
               </Link>
             ))}
           </div>
-          <div className="flex items-center gap-2">
-            <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/[.04] p-1 text-xs text-white/65">
+          <div className="flex shrink-0 items-center gap-2">
+            <div className="hidden sm:flex flex-wrap items-center gap-1 rounded-full border border-white/10 bg-white/[.04] p-1 text-xs text-white/65">
               <Globe2 size={14} className="ml-1 text-emerald-200 sm:ml-2" />
               {supportedLangs.map((item) => (
                 <Link
@@ -634,6 +655,15 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
                 </Link>
               ))}
             </div>
+            <Link
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={copy.whatsappCta}
+              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-emerald-200/40 text-emerald-100 transition hover:bg-emerald-200 hover:text-black sm:hidden"
+            >
+              <MessageCircle size={18} />
+            </Link>
             <Link href={href(lang, "booking")} className="rounded-full border border-emerald-200/40 px-3 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200 hover:text-black sm:px-4">
               {copy.headerCta}
             </Link>
@@ -651,29 +681,37 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
         </nav>
       </header>
 
-      <section className="relative z-10 overflow-hidden px-4 pb-16 pt-36 sm:px-6 lg:px-8">
+      <section className="relative z-10 overflow-hidden px-4 pb-14 pt-24 sm:px-6 sm:pb-16 sm:pt-36 lg:px-8">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_22%,rgba(16,185,129,.16),transparent_28%)]" />
-        <div className="mx-auto grid min-h-[calc(100vh-9rem)] max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_.95fr]">
-          <div>
-            <p className="mb-4 text-xs uppercase tracking-[.4em] text-emerald-200">{copy.heroEyebrow}</p>
-            <h1 className="font-display text-5xl leading-[1.03] text-white md:text-7xl">{copy.heroTitle}</h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">{copy.heroText}</p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link href={href(lang, "booking")} className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-200 px-6 py-3 text-sm font-medium text-black transition hover:bg-white">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 sm:min-h-[calc(100vh-9rem)] sm:gap-12 lg:grid-cols-[1.05fr_.95fr]">
+          <div className="min-w-0">
+            <Link
+              href={href(lang, "booking")}
+              className="mb-6 inline-flex min-h-12 items-center justify-center whitespace-nowrap rounded-full bg-emerald-200 px-7 py-3 text-sm font-bold uppercase tracking-[.18em] text-black shadow-[0_0_35px_rgba(167,243,208,.28)] transition hover:bg-white sm:px-9 sm:text-base"
+            >
+              Безплатна консултация
+            </Link>
+            <p className="mb-4 text-xs uppercase tracking-[.28em] text-emerald-200 sm:tracking-[.4em]">{copy.heroEyebrow}</p>
+            <h1 className="max-w-[11.5ch] break-words font-display text-5xl leading-[1.13] tracking-[.01em] text-white sm:text-6xl lg:text-[5.25rem] lg:leading-[1.1]">
+              {copy.heroTitle}
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-white/70 sm:mt-6 sm:text-lg sm:leading-8">{copy.heroText}</p>
+            <div className="mt-9 grid gap-3 sm:flex sm:flex-wrap sm:items-center min-w-0">
+              <Link href={href(lang, "booking")} className="inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-full bg-emerald-200 px-5 py-3 text-center text-sm font-medium text-black transition hover:bg-white sm:w-auto sm:px-6">
                 {copy.heroPrimary} <ArrowRight size={16} />
               </Link>
-              <Link href={href(lang, "services")} className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-200/30 px-6 py-3 text-sm font-medium text-emerald-100 transition hover:bg-emerald-200 hover:text-black">
+              <Link href={href(lang, "services")} className="inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-full border border-emerald-200/30 px-5 py-3 text-center text-sm font-medium text-emerald-100 transition hover:bg-emerald-200 hover:text-black sm:w-auto sm:px-6">
                 {copy.heroSecondary}
               </Link>
-              <Link href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-white transition hover:border-emerald-200 hover:text-emerald-100">
+              <Link href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 text-center text-sm font-medium text-white transition hover:border-emerald-200 hover:text-emerald-100 sm:w-auto sm:px-6">
                 {copy.whatsappCta} <MessageCircle size={16} />
               </Link>
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative min-w-0 w-full max-w-full">
             <div className="overflow-hidden rounded-lg border border-emerald-200/20 bg-white/[.04] shadow-[0_30px_100px_rgba(0,0,0,.5)]">
-              <div className="relative aspect-[4/5] min-h-[520px]">
+              <div className="relative aspect-[4/5] min-h-[20rem] max-w-full sm:min-h-[520px]">
                 <Image
                   src={promoImages.cover}
                   alt={copy.coverTitle}
@@ -773,13 +811,13 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
           {copy.services.map((service) => {
             const Icon = service.icon;
             return (
-              <article key={service.title} className="rounded-lg border border-white/10 bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-emerald-200/60">
+              <article key={service.title} className="min-w-0 rounded-lg border border-white/10 bg-white/[.04] p-5 transition hover:-translate-y-1 hover:border-emerald-200/60 sm:p-6">
                 <Icon className="text-emerald-200" size={34} />
-                <h3 className="mt-6 font-display text-3xl">{service.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-white/65">{service.text}</p>
-                <div className="mt-6 grid gap-2">
+                <h3 className="mt-5 font-display text-2xl sm:text-3xl">{service.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-white/65">{service.text}</p>
+                <div className="mt-5 grid gap-2">
                   {service.points.map((point) => (
-                    <p key={point} className="rounded-md border border-white/10 px-3 py-2 text-sm text-white/70">{point}</p>
+                    <p key={point} className="rounded-md border border-white/10 px-3 py-2 text-xs text-white/70">{point}</p>
                   ))}
                 </div>
               </article>
@@ -793,13 +831,13 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
           {copy.programs.map((program) => {
             const Icon = program.icon;
             return (
-              <article key={program.title} className="rounded-lg border border-white/10 bg-white/[.04] p-6 transition hover:-translate-y-1 hover:border-emerald-200/60">
+              <article key={program.title} className="min-w-0 rounded-lg border border-white/10 bg-white/[.04] p-5 transition hover:-translate-y-1 hover:border-emerald-200/60 sm:p-6">
                 <Icon className="text-emerald-200" size={34} />
-                <h3 className="mt-6 font-display text-3xl">{program.title}</h3>
-                <p className="mt-4 min-h-28 text-sm leading-7 text-white/65">{program.text}</p>
-                <div className="mt-6 grid gap-2">
+                <h3 className="mt-5 font-display text-2xl sm:text-3xl">{program.title}</h3>
+                <p className="mt-3 min-h-28 text-sm leading-6 text-white/65">{program.text}</p>
+                <div className="mt-5 grid gap-2">
                   {program.details.map((detail) => (
-                    <p key={detail} className="rounded-md border border-white/10 px-3 py-2 text-sm text-white/70">{detail}</p>
+                    <p key={detail} className="rounded-md border border-white/10 px-3 py-2 text-xs text-white/70">{detail}</p>
                   ))}
                 </div>
               </article>
@@ -814,17 +852,17 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
             {paymentStatus === "success" ? copy.paymentSuccess : copy.paymentCancelled}
           </div>
         ) : null}
-        <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
-          <div className="rounded-lg border border-emerald-200/25 bg-black/35 p-7">
+        <div className="grid gap-6 lg:grid-cols-[.9fr_1.1fr]">
+          <div className="min-w-0 rounded-lg border border-emerald-200/25 bg-black/35 p-5 sm:p-7">
             <CalendarCheck className="text-emerald-200" size={36} />
-            <h3 className="mt-6 font-display text-4xl">{copy.bookingCardTitle}</h3>
-            <p className="mt-5 text-base leading-8 text-white/68">{copy.bookingCardText}</p>
-            <Link href={whatsappUrl} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-emerald-200/35 px-5 py-2.5 text-sm text-emerald-100 transition hover:bg-emerald-200 hover:text-black">
+            <h3 className="mt-5 font-display text-3xl sm:text-4xl">{copy.bookingCardTitle}</h3>
+            <p className="mt-4 text-sm leading-7 text-white/68 sm:text-base">{copy.bookingCardText}</p>
+            <Link href={whatsappUrl} target="_blank" rel="noreferrer" className="mt-5 inline-flex w-full justify-center gap-2 rounded-full border border-emerald-200/35 px-4 py-3 text-sm text-emerald-100 transition hover:bg-emerald-200 hover:text-black sm:w-auto">
               {copy.whatsappCta} <MessageCircle size={16} />
             </Link>
-            <div className="mt-6 grid gap-3 text-sm text-white/70">
+            <div className="mt-5 grid gap-2 text-sm text-white/70">
               {copy.bookingItems.map((item) => (
-                <div key={item} className="flex items-center gap-3 rounded-md border border-white/10 px-4 py-3">
+                <div key={item} className="flex min-w-0 items-center gap-2 rounded-md border border-white/10 px-3 py-2 text-xs sm:px-4 sm:py-3">
                   <CheckCircle2 size={18} className="text-emerald-200" />
                   {item}
                 </div>
@@ -897,18 +935,18 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
             );
           })}
         </div>
-        <div className="mt-6 rounded-lg border border-emerald-200/20 bg-black/35 p-6">
+        <div className="mt-6 rounded-lg border border-emerald-200/20 bg-black/35 p-5 sm:p-6">
           <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
             <div>
               <p className="font-display text-3xl">{copy.depositTitle}</p>
               <p className="mt-2 text-sm leading-7 text-white/65">{copy.depositText}</p>
               <p className="mt-2 text-sm leading-7 text-white/65">{copy.directContact}</p>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <Link href={href(lang, "booking")} className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-200 px-6 py-3 text-sm font-medium text-black transition hover:bg-white">
+            <div className="grid gap-3 sm:flex sm:flex-wrap sm:items-center">
+              <Link href={href(lang, "booking")} className="inline-flex w-full min-w-0 justify-center gap-2 rounded-full bg-emerald-200 px-4 py-3 text-sm font-medium text-black transition hover:bg-white sm:w-auto">
                 {copy.depositCta} <ArrowRight size={16} />
               </Link>
-              <Link href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-200/35 px-6 py-3 text-sm font-medium text-emerald-100 transition hover:bg-emerald-200 hover:text-black">
+              <Link href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex w-full min-w-0 justify-center gap-2 rounded-full border border-emerald-200/35 px-4 py-3 text-sm font-medium text-emerald-100 transition hover:bg-emerald-200 hover:text-black sm:w-auto">
                 {copy.whatsappCta} <MessageCircle size={16} />
               </Link>
             </div>
@@ -926,17 +964,10 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
         href={whatsappUrl}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-20 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white"
+        className="fixed bottom-5 right-5 z-50 hidden items-center justify-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white sm:inline-flex"
       >
         <MessageCircle size={18} />
         <span>WhatsApp {whatsappDisplay}</span>
-      </Link>
-      <Link
-        href={phoneUrl}
-        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-emerald-200 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white"
-      >
-        <Phone size={18} />
-        <span>Call {whatsappDisplay}</span>
       </Link>
     </>
   );
