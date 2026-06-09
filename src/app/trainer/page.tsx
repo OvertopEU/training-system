@@ -105,6 +105,7 @@ const content = {
   bg: {
     langLabel: "Език",
     menuLabel: "Меню",
+    scriptureRef: "Псалми 23:1–4",
     nav: [
       ["За мен", "about"],
       ["Услуги", "services"],
@@ -245,6 +246,7 @@ const content = {
   en: {
     langLabel: "Language",
     menuLabel: "Menu",
+    scriptureRef: "Psalm 23:1–4",
     nav: [
       ["About", "about"],
       ["Services", "services"],
@@ -403,6 +405,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     ...content.en,
     langLabel: "Мова",
     menuLabel: "Меню",
+    scriptureRef: "Псалом 23:1–4",
     nav: [
       ["Про мене", "about"],
       ["Послуги", "services"],
@@ -544,6 +547,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     ...content.en,
     langLabel: "Sprache",
     menuLabel: "Menü",
+    scriptureRef: "Psalm 23,1–4",
     nav: [
       ["Über mich", "about"],
       ["Leistungen", "services"],
@@ -691,6 +695,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     ...content.en,
     langLabel: "Langue",
     menuLabel: "Menu",
+    scriptureRef: "Psaume 23:1–4",
     nav: [
       ["Profil", "about"],
       ["Services", "services"],
@@ -838,6 +843,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     ...content.en,
     langLabel: "Idioma",
     menuLabel: "Menú",
+    scriptureRef: "Salmo 23:1–4",
     nav: [
       ["Sobre mí", "about"],
       ["Servicios", "services"],
@@ -1017,7 +1023,13 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
             <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md border border-emerald-300/30 bg-emerald-300/10">
               <Dumbbell size={20} className="text-emerald-200" />
             </span>
-            <span className="hidden font-display text-base tracking-[.14em] text-white sm:block sm:text-lg">TRAINING SYSTEM</span>
+            <span className="hidden items-center sm:flex">
+              <span className="font-display text-base tracking-[.14em] text-white sm:text-lg">TRAINING SYSTEM</span>
+              <span className="mx-3 h-4 w-px bg-emerald-200/25" aria-hidden="true" />
+              <span className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[.18em] text-emerald-200/75">
+                {copy.scriptureRef}
+              </span>
+            </span>
           </Link>
           <details className="relative lg:hidden">
             <summary className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-3 py-2 text-sm text-white transition hover:border-emerald-200/40">
