@@ -42,13 +42,13 @@ const messages = {
     invalid: "Bitte fülle alle Pflichtfelder aus."
   },
   fr: {
-    starting: "Preparation du paiement...",
-    failed: "Impossible de lancer le paiement. Reessaie.",
-    invalid: "Merci de remplir tous les champs obligatoires."
+    starting: "Préparation du paiement...",
+    failed: "Impossible de lancer le paiement. Veuillez réessayer.",
+    invalid: "Veuillez remplir tous les champs obligatoires."
   },
   es: {
     starting: "Preparando el pago...",
-    failed: "No se pudo iniciar el pago. Intentalo de nuevo.",
+    failed: "No se pudo iniciar el pago. Inténtalo de nuevo.",
     invalid: "Completa todos los campos obligatorios."
   }
 };

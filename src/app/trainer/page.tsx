@@ -104,38 +104,39 @@ const whatsappDisplay = "+44 7719 799244";
 const content = {
   bg: {
     langLabel: "Език",
+    menuLabel: "Меню",
     nav: [
       ["За мен", "about"],
       ["Услуги", "services"],
-      ["Буукинг", "booking"],
+      ["Записване", "booking"],
       ["Плащане", "payment"]
     ],
     headerCta: "Запази",
     heroOffer: "Безплатна консултация",
     heroEyebrow: "Тренирай, храни се, спи, повтори.",
     heroTitle: "Персонален план за сила, тяло и дисциплина. Структура за успех.",
-    heroText: "Самостоятелна система за фитнес режим, хранителен режим, хранителни планове и бокс тренировки. С моя опит и вашето желание резултатите са неизбежна част от процеса.",
+    heroText: "Цялостна система за тренировки, хранене, индивидуални планове и занимания по бокс. С моя опит и твоето желание резултатите се превръщат в естествена част от процеса.",
     heroPrimary: "Запази консултация",
     heroSecondary: "Виж услугите",
     whatsappCta: "Пиши в WhatsApp",
     focusTitle: "Бокс + хранене",
     stats: [
-      { value: "12+", label: "седмични сесии" },
+      { value: "12+", label: "тренировки седмично" },
       { value: "3", label: "нива на натоварване" },
       { value: "24/7", label: "онлайн насоки" }
     ],
-    focusItems: ["Техника преди тежест", "Онлайн инструкции"],
+    focusItems: ["Техника преди натоварване", "Онлайн инструкции"],
     coverTitle: "Тренировки по бокс",
     gymPhotoEyebrow: "тренировъчна среда",
     gymPhotoTitle: "Работа в зала с реален ритъм",
     gymPhotoText: "Тренировките се изграждат около техника, дистанция, контрол и постоянно движение в работна среда.",
-    aboutEyebrow: "about",
+    aboutEyebrow: "за мен",
     aboutTitle: "За треньора и тренировъчната общност",
     soloTitle: "Личен подход",
     soloText: "20+ години опит в бокса, полупрофесионален път до професионален ринг, редица постижения и победи с международен опит в над 50 държави. Втори спорт: лека атлетика с 8 национални титли и европейска квота.",
     groupTitle: "Групови тренировки",
     groupText: "Среда за хора, които искат движение, бокс техника, мотивация и постоянство в общ ритъм.",
-    groupBadge: "group training",
+    groupBadge: "групови тренировки",
     servicesEyebrow: "услуги",
     servicesTitle: "Основни направления",
     services: [
@@ -143,7 +144,7 @@ const content = {
         icon: icons.boxing,
         title: "Тренировки по бокс",
         text: "Индивидуална работа върху стойка, удари, защита, движение, реакция и кондиция.",
-        points: ["персонални тренировки", "групови тренировки", "подготовки за състезание", "техника и кондиционни тренировки"]
+        points: ["персонални тренировки", "групови тренировки", "подготовка за състезания", "техника и кондиционни тренировки"]
       },
       {
         icon: icons.online,
@@ -180,10 +181,10 @@ const content = {
         details: ["видео насоки", "седмичен отчет", "корекции онлайн"]
       }
     ],
-    bookingEyebrow: "буукинг",
+    bookingEyebrow: "записване",
     bookingTitle: "Записване за тренировка или онлайн режим",
     bookingCardTitle: "Избери услуга, цел и удобен график.",
-    bookingCardText: "Буукинг секцията е отделна за тренировъчните услуги: бокс, онлайн фитнес инструкции или диетичен режим. След заявка се потвърждава час, депозит и начин на комуникация.",
+    bookingCardText: "Секцията за записване е предназначена за тренировки по бокс, онлайн фитнес насоки и хранителни режими. След заявката уточняваме часа, депозита и начина за връзка.",
     bookingItems: ["Първа консултация", "Индивидуална тренировка", "Онлайн режим", "Хранителен план"],
     directContact: `За директна връзка пиши в WhatsApp: ${whatsappDisplay}.`,
     form: {
@@ -236,13 +237,14 @@ const content = {
     ],
     depositTitle: "Депозит 20%",
     depositText: "Запазва час или активира изготвянето на онлайн тренировъчен и хранителен режим.",
-    depositCta: "Към буукинг",
+    depositCta: "Към записване",
     paymentSuccess: "Плащането е прието. Ще получиш потвърждение и следващи стъпки.",
     paymentCancelled: "Плащането беше прекъснато. Можеш да опиташ отново, когато си готов.",
     footer: "Тренировки, онлайн инструкции, бокс подготовка, хранителни режими и плащане."
   },
   en: {
     langLabel: "Language",
+    menuLabel: "Menu",
     nav: [
       ["About", "about"],
       ["Services", "services"],
@@ -253,7 +255,7 @@ const content = {
     heroOffer: "Free consultation",
     heroEyebrow: "Train, eat, sleep, repeat.",
     heroTitle: "A personal plan for strength, body and discipline. A structure for success.",
-    heroText: "A standalone system for fitness regime, food diet, nutrition plans and boxing sessions. With my experience and your desire, results become an inevitable part of the process.",
+    heroText: "A complete system for training, nutrition, personalised plans and boxing sessions. With my experience and your commitment, results become a natural part of the process.",
     heroPrimary: "Book a consultation",
     heroSecondary: "View services",
     whatsappCta: "Message on WhatsApp",
@@ -263,10 +265,10 @@ const content = {
       { value: "3", label: "training levels" },
       { value: "24/7", label: "online guidance" }
     ],
-    focusItems: ["Technique before load", "Online instructions"],
+    focusItems: ["Technique before intensity", "Online guidance"],
     coverTitle: "Boxing training",
     gymPhotoEyebrow: "training environment",
-    gymPhotoTitle: "Gym work with real training rhythm",
+    gymPhotoTitle: "Train in a real gym environment",
     gymPhotoText: "Training is built around technique, distance, control and consistent movement in a working gym environment.",
     aboutEyebrow: "about",
     aboutTitle: "About the coach and training community",
@@ -276,7 +278,7 @@ const content = {
     groupText: "A training environment for people who want movement, boxing technique, motivation and consistency.",
     groupBadge: "group training",
     servicesEyebrow: "services",
-    servicesTitle: "Core directions",
+    servicesTitle: "Core services",
     services: [
       {
         icon: icons.boxing,
@@ -340,7 +342,7 @@ const content = {
       submit: "Book and pay deposit"
     },
     nutritionEyebrow: "nutrition",
-    nutritionTitle: "Personal nutrition plan for better eating",
+    nutritionTitle: "A personal plan for better nutrition",
     nutritionCardTitle: "No extremes. Clear rules.",
     nutritionCardText: "The plan is built around foods you can buy, prepare and repeat. The goal is calorie control, enough protein, steady energy and less improvisation.",
     nutrition: [
@@ -357,7 +359,7 @@ const content = {
       ["Wednesday", "Mobility and active recovery", "35 min"],
       ["Thursday", "Strength: upper body + back", "60 min"],
       ["Friday", "Online check-in + adjustments", "30 min"],
-      ["Saturday", "Full-body complex", "55 min"]
+      ["Saturday", "Full-body session", "55 min"]
     ],
     methodEyebrow: "method",
     methodTitle: "A controlled process, not just motivation",
@@ -392,6 +394,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
   uk: {
     ...content.en,
     langLabel: "Мова",
+    menuLabel: "Меню",
     nav: [
       ["Про мене", "about"],
       ["Послуги", "services"],
@@ -420,7 +423,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     aboutEyebrow: "про мене",
     aboutTitle: "Про тренера та тренувальну спільноту",
     soloTitle: "Персональний підхід",
-    soloText: "Понад 20 років досвіду в боксі, напівпрофесійний шлях до професійного рингу, численні досягнення та перемоги, а також міжнародний досвід у понад 50 країнах. Другий вид спорту — легка атлетика: 8 національних титулів і європейська квота.",
+    soloText: "Понад 20 років досвіду в боксі, напівпрофесійний шлях до професійного рингу, численні досягнення та перемоги, а також міжнародний досвід у понад 50 країнах. Другий вид спорту — легка атлетика: 8 національних титулів і кваліфікація на європейські змагання.",
     groupTitle: "Групові тренування",
     groupText: "Середовище для людей, які прагнуть руху, боксерської техніки, мотивації та стабільного прогресу.",
     groupBadge: "групові тренування",
@@ -435,7 +438,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       },
       {
         icon: icons.online,
-        title: "Онлайн фітнес-тренер",
+        title: "Онлайн-фітнес-тренер",
         text: "Отримуйте інструкції, тижневий план і коригування онлайн без обов'язкової присутності в залі.",
         points: ["вправи з інструкціями", "тижневий графік"]
       },
@@ -471,7 +474,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     bookingEyebrow: "запис",
     bookingTitle: "Запис на тренування або онлайн-програму",
     bookingCardTitle: "Оберіть послугу, мету та зручний графік.",
-    bookingCardText: "Розділ запису призначений для тренувальних послуг: боксу, онлайн фітнес-інструкцій або плану харчування. Після заявки узгоджуються час, депозит і спосіб зв'язку.",
+    bookingCardText: "Розділ запису призначений для тренувальних послуг: боксу, онлайн-фітнес-інструкцій або плану харчування. Після заявки узгоджуються час, депозит і спосіб зв'язку.",
     bookingItems: ["Перша консультація", "Індивідуальне тренування", "Онлайн-програма", "План харчування"],
     directContact: `Для прямого зв'язку напишіть у WhatsApp: ${whatsappDisplay}.`,
     form: {
@@ -481,7 +484,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       contactPlaceholder: "Контактні дані",
       service: "Послуга",
       servicePlaceholder: "Оберіть послугу",
-      serviceOptions: ["Тренування з боксу", "Онлайн фітнес-тренер", "Персональний план харчування"],
+      serviceOptions: ["Тренування з боксу", "Онлайн-фітнес-тренер", "Персональний план харчування"],
       day: "Бажаний день",
       dayPlaceholder: "Наприклад: вівторок",
       goal: "Мета",
@@ -496,12 +499,12 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       { title: "Баланс макронутрієнтів", text: "Чітка добова норма білків, вуглеводів і жирів відповідно до вашої мети та графіка." },
       { title: "Звичайні продукти", text: "Меню з доступними продуктами, простим приготуванням і варіантами для активніших днів." },
       { title: "Звички, а не крайнощі", text: "Поступові зміни, яких можна дотримуватися без короткострокових дієт і виснаження." },
-      { title: "Відстеження", text: "Щотижневі коригування відповідно до ваги, об'ємів, сили, сну та рівня енергії." }
+      { title: "Відстеження", text: "Щотижневі коригування відповідно до ваги, обхватів, сили, сну та рівня енергії." }
     ],
     weekEyebrow: "тиждень",
     weekTitle: "Приклад тижневої структури тренувань",
     week: [
-      ["Понеділок", "Сила: нижня частина тіла + кор", "60 хв"],
+      ["Понеділок", "Сила: нижня частина тіла + м'язи кора", "60 хв"],
       ["Вівторок", "Техніка боксу + кондиція", "50 хв"],
       ["Середа", "Мобільність та активне відновлення", "35 хв"],
       ["Четвер", "Сила: верхня частина тіла + спина", "60 хв"],
@@ -532,8 +535,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
   de: {
     ...content.en,
     langLabel: "Sprache",
+    menuLabel: "Menü",
     nav: [
-      ["Uber mich", "about"],
+      ["Über mich", "about"],
       ["Leistungen", "services"],
       ["Buchung", "booking"],
       ["Zahlung", "payment"]
@@ -541,26 +545,82 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     headerCta: "Buchen",
     heroOffer: "Kostenlose Beratung",
     heroEyebrow: "Trainieren, essen, schlafen, wiederholen.",
-    heroTitle: "Ein personlicher Plan fur Kraft, Korper und Disziplin. Eine Struktur fur Erfolg.",
-    heroText: "Ein eigenstandiges System fur Fitnessroutine, Ernahrung, Ernahrungsplane und Boxeinheiten. Mit meiner Erfahrung und deinem Willen werden Ergebnisse ein unvermeidbarer Teil des Prozesses.",
-    heroPrimary: "Training buchen",
-    heroSecondary: "WhatsApp Kontakt",
+    heroTitle: "Ein persönlicher Plan für Kraft, Körper und Disziplin. Eine Struktur für Erfolg.",
+    heroText: "Ein vollständiges System für Training, Ernährung, individuelle Pläne und Boxeinheiten. Mit meiner Erfahrung und deinem Einsatz werden Ergebnisse zu einem natürlichen Teil des Prozesses.",
+    heroPrimary: "Beratung buchen",
+    heroSecondary: "Leistungen ansehen",
     whatsappCta: "Auf WhatsApp schreiben",
+    focusTitle: "Boxen + Ernährung",
     stats: [
       { value: "1:1", label: "Personal Coaching" },
-      { value: "Online", label: "Training und Ernahrung" },
-      { value: "20%", label: "Buchungsdepot" }
+      { value: "Online", label: "Training und Ernährung" },
+      { value: "20%", label: "Anzahlung" }
     ],
-    focusItems: ["Boxtechnik", "Kraft und Kondition", "Online Coaching", "Ernahrungsplanung"],
+    focusItems: ["Technik vor Intensität", "Online-Betreuung"],
+    coverTitle: "Boxtraining",
+    gymPhotoEyebrow: "Trainingsumgebung",
+    gymPhotoTitle: "Training im echten Studioalltag",
+    gymPhotoText: "Das Training konzentriert sich auf Technik, Distanz, Kontrolle und kontinuierliche Bewegung in einer professionellen Trainingsumgebung.",
+    aboutEyebrow: "über mich",
+    aboutTitle: "Über den Trainer und die Trainingsgemeinschaft",
+    soloTitle: "Persönlicher Ansatz",
+    soloText: "Mehr als 20 Jahre Boxerfahrung, ein semiprofessioneller Weg bis in den Profiring, zahlreiche Erfolge und Siege sowie internationale Erfahrung in über 50 Ländern. Zweite Sportart: Leichtathletik mit 8 nationalen Titeln und einer Qualifikation für die Europameisterschaft.",
+    groupTitle: "Gruppentraining",
+    groupText: "Ein Umfeld für Menschen, die Bewegung, Boxtechnik, Motivation und beständige Fortschritte suchen.",
+    groupBadge: "Gruppentraining",
+    servicesEyebrow: "Leistungen",
+    servicesTitle: "Unsere Schwerpunkte",
+    services: [
+      {
+        icon: icons.boxing,
+        title: "Boxtraining",
+        text: "Individuelle Arbeit an Stellung, Schlägen, Verteidigung, Bewegung, Reaktion und Kondition.",
+        points: ["Personal Training", "Gruppentraining", "Wettkampfvorbereitung", "Technik- und Konditionstraining"]
+      },
+      {
+        icon: icons.online,
+        title: "Online-Fitnesstraining",
+        text: "Du erhältst Anleitungen, einen Wochenplan und Online-Korrekturen, ohne im Fitnessstudio anwesend sein zu müssen.",
+        points: ["angeleitete Übungen", "Wochenplan"]
+      },
+      {
+        icon: icons.nutrition,
+        title: "Persönlicher Ernährungsplan",
+        text: "Praktische Ernährung, abgestimmt auf dein Ziel, deinen Alltag, deine Vorlieben und deine Gewohnheiten.",
+        points: ["Kalorien und Makronährstoffe", "Beispielmenüs", "wöchentliche Anpassungen"]
+      }
+    ],
+    programsEyebrow: "Programme",
+    programsTitle: "Programme passend zu deinem Ziel",
+    programs: [
+      {
+        icon: icons.strength,
+        title: "Kraft und Form",
+        text: "Strukturiertes Krafttraining für Muskeltonus, Stabilität und sichtbare Fortschritte ohne planlose Überlastung.",
+        details: ["3–5 Einheiten pro Woche", "progressive Belastung", "Technikkorrektur"]
+      },
+      {
+        icon: icons.conditioning,
+        title: "Ausdauer und Kondition",
+        text: "Funktionelle Einheiten mit Cardio, Mobilität und Intervallen für mehr Energie und Belastbarkeit.",
+        details: ["HIIT-Blöcke", "aerobe Grundlage", "Regeneration"]
+      },
+      {
+        icon: icons.instructions,
+        title: "Online-Anleitungen",
+        text: "Ein klarer Plan mit Übungen, Sätzen, Wiederholungen, Tempo und Hinweisen zur Ausführung.",
+        details: ["Videoanleitungen", "wöchentlicher Check-in", "Online-Korrekturen"]
+      }
+    ],
     bookingEyebrow: "Buchung",
-    bookingTitle: "Wahle ein Training oder starte mit einem Online-Plan.",
+    bookingTitle: "Buche eine Trainingseinheit oder starte mit einem Online-Plan.",
     bookingCardTitle: "Direkte Kommunikation",
     bookingCardText:
-      "Sende deine Daten, dein Ziel und deinen bevorzugten Tag. Danach erhaltst du Bestatigung und die nachsten Schritte.",
+      "Sende deine Daten, dein Ziel und deinen bevorzugten Tag. Danach erhältst du eine Bestätigung und die nächsten Schritte.",
     bookingItems: [
-      "WhatsApp Kontakt fur schnelle Abstimmung",
-      "20% Depot fur Buchung oder Planstart",
-      "Klare Bestatigung nach Zahlung"
+      "WhatsApp-Kontakt für eine schnelle Abstimmung",
+      "20% Anzahlung für die Buchung oder den Planstart",
+      "Klare Bestätigung nach der Zahlung"
     ],
     directContact: `Direkt: ${whatsappDisplay}`,
     form: {
@@ -570,96 +630,208 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       contact: "WhatsApp oder E-Mail",
       contactPlaceholder: "+44 ... oder E-Mail",
       service: "Leistung",
-      servicePlaceholder: "Leistung wahlen",
+      servicePlaceholder: "Leistung wählen",
       day: "Bevorzugter Tag",
       dayPlaceholder: "Zum Beispiel: Dienstag",
       goal: "Ziel",
-      goalPlaceholder: "Boxen, Fitness, Gewichtsverlust, Ernahrung...",
-      submit: "20% Depot bezahlen",
-      serviceOptions: ["Personal Training", "Boxtraining", "Online Trainingsplan", "Ernahrungsplan", "Komplettes Paket"]
+      goalPlaceholder: "Boxen, Fitness, Gewichtsverlust, Ernährung...",
+      submit: "20% Anzahlung bezahlen",
+      serviceOptions: ["Personal Training", "Boxtraining", "Online-Trainingsplan", "Ernährungsplan", "Komplettpaket"]
     },
-    paymentEyebrow: "Zahlung",
-    paymentTitle: "Ein einfaches Depot, damit der Termin bestatigt ist.",
-    paymentItems: [
-      { icon: icons.deposit, title: "20% Depot", text: "Sichert deine Buchung oder startet die Erstellung deines Online-Plans." },
-      { icon: icons.payment, title: "Sichere Zahlung", text: "Zahlung lauft uber Stripe Checkout mit Karte und digitaler Bestatigung." },
-      { icon: icons.confirm, title: "Nachste Schritte", text: "Nach der Zahlung melde ich mich mit Zeit, Plan und Vorbereitung." }
+    nutritionEyebrow: "Ernährung",
+    nutritionTitle: "Ein persönlicher Plan für eine bessere Ernährung",
+    nutritionCardTitle: "Keine Extreme. Klare Regeln.",
+    nutritionCardText: "Der Plan basiert auf Lebensmitteln, die du kaufen, zubereiten und regelmäßig verwenden kannst. Ziel sind kontrollierte Kalorien, ausreichend Protein, stabile Energie und weniger Improvisation.",
+    nutrition: [
+      { title: "Makronährstoff-Balance", text: "Klare Tagesziele für Protein, Kohlenhydrate und Fette, abgestimmt auf dein Ziel und deinen Zeitplan." },
+      { title: "Echte Lebensmittel", text: "Ein Menü mit verfügbaren Produkten, einfacher Zubereitung und Optionen für aktivere Tage." },
+      { title: "Gewohnheiten statt Extreme", text: "Schrittweise Veränderungen, die du ohne kurzfristige Diäten und Erschöpfung beibehalten kannst." },
+      { title: "Fortschrittskontrolle", text: "Wöchentliche Anpassungen anhand von Gewicht, Maßen, Kraft, Schlaf und Energie." }
     ],
-    depositTitle: "20% Depot",
-    depositText: "Reserviert eine Einheit oder aktiviert die Erstellung eines Online-Trainings- und Ernahrungsplans.",
+    weekEyebrow: "Woche",
+    weekTitle: "Beispiel für eine Trainingswoche",
+    week: [
+      ["Montag", "Kraft: Unterkörper + Rumpf", "60 Min."],
+      ["Dienstag", "Boxtechnik + Kondition", "50 Min."],
+      ["Mittwoch", "Mobilität und aktive Regeneration", "35 Min."],
+      ["Donnerstag", "Kraft: Oberkörper + Rücken", "60 Min."],
+      ["Freitag", "Online-Check-in + Anpassungen", "30 Min."],
+      ["Samstag", "Ganzkörpertraining", "55 Min."]
+    ],
+    methodEyebrow: "Methode",
+    methodTitle: "Ein kontrollierter Prozess, nicht nur Motivation",
+    process: [
+      { icon: icons.assessment, title: "Analyse", text: "Wir beginnen mit deinem Ziel, deiner Erfahrung, deiner verfügbaren Zeit, deinen Einschränkungen und aktuellen Gewohnheiten." },
+      { icon: icons.plan, title: "Plan", text: "Du erhältst eine klare Struktur für Training, Ernährung und Regeneration." },
+      { icon: icons.progress, title: "Fortschritt", text: "Wir verfolgen die Ergebnisse und passen den Plan an, damit du beständig vorankommst." }
+    ],
+    paymentEyebrow: "Zahlung",
+    paymentTitle: "Eine einfache Anzahlung zur Bestätigung deines Termins.",
+    paymentItems: [
+      { icon: icons.deposit, title: "20% Anzahlung", text: "Sichert deine Buchung oder startet die Erstellung deines Online-Plans." },
+      { icon: icons.payment, title: "Sichere Zahlung", text: "Die Zahlung erfolgt per Karte über Stripe Checkout mit digitaler Bestätigung." },
+      { icon: icons.confirm, title: "Nächste Schritte", text: "Nach der Zahlung melde ich mich mit Termin, Plan und Vorbereitungshinweisen." }
+    ],
+    depositTitle: "20% Anzahlung",
+    depositText: "Reserviert eine Einheit oder aktiviert die Erstellung eines Online-Trainings- und Ernährungsplans.",
     depositCta: "Zur Buchung",
-    paymentSuccess: "Zahlung erhalten. Du bekommst Bestatigung und nachste Schritte.",
+    paymentSuccess: "Zahlung erhalten. Du bekommst eine Bestätigung und die nächsten Schritte.",
     paymentCancelled: "Die Zahlung wurde abgebrochen. Du kannst es erneut versuchen, wenn du bereit bist.",
-    footer: "Training, Online-Anleitung, Boxvorbereitung, Ernahrungsplane und Zahlung."
+    footer: "Training, Online-Anleitungen, Boxvorbereitung, Ernährungspläne und Zahlung."
   },
   fr: {
     ...content.en,
     langLabel: "Langue",
+    menuLabel: "Menu",
     nav: [
       ["Profil", "about"],
       ["Services", "services"],
-      ["Reservation", "booking"],
+      ["Réservation", "booking"],
       ["Paiement", "payment"]
     ],
-    headerCta: "Reserver",
+    headerCta: "Réserver",
     heroOffer: "Consultation gratuite",
-    heroEyebrow: "S'entrainer, manger, dormir, recommencer.",
-    heroTitle: "Un plan personnel pour la force, le corps et la discipline. Une structure pour reussir.",
-    heroText: "Un systeme complet pour le programme fitness, l'alimentation, les plans nutritionnels et les seances de boxe. Avec mon experience et votre envie, les resultats deviennent une partie inevitable du processus.",
-    heroPrimary: "Reserver une seance",
-    heroSecondary: "Contact WhatsApp",
-    whatsappCta: "Ecrire sur WhatsApp",
+    heroEyebrow: "S'entraîner, manger, dormir, recommencer.",
+    heroTitle: "Un programme personnel pour la force, le corps et la discipline. Une structure pour réussir.",
+    heroText: "Un système complet pour l'entraînement, la nutrition, les programmes personnalisés et les séances de boxe. Avec mon expérience et votre engagement, les résultats deviennent une partie naturelle du processus.",
+    heroPrimary: "Réserver une consultation",
+    heroSecondary: "Voir les services",
+    whatsappCta: "Écrire sur WhatsApp",
+    focusTitle: "Boxe + nutrition",
     stats: [
-      { value: "1:1", label: "Coaching prive" },
-      { value: "Online", label: "Training et nutrition" },
+      { value: "1:1", label: "Coaching privé" },
+      { value: "En ligne", label: "Entraînement et nutrition" },
       { value: "20%", label: "Acompte" }
     ],
-    focusItems: ["Technique de boxe", "Force et condition", "Coaching en ligne", "Plan nutritionnel"],
-    bookingEyebrow: "Reservation",
-    bookingTitle: "Choisis une seance ou commence avec un plan en ligne.",
+    focusItems: ["La technique avant l'intensité", "Suivi en ligne"],
+    coverTitle: "Entraînement de boxe",
+    gymPhotoEyebrow: "environnement d'entraînement",
+    gymPhotoTitle: "S'entraîner dans les conditions réelles d'une salle",
+    gymPhotoText: "L'entraînement s'articule autour de la technique, de la distance, du contrôle et d'un mouvement constant dans un environnement professionnel.",
+    aboutEyebrow: "à propos",
+    aboutTitle: "À propos du coach et de la communauté",
+    soloTitle: "Approche personnalisée",
+    soloText: "Plus de 20 ans d'expérience en boxe, un parcours semi-professionnel jusqu'au ring professionnel, de nombreux résultats et victoires, ainsi qu'une expérience internationale dans plus de 50 pays. Deuxième discipline : l'athlétisme, avec 8 titres nationaux et une qualification européenne.",
+    groupTitle: "Entraînement en groupe",
+    groupText: "Un environnement pour celles et ceux qui recherchent le mouvement, la technique de boxe, la motivation et une progression régulière.",
+    groupBadge: "entraînement en groupe",
+    servicesEyebrow: "services",
+    servicesTitle: "Nos principaux services",
+    services: [
+      {
+        icon: icons.boxing,
+        title: "Entraînement de boxe",
+        text: "Travail individuel sur la garde, les frappes, la défense, les déplacements, les réactions et la condition physique.",
+        points: ["coaching individuel", "entraînement en groupe", "préparation aux compétitions", "technique et condition physique"]
+      },
+      {
+        icon: icons.online,
+        title: "Coach fitness en ligne",
+        text: "Recevez des consignes, un programme hebdomadaire et des corrections en ligne sans devoir être présent en salle.",
+        points: ["exercices guidés", "programme hebdomadaire"]
+      },
+      {
+        icon: icons.nutrition,
+        title: "Programme nutritionnel personnalisé",
+        text: "Une alimentation pratique adaptée à votre objectif, votre quotidien, vos préférences et vos habitudes.",
+        points: ["calories et macronutriments", "exemples de menus", "ajustements hebdomadaires"]
+      }
+    ],
+    programsEyebrow: "programmes",
+    programsTitle: "Des programmes adaptés à votre objectif",
+    programs: [
+      {
+        icon: icons.strength,
+        title: "Force et silhouette",
+        text: "Des séances de renforcement structurées pour le tonus musculaire, la stabilité et des progrès visibles sans surcharge désordonnée.",
+        details: ["3 à 5 séances par semaine", "progression de la charge", "correction technique"]
+      },
+      {
+        icon: icons.conditioning,
+        title: "Endurance et condition physique",
+        text: "Des séances fonctionnelles avec cardio, mobilité et intervalles pour améliorer l'énergie et la résistance.",
+        details: ["blocs HIIT", "base aérobie", "récupération"]
+      },
+      {
+        icon: icons.instructions,
+        title: "Consignes en ligne",
+        text: "Un programme clair avec exercices, séries, répétitions, rythme et conseils d'exécution.",
+        details: ["conseils vidéo", "bilan hebdomadaire", "corrections en ligne"]
+      }
+    ],
+    bookingEyebrow: "réservation",
+    bookingTitle: "Réservez une séance ou commencez un programme en ligne.",
     bookingCardTitle: "Contact direct",
     bookingCardText:
-      "Envoie tes coordonnees, ton objectif et ton jour prefere. Tu recevras ensuite une confirmation et les prochaines etapes.",
+      "Envoyez vos coordonnées, votre objectif et votre jour préféré. Vous recevrez ensuite une confirmation et les prochaines étapes.",
     bookingItems: [
-      "Contact WhatsApp pour organiser rapidement",
-      "Acompte de 20% pour reserver ou lancer le plan",
-      "Confirmation claire apres paiement"
+      "Contact WhatsApp pour une organisation rapide",
+      "Acompte de 20% pour réserver ou démarrer le programme",
+      "Confirmation claire après le paiement"
     ],
-    directContact: `Direct: ${whatsappDisplay}`,
+    directContact: `Contact direct : ${whatsappDisplay}`,
     form: {
       ...content.en.form,
       name: "Nom",
-      namePlaceholder: "Ton nom",
+      namePlaceholder: "Votre nom",
       contact: "WhatsApp ou e-mail",
       contactPlaceholder: "+44 ... ou e-mail",
       service: "Service",
-      servicePlaceholder: "Choisis un service",
-      day: "Jour prefere",
+      servicePlaceholder: "Choisissez un service",
+      day: "Jour préféré",
       dayPlaceholder: "Exemple: mardi",
       goal: "Objectif",
-      goalPlaceholder: "Boxe, fitness, perte de poids, nutrition...",
+      goalPlaceholder: "Boxe, remise en forme, perte de poids, nutrition...",
       submit: "Payer l'acompte de 20%",
-      serviceOptions: ["Personal training", "Boxe", "Programme en ligne", "Plan nutritionnel", "Pack complet"]
+      serviceOptions: ["Coaching individuel", "Entraînement de boxe", "Programme en ligne", "Programme nutritionnel", "Formule complète"]
     },
-    paymentEyebrow: "Paiement",
-    paymentTitle: "Un acompte simple pour confirmer la reservation.",
-    paymentItems: [
-      { icon: icons.deposit, title: "Acompte 20%", text: "Reserve ta seance ou lance la creation de ton plan en ligne." },
-      { icon: icons.payment, title: "Paiement securise", text: "Paiement via Stripe Checkout avec carte et confirmation digitale." },
-      { icon: icons.confirm, title: "Prochaines etapes", text: "Apres paiement, je confirme l'horaire, le plan et la preparation." }
+    nutritionEyebrow: "nutrition",
+    nutritionTitle: "Un programme personnalisé pour mieux manger",
+    nutritionCardTitle: "Pas d'extrêmes. Des règles claires.",
+    nutritionCardText: "Le programme repose sur des aliments que vous pouvez acheter, préparer et consommer régulièrement. L'objectif est de contrôler les calories, d'apporter suffisamment de protéines, de stabiliser l'énergie et de limiter l'improvisation.",
+    nutrition: [
+      { title: "Équilibre des macronutriments", text: "Des objectifs quotidiens clairs en protéines, glucides et lipides selon votre objectif et votre emploi du temps." },
+      { title: "Des aliments simples", text: "Un menu composé de produits accessibles, faciles à préparer, avec des options pour les journées plus actives." },
+      { title: "Des habitudes, pas des extrêmes", text: "Des changements progressifs que vous pouvez maintenir sans régimes courts ni épuisement." },
+      { title: "Suivi", text: "Des ajustements hebdomadaires selon le poids, les mensurations, la force, le sommeil et le niveau d'énergie." }
     ],
-    depositTitle: "Acompte 20%",
-    depositText: "Reserve une seance ou active la creation d'un plan d'entrainement et nutrition en ligne.",
-    depositCta: "Aller a la reservation",
-    paymentSuccess: "Paiement recu. Tu recevras une confirmation et les prochaines etapes.",
-    paymentCancelled: "Le paiement a ete annule. Tu peux reessayer quand tu es pret.",
-    footer: "Entrainement, coaching en ligne, preparation boxe, plans nutritionnels et paiement."
+    weekEyebrow: "semaine",
+    weekTitle: "Exemple de semaine d'entraînement",
+    week: [
+      ["Lundi", "Force : bas du corps + sangle abdominale", "60 min"],
+      ["Mardi", "Technique de boxe + condition physique", "50 min"],
+      ["Mercredi", "Mobilité et récupération active", "35 min"],
+      ["Jeudi", "Force : haut du corps + dos", "60 min"],
+      ["Vendredi", "Bilan en ligne + ajustements", "30 min"],
+      ["Samedi", "Séance complète", "55 min"]
+    ],
+    methodEyebrow: "méthode",
+    methodTitle: "Un processus maîtrisé, pas seulement de la motivation",
+    process: [
+      { icon: icons.assessment, title: "Évaluation", text: "Nous commençons par votre objectif, votre expérience, votre disponibilité, vos limites et vos habitudes actuelles." },
+      { icon: icons.plan, title: "Programme", text: "Vous recevez une structure claire pour l'entraînement, la nutrition et la récupération." },
+      { icon: icons.progress, title: "Progression", text: "Nous suivons les résultats et ajustons le programme pour vous faire progresser régulièrement." }
+    ],
+    paymentEyebrow: "Paiement",
+    paymentTitle: "Un acompte simple pour confirmer la réservation.",
+    paymentItems: [
+      { icon: icons.deposit, title: "Acompte de 20%", text: "Réservez votre séance ou lancez la création de votre programme en ligne." },
+      { icon: icons.payment, title: "Paiement sécurisé", text: "Paiement par carte via Stripe Checkout avec confirmation numérique." },
+      { icon: icons.confirm, title: "Prochaines étapes", text: "Après le paiement, je confirme l'horaire, le programme et la préparation." }
+    ],
+    depositTitle: "Acompte de 20%",
+    depositText: "Réserve une séance ou active la création d'un programme d'entraînement et de nutrition en ligne.",
+    depositCta: "Aller à la réservation",
+    paymentSuccess: "Paiement reçu. Vous recevrez une confirmation et les prochaines étapes.",
+    paymentCancelled: "Le paiement a été annulé. Vous pouvez réessayer lorsque vous êtes prêt.",
+    footer: "Entraînement, conseils en ligne, préparation à la boxe, programmes nutritionnels et paiement."
   },
   es: {
     ...content.en,
     langLabel: "Idioma",
+    menuLabel: "Menú",
     nav: [
-      ["Sobre mi", "about"],
+      ["Sobre mí", "about"],
       ["Servicios", "services"],
       ["Reserva", "booking"],
       ["Pago", "payment"]
@@ -667,26 +839,82 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     headerCta: "Reservar",
     heroOffer: "Consulta gratuita",
     heroEyebrow: "Entrena, come, duerme, repite.",
-    heroTitle: "Un plan personal para fuerza, cuerpo y disciplina. Una estructura para el exito.",
-    heroText: "Un sistema independiente para rutina fitness, dieta alimentaria, planes de nutricion y sesiones de boxeo. Con mi experiencia y tu deseo, los resultados se vuelven una parte inevitable del proceso.",
-    heroPrimary: "Reservar entrenamiento",
-    heroSecondary: "Contacto WhatsApp",
+    heroTitle: "Un plan personal para la fuerza, el cuerpo y la disciplina. Una estructura para el éxito.",
+    heroText: "Un sistema completo de entrenamiento, nutrición, planes personalizados y sesiones de boxeo. Con mi experiencia y tu compromiso, los resultados se convierten en una parte natural del proceso.",
+    heroPrimary: "Reservar una consulta",
+    heroSecondary: "Ver servicios",
     whatsappCta: "Escribir por WhatsApp",
+    focusTitle: "Boxeo + nutrición",
     stats: [
       { value: "1:1", label: "Coaching personal" },
-      { value: "Online", label: "Training y nutricion" },
-      { value: "20%", label: "Deposito" }
+      { value: "Online", label: "Entrenamiento y nutrición" },
+      { value: "20%", label: "Depósito" }
     ],
-    focusItems: ["Tecnica de boxeo", "Fuerza y condicion", "Coaching online", "Plan nutricional"],
+    focusItems: ["La técnica antes que la intensidad", "Asesoramiento online"],
+    coverTitle: "Entrenamiento de boxeo",
+    gymPhotoEyebrow: "entorno de entrenamiento",
+    gymPhotoTitle: "Entrena en un entorno de gimnasio real",
+    gymPhotoText: "El entrenamiento se centra en la técnica, la distancia, el control y el movimiento constante dentro de un entorno profesional.",
+    aboutEyebrow: "sobre mí",
+    aboutTitle: "Sobre el entrenador y la comunidad",
+    soloTitle: "Enfoque personal",
+    soloText: "Más de 20 años de experiencia en boxeo, una trayectoria semiprofesional hasta el ring profesional, numerosos logros y victorias, y experiencia internacional en más de 50 países. Segundo deporte: atletismo, con 8 títulos nacionales y una clasificación europea.",
+    groupTitle: "Entrenamiento en grupo",
+    groupText: "Un entorno para quienes buscan movimiento, técnica de boxeo, motivación y progreso constante.",
+    groupBadge: "entrenamiento en grupo",
+    servicesEyebrow: "servicios",
+    servicesTitle: "Servicios principales",
+    services: [
+      {
+        icon: icons.boxing,
+        title: "Entrenamiento de boxeo",
+        text: "Trabajo individual de guardia, golpes, defensa, desplazamientos, reacción y acondicionamiento físico.",
+        points: ["entrenamiento personal", "entrenamiento en grupo", "preparación para competiciones", "técnica y acondicionamiento"]
+      },
+      {
+        icon: icons.online,
+        title: "Entrenador fitness online",
+        text: "Recibe instrucciones, un plan semanal y correcciones online sin necesidad de acudir al gimnasio.",
+        points: ["ejercicios guiados", "plan semanal"]
+      },
+      {
+        icon: icons.nutrition,
+        title: "Plan nutricional personal",
+        text: "Una alimentación práctica adaptada a tu objetivo, rutina diaria, preferencias y hábitos reales.",
+        points: ["calorías y macronutrientes", "menús de ejemplo", "ajustes semanales"]
+      }
+    ],
+    programsEyebrow: "programas",
+    programsTitle: "Programas según tu objetivo",
+    programs: [
+      {
+        icon: icons.strength,
+        title: "Fuerza y forma física",
+        text: "Sesiones de fuerza estructuradas para mejorar el tono muscular, la estabilidad y el progreso visible sin sobrecargas desordenadas.",
+        details: ["3–5 sesiones semanales", "sobrecarga progresiva", "corrección técnica"]
+      },
+      {
+        icon: icons.conditioning,
+        title: "Resistencia y acondicionamiento",
+        text: "Sesiones funcionales con cardio, movilidad e intervalos para mejorar la energía y la resistencia.",
+        details: ["bloques HIIT", "base aeróbica", "recuperación"]
+      },
+      {
+        icon: icons.instructions,
+        title: "Instrucciones online",
+        text: "Un plan claro con ejercicios, series, repeticiones, ritmo y notas de ejecución.",
+        details: ["orientación por vídeo", "revisión semanal", "correcciones online"]
+      }
+    ],
     bookingEyebrow: "Reserva",
-    bookingTitle: "Elige una sesion o empieza con un plan online.",
+    bookingTitle: "Reserva una sesión o empieza con un plan online.",
     bookingCardTitle: "Contacto directo",
     bookingCardText:
-      "Envia tus datos, tu objetivo y tu dia preferido. Despues recibiras confirmacion y los siguientes pasos.",
+      "Envía tus datos, tu objetivo y tu día preferido. Después recibirás la confirmación y los siguientes pasos.",
     bookingItems: [
-      "Contacto por WhatsApp para organizar rapido",
-      "Deposito del 20% para reservar o iniciar el plan",
-      "Confirmacion clara despues del pago"
+      "Contacto por WhatsApp para organizarlo rápidamente",
+      "Depósito del 20% para reservar o iniciar el plan",
+      "Confirmación clara después del pago"
     ],
     directContact: `Directo: ${whatsappDisplay}`,
     form: {
@@ -697,26 +925,53 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       contactPlaceholder: "+44 ... o email",
       service: "Servicio",
       servicePlaceholder: "Elige un servicio",
-      day: "Dia preferido",
+      day: "Día preferido",
       dayPlaceholder: "Ejemplo: martes",
       goal: "Objetivo",
-      goalPlaceholder: "Boxeo, fitness, perdida de peso, nutricion...",
-      submit: "Pagar deposito del 20%",
-      serviceOptions: ["Entrenamiento personal", "Boxeo", "Plan online", "Plan nutricional", "Paquete completo"]
+      goalPlaceholder: "Boxeo, fitness, pérdida de peso, nutrición...",
+      submit: "Pagar el depósito del 20%",
+      serviceOptions: ["Entrenamiento personal", "Entrenamiento de boxeo", "Plan online", "Plan nutricional", "Paquete completo"]
     },
-    paymentEyebrow: "Pago",
-    paymentTitle: "Un deposito sencillo para confirmar la reserva.",
-    paymentItems: [
-      { icon: icons.deposit, title: "Deposito 20%", text: "Reserva tu sesion o inicia la creacion de tu plan online." },
-      { icon: icons.payment, title: "Pago seguro", text: "Pago con Stripe Checkout, tarjeta y confirmacion digital." },
-      { icon: icons.confirm, title: "Siguientes pasos", text: "Despues del pago confirmo horario, plan y preparacion." }
+    nutritionEyebrow: "nutrición",
+    nutritionTitle: "Un plan personal para mejorar tu alimentación",
+    nutritionCardTitle: "Sin extremos. Con reglas claras.",
+    nutritionCardText: "El plan se basa en alimentos que puedes comprar, preparar y consumir con regularidad. El objetivo es controlar las calorías, asegurar suficiente proteína, mantener una energía estable y reducir la improvisación.",
+    nutrition: [
+      { title: "Equilibrio de macronutrientes", text: "Objetivos diarios claros de proteínas, carbohidratos y grasas según tu meta y tu horario." },
+      { title: "Alimentos reales", text: "Un menú con productos accesibles, preparación sencilla y opciones para los días de mayor actividad." },
+      { title: "Hábitos, no extremos", text: "Cambios graduales que puedes mantener sin dietas a corto plazo ni agotamiento." },
+      { title: "Seguimiento", text: "Ajustes semanales según el peso, las medidas, la fuerza, el sueño y el nivel de energía." }
     ],
-    depositTitle: "Deposito 20%",
-    depositText: "Reserva una sesion o activa la creacion de un plan online de entrenamiento y nutricion.",
-    depositCta: "Ir a reserva",
-    paymentSuccess: "Pago recibido. Recibiras confirmacion y siguientes pasos.",
-    paymentCancelled: "El pago fue cancelado. Puedes intentarlo de nuevo cuando estes listo.",
-    footer: "Entrenamiento, coaching online, preparacion de boxeo, planes nutricionales y pago."
+    weekEyebrow: "semana",
+    weekTitle: "Ejemplo de estructura semanal",
+    week: [
+      ["Lunes", "Fuerza: tren inferior + zona media", "60 min"],
+      ["Martes", "Técnica de boxeo + acondicionamiento", "50 min"],
+      ["Miércoles", "Movilidad y recuperación activa", "35 min"],
+      ["Jueves", "Fuerza: tren superior + espalda", "60 min"],
+      ["Viernes", "Revisión online + ajustes", "30 min"],
+      ["Sábado", "Sesión de cuerpo completo", "55 min"]
+    ],
+    methodEyebrow: "método",
+    methodTitle: "Un proceso controlado, no solo motivación",
+    process: [
+      { icon: icons.assessment, title: "Evaluación", text: "Empezamos por tu objetivo, experiencia, tiempo disponible, limitaciones y hábitos actuales." },
+      { icon: icons.plan, title: "Plan", text: "Recibes una estructura clara para el entrenamiento, la nutrición y la recuperación." },
+      { icon: icons.progress, title: "Progreso", text: "Seguimos los resultados y ajustamos el plan para que avances de forma constante." }
+    ],
+    paymentEyebrow: "Pago",
+    paymentTitle: "Un depósito sencillo para confirmar la reserva.",
+    paymentItems: [
+      { icon: icons.deposit, title: "Depósito del 20%", text: "Reserva tu sesión o inicia la creación de tu plan online." },
+      { icon: icons.payment, title: "Pago seguro", text: "Pago con tarjeta mediante Stripe Checkout y confirmación digital." },
+      { icon: icons.confirm, title: "Siguientes pasos", text: "Después del pago confirmaré el horario, el plan y la preparación." }
+    ],
+    depositTitle: "Depósito del 20%",
+    depositText: "Reserva una sesión o activa la creación de un plan online de entrenamiento y nutrición.",
+    depositCta: "Ir a la reserva",
+    paymentSuccess: "Pago recibido. Recibirás la confirmación y los siguientes pasos.",
+    paymentCancelled: "El pago se ha cancelado. Puedes intentarlo de nuevo cuando estés listo.",
+    footer: "Entrenamiento, asesoramiento online, preparación de boxeo, planes nutricionales y pago."
   }
 };
 
@@ -758,7 +1013,7 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
           </Link>
           <details className="relative lg:hidden">
             <summary className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-3 py-2 text-sm text-white transition hover:border-emerald-200/40">
-              Menu <ChevronDown size={16} />
+              {copy.menuLabel} <ChevronDown size={16} />
             </summary>
             <div className="fixed left-3 right-3 top-16 rounded-2xl border border-white/10 bg-black/95 p-4 shadow-2xl sm:absolute sm:left-auto sm:right-0 sm:top-full sm:mt-2 sm:w-[18rem]">
               <div className="grid gap-2">
