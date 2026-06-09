@@ -386,6 +386,14 @@ const content = {
 
 const supportedLangs = ["en", "bg", "uk", "de", "fr", "es"] as const;
 const defaultLang: Lang = "en";
+const languageLabels: Record<Lang, string> = {
+  en: "EN",
+  bg: "BG",
+  uk: "UA",
+  de: "DE",
+  fr: "FR",
+  es: "ES"
+};
 type TrainerCopy = typeof content.en;
 
 const localizedContent: Record<Lang, TrainerCopy> = {
@@ -1030,7 +1038,7 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
                     href={href(item)}
                     className={`rounded-full px-3 py-2 text-xs uppercase transition ${item === lang ? "bg-emerald-200 text-black" : "border border-white/10 hover:bg-white/10 text-white/70"}`}
                   >
-                    {item}
+                    {languageLabels[item]}
                   </Link>
                 ))}
               </div>
@@ -1052,7 +1060,7 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
                   href={href(item)}
                   className={`rounded-full px-2.5 py-1.5 uppercase transition sm:px-3 ${item === lang ? "bg-emerald-200 text-black" : "hover:text-white"}`}
                 >
-                  {item}
+                    {languageLabels[item]}
                 </Link>
               ))}
             </div>
