@@ -110,6 +110,7 @@ const content = {
       ["Плащане", "payment"]
     ],
     headerCta: "Запази",
+    heroOffer: "Безплатна консултация",
     heroEyebrow: "Тренирай, храни се, спи, повтори.",
     heroTitle: "Персонален план за сила, тяло и дисциплина. Структура за успех.",
     heroText: "Самостоятелна система за фитнес режим, хранителен режим, хранителни планове и бокс тренировки. С моя опит и вашето желание резултатите са неизбежна част от процеса.",
@@ -248,6 +249,7 @@ const content = {
       ["Payment", "payment"]
     ],
     headerCta: "Book",
+    heroOffer: "Free consultation",
     heroEyebrow: "Train, eat, sleep, repeat.",
     heroTitle: "A personal plan for strength, body and discipline. A structure for success.",
     heroText: "A standalone system for fitness regime, food diet, nutrition plans and boxing sessions. With my experience and your desire, results become an inevitable part of the process.",
@@ -396,6 +398,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       ["Zahlung", "payment"]
     ],
     headerCta: "Buchen",
+    heroOffer: "Kostenlose Beratung",
     heroEyebrow: "Trainieren, essen, schlafen, wiederholen.",
     heroTitle: "Ein personlicher Plan fur Kraft, Korper und Disziplin. Eine Struktur fur Erfolg.",
     heroText: "Ein eigenstandiges System fur Fitnessroutine, Ernahrung, Ernahrungsplane und Boxeinheiten. Mit meiner Erfahrung und deinem Willen werden Ergebnisse ein unvermeidbarer Teil des Prozesses.",
@@ -458,6 +461,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       ["Paiement", "payment"]
     ],
     headerCta: "Reserver",
+    heroOffer: "Consultation gratuite",
     heroEyebrow: "S'entrainer, manger, dormir, recommencer.",
     heroTitle: "Un plan personnel pour la force, le corps et la discipline. Une structure pour reussir.",
     heroText: "Un systeme complet pour le programme fitness, l'alimentation, les plans nutritionnels et les seances de boxe. Avec mon experience et votre envie, les resultats deviennent une partie inevitable du processus.",
@@ -520,6 +524,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       ["Pago", "payment"]
     ],
     headerCta: "Reservar",
+    heroOffer: "Consulta gratuita",
     heroEyebrow: "Entrena, come, duerme, repite.",
     heroTitle: "Un plan personal para fuerza, cuerpo y disciplina. Una estructura para el exito.",
     heroText: "Un sistema independiente para rutina fitness, dieta alimentaria, planes de nutricion y sesiones de boxeo. Con mi experiencia y tu deseo, los resultados se vuelven una parte inevitable del proceso.",
@@ -689,7 +694,7 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
               href={href(lang, "booking")}
               className="mb-6 inline-flex min-h-12 items-center justify-center whitespace-nowrap rounded-full bg-emerald-200 px-7 py-3 text-sm font-bold uppercase tracking-[.18em] text-black shadow-[0_0_35px_rgba(167,243,208,.28)] transition hover:bg-white sm:px-9 sm:text-base"
             >
-              Безплатна консултация
+              {copy.heroOffer}
             </Link>
             <p className="mb-4 text-xs uppercase tracking-[.28em] text-emerald-200 sm:tracking-[.4em]">{copy.heroEyebrow}</p>
             <h1 className="max-w-[11.5ch] break-words font-display text-5xl leading-[1.13] tracking-[.01em] text-white sm:text-6xl lg:text-[5.25rem] lg:leading-[1.1]">
