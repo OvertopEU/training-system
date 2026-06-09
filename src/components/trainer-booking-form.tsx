@@ -18,7 +18,7 @@ type TrainerFormCopy = {
   submit: string;
 };
 
-type TrainerLang = "en" | "bg" | "de" | "fr" | "es";
+type TrainerLang = "en" | "bg" | "uk" | "de" | "fr" | "es";
 
 const messages = {
   bg: {
@@ -30,6 +30,11 @@ const messages = {
     starting: "Preparing payment...",
     failed: "Could not start payment. Please try again.",
     invalid: "Please complete all required fields."
+  },
+  uk: {
+    starting: "Підготовка оплати...",
+    failed: "Не вдалося розпочати оплату. Спробуйте ще раз.",
+    invalid: "Заповніть усі обов'язкові поля."
   },
   de: {
     starting: "Zahlung wird vorbereitet...",
@@ -98,7 +103,7 @@ export function TrainerBookingForm({ copy, lang }: { copy: TrainerFormCopy; lang
   }
 
   return (
-    <form onSubmit={submit} className="rounded-lg border border-white/10 bg-white/[.04] p-6">
+    <form onSubmit={submit} className="min-w-0 rounded-lg border border-white/10 bg-white/[.04] p-4 sm:p-6">
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-2 text-sm text-white/70">
           {copy.name}
@@ -126,8 +131,8 @@ export function TrainerBookingForm({ copy, lang }: { copy: TrainerFormCopy; lang
         {copy.goal}
         <textarea className="min-h-28 rounded-md border border-white/10 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-emerald-200" name="goal" placeholder={copy.goalPlaceholder} />
       </label>
-      <div className="mt-5 flex flex-wrap items-center gap-4">
-        <button className="inline-flex items-center gap-2 rounded-full bg-emerald-200 px-6 py-3 text-sm font-medium text-black transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-60" type="submit" disabled={isSubmitting}>
+      <div className="mt-5 flex flex-wrap items-center gap-3">
+        <button className="inline-flex w-full max-w-[18rem] items-center justify-center gap-2 rounded-full bg-emerald-200 px-4 py-3 text-sm font-medium text-black transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto" type="submit" disabled={isSubmitting}>
           {copy.submit} <MessageSquare size={16} />
         </button>
         {message ? <p className="text-sm text-white/60">{message}</p> : null}

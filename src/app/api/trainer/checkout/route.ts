@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { assertStripe } from "@/lib/stripe";
 
-const supportedLangs = ["en", "bg", "de", "fr", "es"] as const;
+const supportedLangs = ["en", "bg", "uk", "de", "fr", "es"] as const;
 type TrainerLang = (typeof supportedLangs)[number];
 
 const trainerCheckoutSchema = z.object({
