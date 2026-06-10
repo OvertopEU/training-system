@@ -105,7 +105,7 @@ const content = {
   bg: {
     langLabel: "Език",
     menuLabel: "Меню",
-    scriptureRef: "Псалми 23:1–4",
+    scriptureRef: "Псалми 23:1–6",
     nav: [
       ["За мен", "about"],
       ["Услуги", "services"],
@@ -246,7 +246,7 @@ const content = {
   en: {
     langLabel: "Language",
     menuLabel: "Menu",
-    scriptureRef: "Psalm 23:1–4",
+    scriptureRef: "Psalm 23:1–6",
     nav: [
       ["About", "about"],
       ["Services", "services"],
@@ -396,6 +396,57 @@ const languageLabels: Record<Lang, string> = {
   fr: "FR",
   es: "ES"
 };
+
+const scriptureVerses: Record<Lang, string[]> = {
+  bg: [
+    "Господ е Пастир мой; няма да остана в нужда.",
+    "На зелени пасбища ме успокоява; при тихи води ме завежда.",
+    "Освежава душата ми; води ме през прави пътеки заради името Си.",
+    "Да! И в долината на мрачната сянка, ако ходя, няма да се уплаша от зло; защото Ти си с мене; Твоят жезъл и Твоята тояга – те ме утешават.",
+    "Приготвяш пред мене трапеза в присъствието на неприятелите ми, помазал си с миро главата ми; чашата ми прелива.",
+    "Наистина благост и милост ще ме следват през всичките дни на живота ми; и аз ще живея завинаги в дома Господен."
+  ],
+  en: [
+    "The Lord is my Shepherd; I will lack nothing.",
+    "He gives me rest in green pastures and leads me beside quiet waters.",
+    "He restores my soul and guides me along right paths for his name’s sake.",
+    "Even when I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff comfort me.",
+    "You prepare a table before me in the presence of my enemies; you anoint my head with oil, and my cup overflows.",
+    "Surely goodness and mercy will follow me all the days of my life, and I will dwell in the house of the Lord forever."
+  ],
+  uk: [
+    "Господь — мій Пастир; я не матиму нестачі.",
+    "Він дає мені спочинок на зелених пасовищах і веде до тихих вод.",
+    "Він відновлює мою душу й веде мене праведними стежками заради Свого імені.",
+    "Навіть коли піду долиною темної тіні, не злякаюся зла, бо Ти зі мною; Твій жезл і Твій посох утішають мене.",
+    "Ти готуєш переді мною трапезу в присутності моїх ворогів; помазуєш мою голову оливою, і моя чаша переповнена.",
+    "Так, добро й милість супроводжуватимуть мене всі дні мого життя, і я житиму в домі Господньому повіки."
+  ],
+  de: [
+    "Der Herr ist mein Hirte; mir wird nichts fehlen.",
+    "Er lässt mich auf grünen Weiden ruhen und führt mich zu stillen Wassern.",
+    "Er erquickt meine Seele und führt mich auf rechten Wegen um seines Namens willen.",
+    "Auch wenn ich durch das dunkelste Tal gehe, fürchte ich kein Unheil, denn du bist bei mir; dein Stab und deine Stütze trösten mich.",
+    "Du bereitest vor mir einen Tisch im Angesicht meiner Feinde; du salbst mein Haupt mit Öl, und mein Becher fließt über.",
+    "Güte und Barmherzigkeit werden mir alle Tage meines Lebens folgen, und ich werde für immer im Haus des Herrn wohnen."
+  ],
+  fr: [
+    "Le Seigneur est mon berger : je ne manquerai de rien.",
+    "Il me fait reposer dans de verts pâturages et me conduit près des eaux paisibles.",
+    "Il restaure mon âme et me guide sur de justes sentiers à cause de son nom.",
+    "Même si je marche dans la vallée la plus sombre, je ne crains aucun mal, car tu es avec moi ; ton bâton et ta houlette me rassurent.",
+    "Tu dresses devant moi une table en présence de mes ennemis ; tu verses de l’huile sur ma tête et ma coupe déborde.",
+    "Oui, la bonté et la grâce m’accompagneront tous les jours de ma vie, et j’habiterai pour toujours dans la maison du Seigneur."
+  ],
+  es: [
+    "El Señor es mi Pastor; nada me faltará.",
+    "Me hace descansar en verdes praderas y me conduce junto a aguas tranquilas.",
+    "Restaura mi alma y me guía por caminos rectos por amor de su nombre.",
+    "Aunque camine por el valle más oscuro, no temeré mal alguno, porque tú estás conmigo; tu vara y tu cayado me consuelan.",
+    "Preparas una mesa ante mí en presencia de mis enemigos; unges mi cabeza con aceite y mi copa rebosa.",
+    "Ciertamente, la bondad y la misericordia me seguirán todos los días de mi vida, y habitaré para siempre en la casa del Señor."
+  ]
+};
 type TrainerCopy = typeof content.en;
 
 const localizedContent: Record<Lang, TrainerCopy> = {
@@ -405,7 +456,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     ...content.en,
     langLabel: "Мова",
     menuLabel: "Меню",
-    scriptureRef: "Псалом 23:1–4",
+    scriptureRef: "Псалом 23:1–6",
     nav: [
       ["Про мене", "about"],
       ["Послуги", "services"],
@@ -547,7 +598,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     ...content.en,
     langLabel: "Sprache",
     menuLabel: "Menü",
-    scriptureRef: "Psalm 23,1–4",
+    scriptureRef: "Psalm 23,1–6",
     nav: [
       ["Über mich", "about"],
       ["Leistungen", "services"],
@@ -695,7 +746,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     ...content.en,
     langLabel: "Langue",
     menuLabel: "Menu",
-    scriptureRef: "Psaume 23:1–4",
+    scriptureRef: "Psaume 23:1–6",
     nav: [
       ["Profil", "about"],
       ["Services", "services"],
@@ -843,7 +894,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     ...content.en,
     langLabel: "Idioma",
     menuLabel: "Menú",
-    scriptureRef: "Salmo 23:1–4",
+    scriptureRef: "Salmo 23:1–6",
     nav: [
       ["Sobre mí", "about"],
       ["Servicios", "services"],
@@ -1019,18 +1070,31 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
     <>
       <header className="fixed inset-x-0 top-0 z-40 border-b border-emerald-300/10 bg-black/70 backdrop-blur-xl">
         <nav className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-2 px-3 py-2 sm:min-h-20 sm:gap-4 sm:px-6 lg:px-8">
-          <Link href={href(lang)} className="flex shrink-0 items-center gap-3">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md border border-emerald-300/30 bg-emerald-300/10">
-              <Dumbbell size={20} className="text-emerald-200" />
-            </span>
-            <span className="hidden items-center sm:flex">
-              <span className="font-display text-base tracking-[.14em] text-white sm:text-lg">TRAINING SYSTEM</span>
-              <span className="mx-3 h-4 w-px bg-emerald-200/25" aria-hidden="true" />
-              <span className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[.18em] text-emerald-200/75">
+          <div className="flex shrink-0 items-center gap-3">
+            <details className="group relative hidden lg:block">
+              <summary className="inline-flex cursor-pointer list-none items-center gap-2 rounded-md border border-emerald-200/25 bg-emerald-200/[.06] px-3 py-2 text-[10px] font-semibold uppercase tracking-[.16em] text-emerald-100 transition hover:border-emerald-200/60 hover:bg-emerald-200/10">
                 {copy.scriptureRef}
+                <ChevronDown size={13} className="transition group-open:rotate-180" />
+              </summary>
+              <div className="absolute left-0 top-full z-50 mt-3 max-h-[70vh] w-[32rem] overflow-y-auto rounded-xl border border-emerald-200/25 bg-black/95 p-6 shadow-[0_24px_80px_rgba(0,0,0,.75)] backdrop-blur-xl">
+                <p className="font-display text-2xl text-white">{copy.scriptureRef}</p>
+                <div className="mt-5 grid gap-4">
+                  {scriptureVerses[lang].map((verse, index) => (
+                    <p key={verse} className="grid grid-cols-[1.5rem_1fr] gap-2 text-sm leading-6 text-white/75">
+                      <span className="font-display text-lg text-emerald-200">{index + 1}</span>
+                      <span>{verse}</span>
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </details>
+            <Link href={href(lang)} className="flex shrink-0 items-center gap-3">
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md border border-emerald-300/30 bg-emerald-300/10">
+                <Dumbbell size={20} className="text-emerald-200" />
               </span>
-            </span>
-          </Link>
+              <span className="hidden font-display text-base tracking-[.14em] text-white sm:block sm:text-lg">TRAINING SYSTEM</span>
+            </Link>
+          </div>
           <details className="relative lg:hidden">
             <summary className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 px-3 py-2 text-sm text-white transition hover:border-emerald-200/40">
               {copy.menuLabel} <ChevronDown size={16} />
