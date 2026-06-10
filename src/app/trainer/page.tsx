@@ -1136,6 +1136,22 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
               {copy.menuLabel} <ChevronDown size={16} />
             </summary>
             <div className="fixed left-3 right-3 top-16 rounded-2xl border border-white/10 bg-black/95 p-4 shadow-2xl sm:absolute sm:left-auto sm:right-0 sm:top-full sm:mt-2 sm:w-[18rem]">
+              <details className="group mb-3 border-b border-white/10 pb-3">
+                <summary className="flex cursor-pointer list-none items-center justify-between rounded-xl border border-emerald-200/25 bg-emerald-200/[.06] px-4 py-3 text-xs font-semibold uppercase tracking-[.14em] text-emerald-100">
+                  {copy.scriptureRef}
+                  <ChevronDown size={15} className="transition group-open:rotate-180" />
+                </summary>
+                <div className="mt-3 max-h-[55vh] overflow-y-auto rounded-xl border border-emerald-200/15 bg-white/[.03] p-4">
+                  <div className="grid gap-3">
+                    {scriptureVerses[lang].map((verse, index) => (
+                      <p key={verse} className="grid grid-cols-[1.25rem_1fr] gap-2 text-xs leading-5 text-white/75">
+                        <span className="font-display text-base text-emerald-200">{index + 1}</span>
+                        <span>{verse}</span>
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </details>
               <div className="grid gap-2">
                 {copy.nav.map(([label, id]) => (
                   <Link key={id} href={href(lang, id)} className="rounded-full px-4 py-2 text-sm text-white transition hover:bg-white/10">
