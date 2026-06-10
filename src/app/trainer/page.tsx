@@ -101,6 +101,10 @@ const promoImages = {
 const whatsappUrl = "https://api.whatsapp.com/send?phone=447719799244";
 const whatsappDisplay = "+44 7719 799244";
 
+function whatsappMessageUrl(message: string) {
+  return `${whatsappUrl}&text=${encodeURIComponent(message)}`;
+}
+
 const content = {
   bg: {
     langLabel: "Език",
@@ -120,6 +124,11 @@ const content = {
     heroPrimary: "Запази консултация",
     heroSecondary: "Виж услугите",
     whatsappCta: "Пиши в WhatsApp",
+    chatTitle: "Как мога да помогна?",
+    chatPrompt: "Избери тема",
+    chatConsultation: "Запази консултация",
+    chatTraining: "Питай за тренировки",
+    chatNutrition: "Питай за хранителен режим",
     focusTitle: "Бокс + хранене",
     stats: [
       { value: "12+", label: "тренировки седмично" },
@@ -261,6 +270,11 @@ const content = {
     heroPrimary: "Book a consultation",
     heroSecondary: "View services",
     whatsappCta: "Message on WhatsApp",
+    chatTitle: "How can I help?",
+    chatPrompt: "Choose a topic",
+    chatConsultation: "Book a consultation",
+    chatTraining: "Ask about training",
+    chatNutrition: "Ask about nutrition",
     focusTitle: "Boxing + nutrition",
     stats: [
       { value: "12+", label: "weekly sessions" },
@@ -471,6 +485,11 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     heroPrimary: "Записатися на консультацію",
     heroSecondary: "Переглянути послуги",
     whatsappCta: "Написати у WhatsApp",
+    chatTitle: "Чим можу допомогти?",
+    chatPrompt: "Оберіть тему",
+    chatConsultation: "Записатися на консультацію",
+    chatTraining: "Запитати про тренування",
+    chatNutrition: "Запитати про харчування",
     focusTitle: "Бокс + харчування",
     stats: [
       { value: "12+", label: "занять на тиждень" },
@@ -613,6 +632,11 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     heroPrimary: "Beratung buchen",
     heroSecondary: "Leistungen ansehen",
     whatsappCta: "Auf WhatsApp schreiben",
+    chatTitle: "Wie kann ich helfen?",
+    chatPrompt: "Thema auswählen",
+    chatConsultation: "Beratung buchen",
+    chatTraining: "Frage zum Training",
+    chatNutrition: "Frage zur Ernährung",
     focusTitle: "Boxen + Ernährung",
     stats: [
       { value: "1:1", label: "Personal Coaching" },
@@ -761,6 +785,11 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     heroPrimary: "Réserver une consultation",
     heroSecondary: "Voir les services",
     whatsappCta: "Écrire sur WhatsApp",
+    chatTitle: "Comment puis-je vous aider ?",
+    chatPrompt: "Choisissez un sujet",
+    chatConsultation: "Réserver une consultation",
+    chatTraining: "Question sur l'entraînement",
+    chatNutrition: "Question sur la nutrition",
     focusTitle: "Boxe + nutrition",
     stats: [
       { value: "1:1", label: "Coaching privé" },
@@ -909,6 +938,11 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     heroPrimary: "Reservar una consulta",
     heroSecondary: "Ver servicios",
     whatsappCta: "Escribir por WhatsApp",
+    chatTitle: "¿Cómo puedo ayudarte?",
+    chatPrompt: "Elige un tema",
+    chatConsultation: "Reservar una consulta",
+    chatTraining: "Preguntar por entrenamiento",
+    chatNutrition: "Preguntar por nutrición",
     focusTitle: "Boxeo + nutrición",
     stats: [
       { value: "1:1", label: "Coaching personal" },
@@ -1065,6 +1099,8 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
   const lang = getLang(searchParams);
   const copy = localizedContent[lang];
   const paymentStatus = getPaymentStatus(searchParams);
+  const trainingChatUrl = whatsappMessageUrl(copy.chatTraining);
+  const nutritionChatUrl = whatsappMessageUrl(copy.chatNutrition);
 
   return (
     <>
@@ -1445,15 +1481,45 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
           <p>{copy.footer}</p>
         </div>
       </footer>
-      <Link
-        href={whatsappUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="fixed bottom-5 right-5 z-50 hidden items-center justify-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white sm:inline-flex"
-      >
-        <MessageCircle size={18} />
-        <span>WhatsApp {whatsappDisplay}</span>
-      </Link>
+      <details className="group fixed bottom-5 right-5 z-50">
+        <summary
+          aria-label={copy.chatTitle}
+          className="ml-auto flex h-14 w-14 cursor-pointer list-none items-center justify-center rounded-full bg-emerald-200 text-black shadow-[0_16px_50px_rgba(0,0,0,.55)] transition hover:scale-105 hover:bg-white"
+        >
+          <MessageCircle size={23} />
+        </summary>
+        <div className="absolute bottom-[4.25rem] right-0 w-[min(21rem,calc(100vw-2.5rem))] rounded-2xl border border-emerald-200/25 bg-black/95 p-4 shadow-[0_24px_80px_rgba(0,0,0,.75)] backdrop-blur-xl">
+          <p className="font-display text-2xl text-white">{copy.chatTitle}</p>
+          <p className="mt-1 text-xs uppercase tracking-[.18em] text-emerald-200/70">{copy.chatPrompt}</p>
+          <div className="mt-4 grid gap-2">
+            <Link
+              href={href(lang, "booking")}
+              className="flex items-center justify-between rounded-xl bg-emerald-200 px-4 py-3 text-sm font-semibold text-black transition hover:bg-white"
+            >
+              {copy.chatConsultation}
+              <CalendarCheck size={17} />
+            </Link>
+            <Link
+              href={trainingChatUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-between rounded-xl border border-white/10 px-4 py-3 text-sm text-white transition hover:border-emerald-200/45 hover:text-emerald-100"
+            >
+              {copy.chatTraining}
+              <Dumbbell size={17} />
+            </Link>
+            <Link
+              href={nutritionChatUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-between rounded-xl border border-white/10 px-4 py-3 text-sm text-white transition hover:border-emerald-200/45 hover:text-emerald-100"
+            >
+              {copy.chatNutrition}
+              <Apple size={17} />
+            </Link>
+          </div>
+        </div>
+      </details>
     </>
   );
 }
