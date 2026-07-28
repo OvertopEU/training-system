@@ -512,19 +512,19 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
             ))}
           </div>
           <div className="flex flex-wrap items-center gap-2">
-            <div className="hidden sm:flex flex-wrap items-center gap-1 rounded-full border border-white/10 bg-white/[.04] p-1 text-xs text-white/65">
+            <div className="flex max-w-[58vw] items-center gap-1 overflow-x-auto rounded-full border border-white/10 bg-white/[.04] p-1 text-[11px] text-white/65 sm:max-w-none sm:flex-wrap sm:text-xs">
               <Globe2 size={14} className="ml-1 text-emerald-200 sm:ml-2" />
               {supportedLangs.map((item) => (
                 <Link
                   key={item}
                   href={href(item)}
-                  className={`rounded-full px-2.5 py-1.5 uppercase transition sm:px-3 ${item === lang ? "bg-emerald-200 text-black" : "hover:text-white"}`}
+                  className={`whitespace-nowrap rounded-full px-2.5 py-1.5 uppercase transition sm:px-3 ${item === lang ? "bg-emerald-200 text-black" : "hover:text-white"}`}
                 >
                   {item}
                 </Link>
               ))}
             </div>
-            <Link href={href(lang, "booking")} className="rounded-full border border-emerald-200/40 px-3 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200 hover:text-black sm:px-4">
+            <Link href={href(lang, "booking")} className="whitespace-nowrap rounded-full border border-emerald-200/40 px-3 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200 hover:text-black sm:px-4">
               {copy.headerCta}
             </Link>
             <Link
@@ -545,8 +545,8 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_22%,rgba(16,185,129,.16),transparent_28%)]" />
         <div className="mx-auto grid min-h-[calc(100vh-9rem)] max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_.95fr]">
           <div>
-            <p className="mb-4 text-xs uppercase tracking-[.4em] text-emerald-200">{copy.heroEyebrow}</p>
-            <h1 className="font-display text-5xl leading-[1.03] text-white md:text-7xl">{copy.heroTitle}</h1>
+            <p className="mb-4 text-xs uppercase tracking-[.28em] text-emerald-200 sm:tracking-[.4em]">{copy.heroEyebrow}</p>
+            <h1 className="font-display text-4xl leading-[1.03] text-white sm:text-5xl md:text-7xl">{copy.heroTitle}</h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70">{copy.heroText}</p>
             <div className="mt-8 flex flex-col gap-3">
               <div className="flex flex-col gap-3 sm:flex-row">
@@ -565,7 +565,7 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
 
           <div className="relative">
             <div className="overflow-hidden rounded-lg border border-emerald-200/20 bg-white/[.04] shadow-[0_30px_100px_rgba(0,0,0,.5)]">
-              <div className="relative aspect-[4/5] min-h-[520px]">
+              <div className="relative aspect-[4/5] min-h-[360px] sm:min-h-[520px]">
                 <Image
                   src={promoImages.cover}
                   alt={copy.coverTitle}
@@ -807,17 +807,19 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
         href={whatsappUrl}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-20 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white"
+        aria-label={`WhatsApp ${whatsappDisplay}`}
+        className="fixed bottom-20 right-5 z-50 hidden h-12 w-12 items-center justify-center rounded-full bg-green-500 text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white sm:inline-flex"
       >
         <MessageCircle size={18} />
-        <span>WhatsApp {whatsappDisplay}</span>
+        <span className="sr-only">WhatsApp {whatsappDisplay}</span>
       </Link>
       <Link
         href={phoneUrl}
-        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-emerald-200 px-4 py-3 text-sm font-medium text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white"
+        aria-label={`Call ${whatsappDisplay}`}
+        className="fixed bottom-5 right-5 z-50 hidden h-12 w-12 items-center justify-center rounded-full bg-emerald-200 text-black shadow-[0_16px_50px_rgba(0,0,0,.45)] transition hover:bg-white sm:inline-flex"
       >
         <Phone size={18} />
-        <span>Call {whatsappDisplay}</span>
+        <span className="sr-only">Call {whatsappDisplay}</span>
       </Link>
     </>
   );
