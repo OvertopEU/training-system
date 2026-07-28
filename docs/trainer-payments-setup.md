@@ -1,86 +1,33 @@
-# Trainer Payments Setup
+# Trainer Nutrition Plan Payment Setup
 
-Use this checklist to finish Stripe payments for `/trainer`.
+Use this checklist to connect the nutrition plan checkout for `/trainer`.
 
-## Current Stripe Objects
+## Stripe Object
 
-- Stripe account: `acct_1TcVwX2KgNuVVEvF`
-- Deposit price: `price_1TcdGM2KgNuVVEvF950joPNX`
-- Amount: `2000` minor units, `GBP 20.00`
+- Product: nutrition plan
+- Price ID env variable: `TRAINER_NUTRITION_PRICE_ID`
 - Production site URL: `https://training-system.org`
-- Checkout route: `POST /api/trainer/checkout`
-- Webhook route: `POST /api/webhooks/stripe`
+- Checkout route: `POST /api/trainer/nutrition-checkout`
 
 ## Required `.env` Values
 
-Replace the placeholder values in `.env`:
-
 ```bash
 STRIPE_SECRET_KEY="sk_test_..."
-STRIPE_WEBHOOK_SECRET="whsec_..."
-TRAINER_DEPOSIT_PRICE_ID="price_1TcdGM2KgNuVVEvF950joPNX"
-TRAINER_DEPOSIT_AMOUNT_CENTS="2000"
-TRAINER_PAYMENT_CURRENCY="gbp"
+TRAINER_NUTRITION_PRICE_ID="price_..."
 NEXT_PUBLIC_SITE_URL="https://training-system.org"
-ADMIN_EMAIL="your-admin-email@example.com"
-SMTP_HOST="your-smtp-host"
-SMTP_PORT="587"
-SMTP_USER="your-smtp-user"
-SMTP_PASS="your-smtp-password"
-EMAIL_FROM="Training System <hello@your-domain.com>"
 ```
 
 ## Stripe Dashboard Steps
 
-1. Open Stripe Dashboard > Developers > API keys.
-2. Copy the secret key for the same mode as the price ID.
-3. Put it in `.env` as `STRIPE_SECRET_KEY`.
-4. Open Stripe Dashboard > Developers > Webhooks.
-5. Add endpoint:
-
-```text
-https://training-system.org/api/webhooks/stripe
-```
-
-6. Select this event:
-
-```text
-checkout.session.completed
-```
-
-7. Copy the endpoint signing secret and put it in `.env` as `STRIPE_WEBHOOK_SECRET`.
-
-## Local Test
-
-For local webhook testing, use Stripe CLI:
-
-```bash
-stripe listen --forward-to localhost:3000/api/webhooks/stripe
-```
-
-Copy the `whsec_...` shown by the CLI into `.env`.
-
-Then run:
-
-```bash
-npm run dev
-```
-
-Open:
-
-```text
-http://localhost:3000/trainer
-```
-
-Submit the booking form. You should be redirected to Stripe Checkout for the `GBP 20.00` deposit.
+1. Open Stripe Dashboard > Product catalog.
+2. Open the nutrition plan product.
+3. Copy the active Price ID.
+4. Put it in `.env` and in the Vercel environment as `TRAINER_NUTRITION_PRICE_ID`.
+5. Make sure `STRIPE_SECRET_KEY` is set in the same mode as the Price ID.
 
 ## Verification
 
-After payment succeeds:
-
-- Stripe redirects back to `/trainer?...payment=success#booking`.
-- The page shows the payment success message.
-- Stripe sends `checkout.session.completed` to `/api/webhooks/stripe`.
-- The webhook sends an admin email with the trainer booking details.
-
-If SMTP is not configured, the app logs email output in development instead of sending a real email.
+1. Run the site.
+2. Open `/trainer#nutrition`.
+3. Click the nutrition plan payment button.
+4. Stripe Checkout should open with the final price for the plan.

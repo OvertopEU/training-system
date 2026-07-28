@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { Section } from "@/components/section";
 import { TrainerBookingForm } from "@/components/trainer-booking-form";
+import { TrainerPlanCheckoutButton } from "@/components/trainer-plan-checkout-button";
 
 type Lang = "en" | "bg" | "de" | "fr" | "es";
 
@@ -198,6 +199,15 @@ const content = {
     nutritionTitle: "Личен диетичен режим за правилно хранене",
     nutritionCardTitle: "Без крайности. С ясни правила.",
     nutritionCardText: "Режимът се изгражда около храните, които можеш да купиш, приготвиш и повториш. Целта е контрол върху калориите, достатъчно протеин, стабилна енергия и по-малко импровизация.",
+    nutritionOfferBadge: "готов план",
+    nutritionOfferTitle: "Хранителен режим с крайна цена",
+    nutritionOfferText: "Започни директно с персонален режим, изграден около твоя график, цел и реални навици. Плащането е за целия план с ясна крайна цена.",
+    nutritionOfferItems: ["индивидуален хранителен режим", "ясни правила и примерни менюта", "онлайн комуникация за уточнения"],
+    nutritionCheckout: {
+      button: "Купи хранителен режим",
+      loading: "Отварям Stripe...",
+      error: "Не успях да отворя плащането. Пиши ми в WhatsApp."
+    },
     nutrition: [
       { title: "Баланс на макроси", text: "Ясен дневен прием на протеин, въглехидрати и мазнини според целта и графика." },
       { title: "Реални храни", text: "Меню с достъпни продукти, лесна подготовка и варианти за дни с повече движение." },
@@ -323,6 +333,15 @@ const content = {
     nutritionTitle: "Personal nutrition plan for better eating",
     nutritionCardTitle: "No extremes. Clear rules.",
     nutritionCardText: "The plan is built around foods you can buy, prepare and repeat. The goal is calorie control, enough protein, steady energy and less improvisation.",
+    nutritionOfferBadge: "ready plan",
+    nutritionOfferTitle: "Nutrition plan with final price",
+    nutritionOfferText: "Start directly with a personal nutrition plan built around your schedule, goal and real habits. This is full-plan payment with a clear final price.",
+    nutritionOfferItems: ["individual nutrition plan", "clear rules and sample menus", "online communication for details"],
+    nutritionCheckout: {
+      button: "Buy nutrition plan",
+      loading: "Opening Stripe...",
+      error: "I could not open the payment. Message me on WhatsApp."
+    },
     nutrition: [
       { title: "Macro balance", text: "Clear daily protein, carbohydrate and fat targets based on your goal and schedule." },
       { title: "Real food", text: "A menu with accessible products, simple preparation and options for more active days." },
@@ -389,6 +408,15 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       "WhatsApp Kontakt fur schnelle Abstimmung",
       "Klare Abstimmung von Plan, Preis und Start"
     ],
+    nutritionOfferBadge: "fertiger Plan",
+    nutritionOfferTitle: "Ernahrungsplan mit festem Endpreis",
+    nutritionOfferText: "Starte direkt mit einem personlichen Ernahrungsplan, der zu deinem Zeitplan, Ziel und deinen realen Gewohnheiten passt. Das ist die Zahlung fur den kompletten Plan, keine Anzahlung.",
+    nutritionOfferItems: ["individueller Ernahrungsplan", "klare Regeln und Beispielmenus", "Online-Kommunikation fur Details"],
+    nutritionCheckout: {
+      button: "Ernahrungsplan kaufen",
+      loading: "Stripe wird geoffnet...",
+      error: "Die Zahlung konnte nicht geoffnet werden. Schreib mir auf WhatsApp."
+    },
     directContact: `Direkt: ${whatsappDisplay}`,
     form: {
       ...content.en.form,
@@ -439,6 +467,15 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       "Contact WhatsApp pour organiser rapidement",
       "Confirmation claire du plan, du prix et du début"
     ],
+    nutritionOfferBadge: "plan pret",
+    nutritionOfferTitle: "Plan nutritionnel avec prix final",
+    nutritionOfferText: "Commence directement avec un plan nutritionnel personnel, adapte a ton emploi du temps, ton objectif et tes habitudes reelles. C'est le paiement du plan complet, pas un acompte.",
+    nutritionOfferItems: ["plan nutritionnel individuel", "regles claires et exemples de menus", "communication en ligne pour les details"],
+    nutritionCheckout: {
+      button: "Acheter le plan nutritionnel",
+      loading: "Ouverture de Stripe...",
+      error: "Impossible d'ouvrir le paiement. Ecris-moi sur WhatsApp."
+    },
     directContact: `Direct: ${whatsappDisplay}`,
     form: {
       ...content.en.form,
@@ -489,6 +526,15 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       "Contacto por WhatsApp para organizar rapido",
       "Confirmación clara del plan, precio e inicio"
     ],
+    nutritionOfferBadge: "plan listo",
+    nutritionOfferTitle: "Plan nutricional con precio final",
+    nutritionOfferText: "Empieza directamente con un plan nutricional personal, creado alrededor de tu horario, objetivo y habitos reales. Es el pago del plan completo con precio final claro.",
+    nutritionOfferItems: ["plan nutricional individual", "reglas claras y menus de ejemplo", "comunicacion online para detalles"],
+    nutritionCheckout: {
+      button: "Comprar plan nutricional",
+      loading: "Abriendo Stripe...",
+      error: "No pude abrir el pago. Escribeme por WhatsApp."
+    },
     directContact: `Directo: ${whatsappDisplay}`,
     form: {
       ...content.en.form,
@@ -763,6 +809,20 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
             <Utensils className="text-emerald-200" size={36} />
             <h3 className="mt-6 font-display text-4xl">{copy.nutritionCardTitle}</h3>
             <p className="mt-5 text-base leading-8 text-white/68">{copy.nutritionCardText}</p>
+            <div className="mt-7 rounded-lg border border-emerald-200/25 bg-emerald-200/[.06] p-5">
+              <p className="text-xs uppercase tracking-[.28em] text-emerald-100">{copy.nutritionOfferBadge}</p>
+              <h4 className="mt-3 font-display text-3xl text-white">{copy.nutritionOfferTitle}</h4>
+              <p className="mt-4 text-sm leading-7 text-white/68">{copy.nutritionOfferText}</p>
+              <div className="mt-5 grid gap-2">
+                {copy.nutritionOfferItems.map((item) => (
+                  <p key={item} className="flex items-center gap-3 rounded-md border border-white/10 bg-black/25 px-3 py-2 text-sm text-white/72">
+                    <CheckCircle2 size={16} className="shrink-0 text-emerald-200" />
+                    {item}
+                  </p>
+                ))}
+              </div>
+              <TrainerPlanCheckoutButton copy={copy.nutritionCheckout} lang={lang} />
+            </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {copy.nutrition.map((item) => (
