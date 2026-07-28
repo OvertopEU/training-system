@@ -214,7 +214,7 @@ const content = {
       { icon: icons.plan, title: "План", text: "Получаваш структура за тренировки, хранене и възстановяване." },
       { icon: icons.progress, title: "Прогрес", text: "Лично следя резултатите ти и настройвам плана, за да вървиш стабилно напред." }
     ],
-    footer: "Тренировки, онлайн инструкции, бокс подготовка и хранителни режими."
+    footer: "Всичко в този сайт е изградено и потвърдено лично от мен, Svetoslav Milushev. Плановете и цялостната структура се предоставят лично от мен."
   },
   en: {
     langLabel: "Language",
@@ -333,7 +333,7 @@ const content = {
       { icon: icons.plan, title: "Plan", text: "You receive a structure for training, nutrition and recovery." },
       { icon: icons.progress, title: "Progress", text: "I personally track your results and adjust the plan so you keep moving forward." }
     ],
-    footer: "Training, online instructions, boxing preparation and nutrition plans."
+    footer: "Everything on this site is built and confirmed personally by me, Svetoslav Milushev. The plans and full structure are provided directly by me."
   }
 };
 
@@ -385,7 +385,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     nutritionOfferText: "Starte direkt mit einem personlichen Ernahrungsplan, der zu deinem Zeitplan, Ziel und deinen realen Gewohnheiten passt. Das ist die Zahlung fur den kompletten Plan, keine Anzahlung.",
     nutritionOfferItems: ["individueller Ernahrungsplan", "klare Regeln und Beispielmenus", "Online-Kommunikation fur Details"],
     directContact: `Direkt: ${whatsappDisplay}`,
-    footer: "Training, Online-Anleitung, Boxvorbereitung und Ernahrungsplane."
+    footer: "Alles auf dieser Website wurde von mir, Svetoslav Milushev, persönlich erstellt und bestätigt. Die Pläne und die gesamte Struktur werden direkt von mir bereitgestellt."
   },
   fr: {
     ...content.en,
@@ -428,7 +428,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     nutritionOfferText: "Commence directement avec un plan nutritionnel personnel, adapte a ton emploi du temps, ton objectif et tes habitudes reelles. C'est le paiement du plan complet, pas un acompte.",
     nutritionOfferItems: ["plan nutritionnel individuel", "regles claires et exemples de menus", "communication en ligne pour les details"],
     directContact: `Direct: ${whatsappDisplay}`,
-    footer: "Entrainement, coaching en ligne, preparation boxe et plans nutritionnels."
+    footer: "Tout ce qui se trouve sur ce site est construit et confirmé personnellement par moi, Svetoslav Milushev. Les plans et toute la structure sont fournis directement par moi."
   },
   es: {
     ...content.en,
@@ -471,7 +471,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     nutritionOfferText: "Empieza directamente con un plan nutricional personal, creado alrededor de tu horario, objetivo y habitos reales. Es el pago del plan completo con precio final claro.",
     nutritionOfferItems: ["plan nutricional individual", "reglas claras y menus de ejemplo", "comunicacion online para detalles"],
     directContact: `Directo: ${whatsappDisplay}`,
-    footer: "Entrenamiento, coaching online, preparacion de boxeo y planes nutricionales."
+    footer: "Todo lo que aparece en este sitio está creado y confirmado personalmente por mí, Svetoslav Milushev. Los planes y toda la estructura son proporcionados directamente por mí."
   }
 };
 
@@ -574,6 +574,10 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
                   sizes="(min-width: 1024px) 42vw, 100vw"
                   className="object-cover object-[50%_18%]"
                 />
+              </div>
+              <div className="border-t border-emerald-200/20 bg-emerald-200/[.08] p-4">
+                <p className="text-[10px] uppercase tracking-[.24em] text-emerald-100">Svetoslav Milushev</p>
+                <p className="mt-2 text-sm leading-6 text-white/82">{copy.footer}</p>
               </div>
               <div className="grid gap-2 border-t border-white/10 bg-black/55 p-4 sm:grid-cols-3">
                 {copy.stats.map((item) => (
@@ -800,7 +804,7 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
       <footer className="relative z-10 border-t border-emerald-300/10 bg-black px-4 py-10">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
           <p className="font-display text-xl tracking-[.16em] text-white">TRAINING SYSTEM</p>
-          <p>{copy.footer}</p>
+          <p>Svetoslav Milushev</p>
         </div>
       </footer>
       <Link
