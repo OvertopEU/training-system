@@ -22,42 +22,38 @@ type TrainerLang = "en" | "bg" | "uk" | "de" | "fr" | "es";
 
 const messages = {
   bg: {
-    starting: "Подготвям плащане...",
-    failed: "Не успях да стартирам плащането. Опитай пак.",
+    starting: "Отварям WhatsApp...",
     invalid: "Попълни всички задължителни полета."
   },
   en: {
-    starting: "Preparing payment...",
-    failed: "Could not start payment. Please try again.",
+    starting: "Opening WhatsApp...",
     invalid: "Please complete all required fields."
   },
   uk: {
-    starting: "Підготовка оплати...",
-    failed: "Не вдалося розпочати оплату. Спробуйте ще раз.",
+    starting: "Відкриваю WhatsApp...",
     invalid: "Заповніть усі обов'язкові поля."
   },
   de: {
-    starting: "Zahlung wird vorbereitet...",
-    failed: "Zahlung konnte nicht gestartet werden. Bitte versuche es erneut.",
+    starting: "WhatsApp wird geöffnet...",
     invalid: "Bitte fülle alle Pflichtfelder aus."
   },
   fr: {
-    starting: "Préparation du paiement...",
-    failed: "Impossible de lancer le paiement. Veuillez réessayer.",
+    starting: "Ouverture de WhatsApp...",
     invalid: "Veuillez remplir tous les champs obligatoires."
   },
   es: {
-    starting: "Preparando el pago...",
-    failed: "No se pudo iniciar el pago. Inténtalo de nuevo.",
+    starting: "Abriendo WhatsApp...",
     invalid: "Completa todos los campos obligatorios."
   }
 };
+
+const whatsappUrl = "https://api.whatsapp.com/send?phone=447719799244";
 
 export function TrainerBookingForm({ copy, lang }: { copy: TrainerFormCopy; lang: TrainerLang }) {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  async function submit(event: React.FormEvent<HTMLFormElement>) {
+  function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const payload = {
@@ -65,8 +61,7 @@ export function TrainerBookingForm({ copy, lang }: { copy: TrainerFormCopy; lang
       contact: form.get("contact")?.toString().trim() ?? "",
       service: form.get("service")?.toString().trim() ?? "",
       day: form.get("day")?.toString().trim() ?? "",
-      goal: form.get("goal")?.toString().trim() ?? "",
-      lang
+      goal: form.get("goal")?.toString().trim() ?? ""
     };
 
     if (!payload.name || !payload.contact || !payload.service || !payload.day) {
@@ -77,29 +72,16 @@ export function TrainerBookingForm({ copy, lang }: { copy: TrainerFormCopy; lang
     setIsSubmitting(true);
     setMessage(messages[lang].starting);
 
-    let data: { url?: string; error?: string } = {};
-    let response: Response;
+    const request = [
+      "Training System request",
+      `Name: ${payload.name}`,
+      `Contact: ${payload.contact}`,
+      `Service: ${payload.service}`,
+      `Preferred day: ${payload.day}`,
+      payload.goal ? `Goal: ${payload.goal}` : ""
+    ].filter(Boolean).join("\n");
 
-    try {
-      response = await fetch("/api/trainer/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-      data = await response.json();
-    } catch {
-      setIsSubmitting(false);
-      setMessage(messages[lang].failed);
-      return;
-    }
-
-    if (!response.ok || !data.url) {
-      setIsSubmitting(false);
-      setMessage(data.error?.toString() ?? messages[lang].failed);
-      return;
-    }
-
-    window.location.href = data.url;
+    window.location.href = `${whatsappUrl}&text=${encodeURIComponent(request)}`;
   }
 
   return (

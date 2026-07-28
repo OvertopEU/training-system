@@ -8,7 +8,6 @@ import {
   CalendarCheck,
   CheckCircle2,
   ClipboardList,
-  CreditCard,
   Dumbbell,
   Flame,
   Globe2,
@@ -21,7 +20,6 @@ import {
   Timer,
   Trophy,
   Utensils,
-  Wallet
 } from "lucide-react";
 import { Section } from "@/components/section";
 import { TrainerBookingForm } from "@/components/trainer-booking-form";
@@ -80,8 +78,6 @@ const icons = {
   assessment: Target,
   plan: CalendarCheck,
   progress: Trophy,
-  deposit: Wallet,
-  payment: CreditCard,
   confirm: CheckCircle2
 };
 
@@ -107,13 +103,12 @@ const content = {
     nav: [
       ["За мен", "about"],
       ["Услуги", "services"],
-      ["Буукинг", "booking"],
-      ["Плащане", "payment"]
+      ["Буукинг", "booking"]
     ],
     headerCta: "Запази",
     heroEyebrow: "тренировки, бокс и правилно хранене",
     heroTitle: "Персонален план за тяло, сила и дисциплина",
-    heroText: "Самостоятелна система за лични бокс тренировки, онлайн фитнес инструкции, хранителни режими, буукинг, депозит и плащане.",
+    heroText: "Самостоятелна система за лични бокс тренировки, онлайн фитнес инструкции, хранителни режими и чисти планове с крайна цена.",
     heroPrimary: "Запази консултация",
     heroSecondary: "Виж услугите",
     whatsappCta: "Пиши в WhatsApp",
@@ -182,7 +177,7 @@ const content = {
     bookingEyebrow: "буукинг",
     bookingTitle: "Записване за тренировка или онлайн режим",
     bookingCardTitle: "Избери услуга, цел и удобен график.",
-    bookingCardText: "Буукинг секцията е отделна за тренировъчните услуги: бокс, онлайн фитнес инструкции или диетичен режим. След заявка се потвърждава час, депозит и начин на комуникация.",
+    bookingCardText: "Буукинг секцията е отделна за тренировъчните услуги: бокс, онлайн фитнес инструкции или диетичен режим. След заявка уточняваме подходящ план, крайна цена и начин на комуникация.",
     bookingItems: ["Първа консултация", "Индивидуална тренировка", "Онлайн режим", "Хранителен план"],
     directContact: `За директна връзка пиши в WhatsApp: ${whatsappDisplay}.`,
     form: {
@@ -197,7 +192,7 @@ const content = {
       dayPlaceholder: "Например: вторник",
       goal: "Цел",
       goalPlaceholder: "Сила, отслабване, бокс техника, хранене...",
-      submit: "Запази и плати депозит"
+      submit: "Изпрати запитване"
     },
     nutritionEyebrow: "хранене",
     nutritionTitle: "Личен диетичен режим за правилно хранене",
@@ -226,27 +221,14 @@ const content = {
       { icon: icons.plan, title: "План", text: "Получаваш структура за тренировки, хранене и възстановяване." },
       { icon: icons.progress, title: "Прогрес", text: "Следим резултатите и настройваме плана, за да вървиш стабилно напред." }
     ],
-    paymentEyebrow: "депозит и плащане",
-    paymentTitle: "Потвърждение преди старт",
-    paymentItems: [
-      { icon: icons.deposit, title: "Депозит", text: "20% депозит за потвърждение на час или старт на онлайн режим." },
-      { icon: icons.payment, title: "Плащане", text: "Подготвена секция за карта, банков превод или друг метод по избор." },
-      { icon: icons.confirm, title: "Потвърждение", text: "След плащане клиентът получава потвърждение и следващи стъпки." }
-    ],
-    depositTitle: "Депозит 20%",
-    depositText: "Запазва час или активира изготвянето на онлайн тренировъчен и хранителен режим.",
-    depositCta: "Към буукинг",
-    paymentSuccess: "Плащането е прието. Ще получиш потвърждение и следващи стъпки.",
-    paymentCancelled: "Плащането беше прекъснато. Можеш да опиташ отново, когато си готов.",
-    footer: "Тренировки, онлайн инструкции, бокс подготовка, хранителни режими и плащане."
+    footer: "Тренировки, онлайн инструкции, бокс подготовка и хранителни режими."
   },
   en: {
     langLabel: "Language",
     nav: [
       ["About", "about"],
       ["Services", "services"],
-      ["Booking", "booking"],
-      ["Payment", "payment"]
+      ["Booking", "booking"]
     ],
     headerCta: "Book",
     heroEyebrow: "training, boxing and nutrition",
@@ -320,7 +302,7 @@ const content = {
     bookingEyebrow: "booking",
     bookingTitle: "Book a training session or online plan",
     bookingCardTitle: "Choose a service, goal and schedule.",
-    bookingCardText: "The booking area is dedicated to training services: boxing, online fitness instructions or a nutrition plan. After submitting, the time, deposit and communication method are confirmed.",
+    bookingCardText: "The booking area is dedicated to training services: boxing, online fitness instructions or a nutrition plan. After submitting, we confirm the right plan, final price and communication method.",
     bookingItems: ["Initial consultation", "Private session", "Online plan", "Nutrition plan"],
     directContact: `For direct contact, message on WhatsApp: ${whatsappDisplay}.`,
     form: {
@@ -335,7 +317,7 @@ const content = {
       dayPlaceholder: "Example: Tuesday",
       goal: "Goal",
       goalPlaceholder: "Strength, fat loss, boxing technique, nutrition...",
-      submit: "Book and pay deposit"
+      submit: "Send request"
     },
     nutritionEyebrow: "nutrition",
     nutritionTitle: "Personal nutrition plan for better eating",
@@ -364,19 +346,7 @@ const content = {
       { icon: icons.plan, title: "Plan", text: "You receive a structure for training, nutrition and recovery." },
       { icon: icons.progress, title: "Progress", text: "We track results and adjust the plan so you keep moving forward." }
     ],
-    paymentEyebrow: "deposit and payment",
-    paymentTitle: "Confirmation before starting",
-    paymentItems: [
-      { icon: icons.deposit, title: "Deposit", text: "20% deposit to confirm a session or start an online plan." },
-      { icon: icons.payment, title: "Payment", text: "Prepared area for card, bank transfer or another chosen method." },
-      { icon: icons.confirm, title: "Confirmation", text: "After payment, the client receives confirmation and next steps." }
-    ],
-    depositTitle: "20% deposit",
-    depositText: "Reserves a session or activates the creation of an online training and nutrition plan.",
-    depositCta: "Go to booking",
-    paymentSuccess: "Payment received. You will get confirmation and next steps.",
-    paymentCancelled: "Payment was cancelled. You can try again when you are ready.",
-    footer: "Training, online instructions, boxing preparation, nutrition plans and payment."
+    footer: "Training, online instructions, boxing preparation and nutrition plans."
   }
 };
 
@@ -393,8 +363,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     nav: [
       ["Uber mich", "about"],
       ["Leistungen", "services"],
-      ["Buchung", "booking"],
-      ["Zahlung", "payment"]
+      ["Buchung", "booking"]
     ],
     headerCta: "Buchen",
     heroEyebrow: "Boxen, Fitness und Ernahrung",
@@ -408,7 +377,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     stats: [
       { value: "1:1", label: "Personal Coaching" },
       { value: "Online", label: "Training und Ernahrung" },
-      { value: "20%", label: "Buchungsdepot" }
+      { value: "Plan", label: "fester Endpreis" }
     ],
     focusItems: ["Boxtechnik", "Kraft und Kondition", "Online Coaching", "Ernahrungsplanung"],
     bookingEyebrow: "Buchung",
@@ -418,8 +387,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       "Sende deine Daten, dein Ziel und deinen bevorzugten Tag. Danach erhaltst du Bestatigung und die nachsten Schritte.",
     bookingItems: [
       "WhatsApp Kontakt fur schnelle Abstimmung",
-      "20% Depot fur Buchung oder Planstart",
-      "Klare Bestatigung nach Zahlung"
+      "Klare Abstimmung von Plan, Preis und Start"
     ],
     directContact: `Direkt: ${whatsappDisplay}`,
     form: {
@@ -434,22 +402,10 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       dayPlaceholder: "Zum Beispiel: Dienstag",
       goal: "Ziel",
       goalPlaceholder: "Boxen, Fitness, Gewichtsverlust, Ernahrung...",
-      submit: "20% Depot bezahlen",
+      submit: "Anfrage senden",
       serviceOptions: ["Personal Training", "Boxtraining", "Online Trainingsplan", "Ernahrungsplan", "Komplettes Paket"]
     },
-    paymentEyebrow: "Zahlung",
-    paymentTitle: "Ein einfaches Depot, damit der Termin bestatigt ist.",
-    paymentItems: [
-      { icon: icons.deposit, title: "20% Depot", text: "Sichert deine Buchung oder startet die Erstellung deines Online-Plans." },
-      { icon: icons.payment, title: "Sichere Zahlung", text: "Zahlung lauft uber Stripe Checkout mit Karte und digitaler Bestatigung." },
-      { icon: icons.confirm, title: "Nachste Schritte", text: "Nach der Zahlung melde ich mich mit Zeit, Plan und Vorbereitung." }
-    ],
-    depositTitle: "20% Depot",
-    depositText: "Reserviert eine Einheit oder aktiviert die Erstellung eines Online-Trainings- und Ernahrungsplans.",
-    depositCta: "Zur Buchung",
-    paymentSuccess: "Zahlung erhalten. Du bekommst Bestatigung und nachste Schritte.",
-    paymentCancelled: "Die Zahlung wurde abgebrochen. Du kannst es erneut versuchen, wenn du bereit bist.",
-    footer: "Training, Online-Anleitung, Boxvorbereitung, Ernahrungsplane und Zahlung."
+    footer: "Training, Online-Anleitung, Boxvorbereitung und Ernahrungsplane."
   },
   fr: {
     ...content.en,
@@ -457,8 +413,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     nav: [
       ["Profil", "about"],
       ["Services", "services"],
-      ["Reservation", "booking"],
-      ["Paiement", "payment"]
+      ["Reservation", "booking"]
     ],
     headerCta: "Reserver",
     heroEyebrow: "Boxe, fitness et nutrition",
@@ -472,7 +427,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     stats: [
       { value: "1:1", label: "Coaching prive" },
       { value: "Online", label: "Training et nutrition" },
-      { value: "20%", label: "Acompte" }
+      { value: "Prix", label: "final clair" }
     ],
     focusItems: ["Technique de boxe", "Force et condition", "Coaching en ligne", "Plan nutritionnel"],
     bookingEyebrow: "Reservation",
@@ -482,8 +437,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       "Envoie tes coordonnees, ton objectif et ton jour prefere. Tu recevras ensuite une confirmation et les prochaines etapes.",
     bookingItems: [
       "Contact WhatsApp pour organiser rapidement",
-      "Acompte de 20% pour reserver ou lancer le plan",
-      "Confirmation claire apres paiement"
+      "Confirmation claire du plan, du prix et du début"
     ],
     directContact: `Direct: ${whatsappDisplay}`,
     form: {
@@ -498,22 +452,10 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       dayPlaceholder: "Exemple: mardi",
       goal: "Objectif",
       goalPlaceholder: "Boxe, fitness, perte de poids, nutrition...",
-      submit: "Payer l'acompte de 20%",
+      submit: "Envoyer la demande",
       serviceOptions: ["Personal training", "Boxe", "Programme en ligne", "Plan nutritionnel", "Pack complet"]
     },
-    paymentEyebrow: "Paiement",
-    paymentTitle: "Un acompte simple pour confirmer la reservation.",
-    paymentItems: [
-      { icon: icons.deposit, title: "Acompte 20%", text: "Reserve ta seance ou lance la creation de ton plan en ligne." },
-      { icon: icons.payment, title: "Paiement securise", text: "Paiement via Stripe Checkout avec carte et confirmation digitale." },
-      { icon: icons.confirm, title: "Prochaines etapes", text: "Apres paiement, je confirme l'horaire, le plan et la preparation." }
-    ],
-    depositTitle: "Acompte 20%",
-    depositText: "Reserve une seance ou active la creation d'un plan d'entrainement et nutrition en ligne.",
-    depositCta: "Aller a la reservation",
-    paymentSuccess: "Paiement recu. Tu recevras une confirmation et les prochaines etapes.",
-    paymentCancelled: "Le paiement a ete annule. Tu peux reessayer quand tu es pret.",
-    footer: "Entrainement, coaching en ligne, preparation boxe, plans nutritionnels et paiement."
+    footer: "Entrainement, coaching en ligne, preparation boxe et plans nutritionnels."
   },
   es: {
     ...content.en,
@@ -521,8 +463,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     nav: [
       ["Sobre mi", "about"],
       ["Servicios", "services"],
-      ["Reserva", "booking"],
-      ["Pago", "payment"]
+      ["Reserva", "booking"]
     ],
     headerCta: "Reservar",
     heroEyebrow: "Boxeo, fitness y nutricion",
@@ -536,7 +477,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     stats: [
       { value: "1:1", label: "Coaching personal" },
       { value: "Online", label: "Training y nutricion" },
-      { value: "20%", label: "Deposito" }
+      { value: "Precio", label: "final claro" }
     ],
     focusItems: ["Tecnica de boxeo", "Fuerza y condicion", "Coaching online", "Plan nutricional"],
     bookingEyebrow: "Reserva",
@@ -546,8 +487,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       "Envia tus datos, tu objetivo y tu dia preferido. Despues recibiras confirmacion y los siguientes pasos.",
     bookingItems: [
       "Contacto por WhatsApp para organizar rapido",
-      "Deposito del 20% para reservar o iniciar el plan",
-      "Confirmacion clara despues del pago"
+      "Confirmación clara del plan, precio e inicio"
     ],
     directContact: `Directo: ${whatsappDisplay}`,
     form: {
@@ -562,38 +502,20 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       dayPlaceholder: "Ejemplo: martes",
       goal: "Objetivo",
       goalPlaceholder: "Boxeo, fitness, perdida de peso, nutricion...",
-      submit: "Pagar deposito del 20%",
+      submit: "Enviar solicitud",
       serviceOptions: ["Entrenamiento personal", "Boxeo", "Plan online", "Plan nutricional", "Paquete completo"]
     },
-    paymentEyebrow: "Pago",
-    paymentTitle: "Un deposito sencillo para confirmar la reserva.",
-    paymentItems: [
-      { icon: icons.deposit, title: "Deposito 20%", text: "Reserva tu sesion o inicia la creacion de tu plan online." },
-      { icon: icons.payment, title: "Pago seguro", text: "Pago con Stripe Checkout, tarjeta y confirmacion digital." },
-      { icon: icons.confirm, title: "Siguientes pasos", text: "Despues del pago confirmo horario, plan y preparacion." }
-    ],
-    depositTitle: "Deposito 20%",
-    depositText: "Reserva una sesion o activa la creacion de un plan online de entrenamiento y nutricion.",
-    depositCta: "Ir a reserva",
-    paymentSuccess: "Pago recibido. Recibiras confirmacion y siguientes pasos.",
-    paymentCancelled: "El pago fue cancelado. Puedes intentarlo de nuevo cuando estes listo.",
-    footer: "Entrenamiento, coaching online, preparacion de boxeo, planes nutricionales y pago."
+    footer: "Entrenamiento, coaching online, preparacion de boxeo y planes nutricionales."
   }
 };
 
 type TrainerSearchParams = {
   lang?: string | string[];
-  payment?: string | string[];
 };
 
 function getLang(searchParams?: TrainerSearchParams): Lang {
   const lang = Array.isArray(searchParams?.lang) ? searchParams?.lang[0] : searchParams?.lang;
   return supportedLangs.includes(lang as Lang) ? (lang as Lang) : defaultLang;
-}
-
-function getPaymentStatus(searchParams?: TrainerSearchParams) {
-  const payment = Array.isArray(searchParams?.payment) ? searchParams?.payment[0] : searchParams?.payment;
-  return payment === "success" || payment === "cancelled" ? payment : null;
 }
 
 function href(lang: Lang, id?: string) {
@@ -605,7 +527,6 @@ function href(lang: Lang, id?: string) {
 export default function TrainerPage({ searchParams }: { searchParams?: TrainerSearchParams }) {
   const lang = getLang(searchParams);
   const copy = localizedContent[lang];
-  const paymentStatus = getPaymentStatus(searchParams);
 
   return (
     <>
@@ -814,11 +735,6 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
       </Section>
 
       <Section eyebrow={copy.bookingEyebrow} title={copy.bookingTitle} className="scroll-mt-24" id="booking">
-        {paymentStatus ? (
-          <div className={`mb-6 rounded-lg border px-4 py-3 text-sm ${paymentStatus === "success" ? "border-emerald-200/40 bg-emerald-200/10 text-emerald-50" : "border-white/15 bg-white/[.04] text-white/70"}`}>
-            {paymentStatus === "success" ? copy.paymentSuccess : copy.paymentCancelled}
-          </div>
-        ) : null}
         <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
           <div className="rounded-lg border border-emerald-200/25 bg-black/35 p-7">
             <CalendarCheck className="text-emerald-200" size={36} />
@@ -886,38 +802,6 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
               </div>
             );
           })}
-        </div>
-      </Section>
-
-      <Section eyebrow={copy.paymentEyebrow} title={copy.paymentTitle} className="scroll-mt-24" id="payment">
-        <div className="grid gap-5 md:grid-cols-3">
-          {copy.paymentItems.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div key={item.title} className="rounded-lg border border-white/10 bg-white/[.04] p-7">
-                <Icon className="text-emerald-200" size={32} />
-                <h3 className="mt-6 font-display text-3xl">{item.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-white/65">{item.text}</p>
-              </div>
-            );
-          })}
-        </div>
-        <div className="mt-6 rounded-lg border border-emerald-200/20 bg-black/35 p-6">
-          <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
-            <div>
-              <p className="font-display text-3xl">{copy.depositTitle}</p>
-              <p className="mt-2 text-sm leading-7 text-white/65">{copy.depositText}</p>
-              <p className="mt-2 text-sm leading-7 text-white/65">{copy.directContact}</p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <Link href={href(lang, "booking")} className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-200 px-6 py-3 text-sm font-medium text-black transition hover:bg-white">
-                {copy.depositCta} <ArrowRight size={16} />
-              </Link>
-              <Link href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-200/35 px-6 py-3 text-sm font-medium text-emerald-100 transition hover:bg-emerald-200 hover:text-black">
-                {copy.whatsappCta} <MessageCircle size={16} />
-              </Link>
-            </div>
-          </div>
         </div>
       </Section>
 
