@@ -179,6 +179,10 @@ const content = {
     bookingCardTitle: "Избери услуга, цел и удобен график.",
     bookingCardText: "Буукинг секцията е отделна за тренировъчните услуги: бокс, онлайн фитнес инструкции или диетичен режим. След заявка уточняваме подходящ план, крайна цена и начин на комуникация.",
     bookingItems: ["Първа консултация", "Индивидуална тренировка", "Онлайн режим", "Хранителен план"],
+    paymentInfoBadge: "плащане",
+    paymentInfoTitle: "Сигурно плащане по банков път",
+    paymentInfoText: "Плащането ще се извършва през оторизиран сайт за банково плащане, като ще има възможност и за директен банков трансфер след потвърждение на избрания план.",
+    paymentInfoItems: ["крайна цена преди плащане", "оторизирана платежна страница", "възможност за банков трансфер"],
     directContact: `За директна връзка пиши в WhatsApp: ${whatsappDisplay}.`,
     form: {
       name: "Име",
@@ -308,6 +312,10 @@ const content = {
     bookingCardTitle: "Choose a service, goal and schedule.",
     bookingCardText: "The booking area is dedicated to training services: boxing, online fitness instructions or a nutrition plan. After submitting, we confirm the right plan, final price and communication method.",
     bookingItems: ["Initial consultation", "Private session", "Online plan", "Nutrition plan"],
+    paymentInfoBadge: "payment",
+    paymentInfoTitle: "Secure bank payment",
+    paymentInfoText: "Payments will be handled through an authorized bank payment site, with the option for a direct bank transfer after the selected plan is confirmed.",
+    paymentInfoItems: ["final price before payment", "authorized payment page", "direct bank transfer option"],
     directContact: `For direct contact, message on WhatsApp: ${whatsappDisplay}.`,
     form: {
       name: "Name",
@@ -397,6 +405,10 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       "WhatsApp Kontakt fur schnelle Abstimmung",
       "Klare Abstimmung von Plan, Preis und Start"
     ],
+    paymentInfoBadge: "Zahlung",
+    paymentInfoTitle: "Sichere Bankzahlung",
+    paymentInfoText: "Die Zahlung erfolgt uber eine autorisierte Website fur Bankzahlungen. Nach Bestatigung des gewahlten Plans ist auch eine direkte Bankuberweisung moglich.",
+    paymentInfoItems: ["Endpreis vor der Zahlung", "autorisierte Zahlungsseite", "Option fur direkte Bankuberweisung"],
     nutritionOfferBadge: "fertiger Plan",
     nutritionOfferTitle: "Ernahrungsplan mit festem Endpreis",
     nutritionOfferText: "Starte direkt mit einem personlichen Ernahrungsplan, der zu deinem Zeitplan, Ziel und deinen realen Gewohnheiten passt. Das ist die Zahlung fur den kompletten Plan, keine Anzahlung.",
@@ -451,6 +463,10 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       "Contact WhatsApp pour organiser rapidement",
       "Confirmation claire du plan, du prix et du début"
     ],
+    paymentInfoBadge: "paiement",
+    paymentInfoTitle: "Paiement bancaire securise",
+    paymentInfoText: "Le paiement sera effectue via un site autorise pour les paiements bancaires, avec la possibilite d'un virement bancaire direct apres confirmation du plan choisi.",
+    paymentInfoItems: ["prix final avant paiement", "page de paiement autorisee", "option de virement bancaire direct"],
     nutritionOfferBadge: "plan pret",
     nutritionOfferTitle: "Plan nutritionnel avec prix final",
     nutritionOfferText: "Commence directement avec un plan nutritionnel personnel, adapte a ton emploi du temps, ton objectif et tes habitudes reelles. C'est le paiement du plan complet, pas un acompte.",
@@ -505,6 +521,10 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       "Contacto por WhatsApp para organizar rapido",
       "Confirmación clara del plan, precio e inicio"
     ],
+    paymentInfoBadge: "pago",
+    paymentInfoTitle: "Pago bancario seguro",
+    paymentInfoText: "El pago se realizara mediante un sitio autorizado para pagos bancarios, con la opcion de transferencia bancaria directa despues de confirmar el plan elegido.",
+    paymentInfoItems: ["precio final antes del pago", "pagina de pago autorizada", "opcion de transferencia bancaria directa"],
     nutritionOfferBadge: "plan listo",
     nutritionOfferTitle: "Plan nutricional con precio final",
     nutritionOfferText: "Empieza directamente con un plan nutricional personal, creado alrededor de tu horario, objetivo y habitos reales. Es el pago del plan completo con precio final claro.",
@@ -770,6 +790,19 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
                   {item}
                 </div>
               ))}
+            </div>
+            <div className="mt-6 rounded-lg border border-emerald-200/20 bg-emerald-200/[.06] p-5">
+              <p className="text-xs uppercase tracking-[.26em] text-emerald-100">{copy.paymentInfoBadge}</p>
+              <h4 className="mt-3 font-display text-3xl text-white">{copy.paymentInfoTitle}</h4>
+              <p className="mt-4 text-sm leading-7 text-white/68">{copy.paymentInfoText}</p>
+              <div className="mt-5 grid gap-2">
+                {copy.paymentInfoItems.map((item) => (
+                  <p key={item} className="flex items-center gap-3 rounded-md border border-white/10 bg-black/25 px-3 py-2 text-sm text-white/72">
+                    <CheckCircle2 size={16} className="shrink-0 text-emerald-200" />
+                    {item}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
 
