@@ -251,7 +251,7 @@ const content = {
     headerCta: "Book",
     heroEyebrow: "training, boxing and nutrition",
     heroTitle: "Individual training and nutrition plans, precisely built around your daily schedule.",
-    heroText: "A standalone system for private boxing sessions, online fitness instructions, nutrition plans, booking, deposits and payment.",
+    heroText: "A standalone system for private boxing sessions, online fitness instructions, nutrition plans, and diet regime.",
     heroPrimary: "Book a consultation",
     heroSecondary: "View services",
     whatsappCta: "Message on WhatsApp",
