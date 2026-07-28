@@ -285,7 +285,7 @@ const content = {
       {
         icon: icons.online,
         title: "Online fitness coach",
-        text: "Get instructions, a weekly plan and online corrections without needing to be present in a gym.",
+        text: "Get instructions, a weekly plan and online personal guides.",
         points: ["guided exercises", "weekly schedule"]
       },
       {
