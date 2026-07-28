@@ -22,7 +22,6 @@ import {
   Utensils,
 } from "lucide-react";
 import { Section } from "@/components/section";
-import { TrainerBookingForm } from "@/components/trainer-booking-form";
 
 type Lang = "en" | "bg" | "de" | "fr" | "es";
 
@@ -177,27 +176,13 @@ const content = {
     bookingEyebrow: "буукинг",
     bookingTitle: "Записване за тренировка или онлайн режим",
     bookingCardTitle: "Избери услуга, цел и удобен график.",
-    bookingCardText: "Буукинг секцията е отделна за тренировъчните услуги: бокс, онлайн фитнес инструкции или диетичен режим. След заявка уточняваме подходящ план, крайна цена и начин на комуникация.",
+    bookingCardText: "За момента плащанията се уточняват индивидуално след директен контакт. След избор на услуга получаваш крайна цена и персонален начин за плащане.",
     bookingItems: ["Първа консултация", "Индивидуална тренировка", "Онлайн режим", "Хранителен план"],
     paymentInfoBadge: "плащане",
-    paymentInfoTitle: "Сигурно плащане по банков път",
-    paymentInfoText: "Плащането ще се извършва през оторизиран сайт за банково плащане, като ще има възможност и за директен банков трансфер след потвърждение на избрания план.",
-    paymentInfoItems: ["крайна цена преди плащане", "оторизирана платежна страница", "възможност за банков трансфер"],
+    paymentInfoTitle: "Индивидуален Stripe линк или банков трансфер",
+    paymentInfoText: "Всеки конкретен пеймент към клиент ще се изпраща като индивидуално генериран Stripe payment link за съответната услуга. При нужда ще има и възможност за директен банков трансфер след потвърждение.",
+    paymentInfoItems: ["крайна цена преди плащане", "персонален Stripe payment link", "възможност за директен банков трансфер"],
     directContact: `За директна връзка пиши в WhatsApp: ${whatsappDisplay}.`,
-    form: {
-      name: "Име",
-      namePlaceholder: "Твоето име",
-      contact: "Телефон или имейл",
-      contactPlaceholder: "Контакт",
-      service: "Услуга",
-      servicePlaceholder: "Избери услуга",
-      serviceOptions: ["Тренировки по бокс", "Онлайн фитнес треньор", "Личен диетичен режим", "Nutrition and diet fitness regime."],
-      day: "Предпочитан ден",
-      dayPlaceholder: "Например: вторник",
-      goal: "Цел",
-      goalPlaceholder: "Сила, отслабване, бокс техника, хранене...",
-      submit: "Изпрати запитване"
-    },
     nutritionEyebrow: "хранене",
     nutritionTitle: "Личен диетичен режим за правилно хранене",
     nutritionCardTitle: "Без крайности. С ясни правила.",
@@ -310,27 +295,13 @@ const content = {
     bookingEyebrow: "booking",
     bookingTitle: "Book a training session or online plan",
     bookingCardTitle: "Choose a service, goal and schedule.",
-    bookingCardText: "The booking area is dedicated to training services: boxing, online fitness instructions or a nutrition plan. After submitting, we confirm the right plan, final price and communication method.",
+    bookingCardText: "For now, payments are arranged individually after direct contact. Once the service is confirmed, you receive the final price and the right payment method.",
     bookingItems: ["Initial consultation", "Private session", "Online plan", "Nutrition plan"],
     paymentInfoBadge: "payment",
-    paymentInfoTitle: "Secure bank payment",
-    paymentInfoText: "Payments will be handled through an authorized bank payment site, with the option for a direct bank transfer after the selected plan is confirmed.",
-    paymentInfoItems: ["final price before payment", "authorized payment page", "direct bank transfer option"],
+    paymentInfoTitle: "Individual Stripe link or bank transfer",
+    paymentInfoText: "Each client payment will be sent as an individually generated Stripe payment link for the confirmed service. A direct bank transfer option can also be provided after confirmation.",
+    paymentInfoItems: ["final price before payment", "personal Stripe payment link", "direct bank transfer option"],
     directContact: `For direct contact, message on WhatsApp: ${whatsappDisplay}.`,
-    form: {
-      name: "Name",
-      namePlaceholder: "Your name",
-      contact: "Phone or email",
-      contactPlaceholder: "Contact",
-      service: "Service",
-      servicePlaceholder: "Choose a service",
-      serviceOptions: ["Boxing training", "Online fitness coach", "Personal nutrition plan", "Nutrition and diet fitness regime."],
-      day: "Preferred day",
-      dayPlaceholder: "Example: Tuesday",
-      goal: "Goal",
-      goalPlaceholder: "Strength, fat loss, boxing technique, nutrition...",
-      submit: "Send request"
-    },
     nutritionEyebrow: "nutrition",
     nutritionTitle: "Personal nutrition plan for better eating",
     nutritionCardTitle: "No extremes. Clear rules.",
@@ -400,35 +371,20 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     bookingTitle: "Wahle ein Training oder starte mit einem Online-Plan.",
     bookingCardTitle: "Direkte Kommunikation",
     bookingCardText:
-      "Sende deine Daten, dein Ziel und deinen bevorzugten Tag. Danach erhaltst du Bestatigung und die nachsten Schritte.",
+      "Zahlungen werden vorerst individuell nach direktem Kontakt abgestimmt. Nach Bestatigung der Leistung erhaltst du den Endpreis und die passende Zahlungsmethode.",
     bookingItems: [
       "WhatsApp Kontakt fur schnelle Abstimmung",
       "Klare Abstimmung von Plan, Preis und Start"
     ],
     paymentInfoBadge: "Zahlung",
-    paymentInfoTitle: "Sichere Bankzahlung",
-    paymentInfoText: "Die Zahlung erfolgt uber eine autorisierte Website fur Bankzahlungen. Nach Bestatigung des gewahlten Plans ist auch eine direkte Bankuberweisung moglich.",
-    paymentInfoItems: ["Endpreis vor der Zahlung", "autorisierte Zahlungsseite", "Option fur direkte Bankuberweisung"],
+    paymentInfoTitle: "Individueller Stripe-Link oder Bankuberweisung",
+    paymentInfoText: "Jede Kundenzahlung wird als individuell generierter Stripe Payment Link fur die bestatigte Leistung gesendet. Nach Bestatigung ist auch eine direkte Bankuberweisung moglich.",
+    paymentInfoItems: ["Endpreis vor der Zahlung", "personlicher Stripe Payment Link", "Option fur direkte Bankuberweisung"],
     nutritionOfferBadge: "fertiger Plan",
     nutritionOfferTitle: "Ernahrungsplan mit festem Endpreis",
     nutritionOfferText: "Starte direkt mit einem personlichen Ernahrungsplan, der zu deinem Zeitplan, Ziel und deinen realen Gewohnheiten passt. Das ist die Zahlung fur den kompletten Plan, keine Anzahlung.",
     nutritionOfferItems: ["individueller Ernahrungsplan", "klare Regeln und Beispielmenus", "Online-Kommunikation fur Details"],
     directContact: `Direkt: ${whatsappDisplay}`,
-    form: {
-      ...content.en.form,
-      name: "Name",
-      namePlaceholder: "Dein Name",
-      contact: "WhatsApp oder E-Mail",
-      contactPlaceholder: "+44 ... oder E-Mail",
-      service: "Leistung",
-      servicePlaceholder: "Leistung wahlen",
-      day: "Bevorzugter Tag",
-      dayPlaceholder: "Zum Beispiel: Dienstag",
-      goal: "Ziel",
-      goalPlaceholder: "Boxen, Fitness, Gewichtsverlust, Ernahrung...",
-      submit: "Anfrage senden",
-      serviceOptions: ["Personal Training", "Boxtraining", "Online Trainingsplan", "Ernahrungsplan", "Nutrition and diet fitness regime.", "Komplettes Paket"]
-    },
     footer: "Training, Online-Anleitung, Boxvorbereitung und Ernahrungsplane."
   },
   fr: {
@@ -458,35 +414,20 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     bookingTitle: "Choisis une seance ou commence avec un plan en ligne.",
     bookingCardTitle: "Contact direct",
     bookingCardText:
-      "Envoie tes coordonnees, ton objectif et ton jour prefere. Tu recevras ensuite une confirmation et les prochaines etapes.",
+      "Pour le moment, les paiements sont organises individuellement apres un contact direct. Une fois le service confirme, tu recois le prix final et le mode de paiement adapte.",
     bookingItems: [
       "Contact WhatsApp pour organiser rapidement",
       "Confirmation claire du plan, du prix et du début"
     ],
     paymentInfoBadge: "paiement",
-    paymentInfoTitle: "Paiement bancaire securise",
-    paymentInfoText: "Le paiement sera effectue via un site autorise pour les paiements bancaires, avec la possibilite d'un virement bancaire direct apres confirmation du plan choisi.",
-    paymentInfoItems: ["prix final avant paiement", "page de paiement autorisee", "option de virement bancaire direct"],
+    paymentInfoTitle: "Lien Stripe individuel ou virement bancaire",
+    paymentInfoText: "Chaque paiement client sera envoye sous forme de lien Stripe genere individuellement pour le service confirme. Un virement bancaire direct pourra aussi etre propose apres confirmation.",
+    paymentInfoItems: ["prix final avant paiement", "lien Stripe personnel", "option de virement bancaire direct"],
     nutritionOfferBadge: "plan pret",
     nutritionOfferTitle: "Plan nutritionnel avec prix final",
     nutritionOfferText: "Commence directement avec un plan nutritionnel personnel, adapte a ton emploi du temps, ton objectif et tes habitudes reelles. C'est le paiement du plan complet, pas un acompte.",
     nutritionOfferItems: ["plan nutritionnel individuel", "regles claires et exemples de menus", "communication en ligne pour les details"],
     directContact: `Direct: ${whatsappDisplay}`,
-    form: {
-      ...content.en.form,
-      name: "Nom",
-      namePlaceholder: "Ton nom",
-      contact: "WhatsApp ou e-mail",
-      contactPlaceholder: "+44 ... ou e-mail",
-      service: "Service",
-      servicePlaceholder: "Choisis un service",
-      day: "Jour prefere",
-      dayPlaceholder: "Exemple: mardi",
-      goal: "Objectif",
-      goalPlaceholder: "Boxe, fitness, perte de poids, nutrition...",
-      submit: "Envoyer la demande",
-      serviceOptions: ["Personal training", "Boxe", "Programme en ligne", "Plan nutritionnel", "Nutrition and diet fitness regime.", "Pack complet"]
-    },
     footer: "Entrainement, coaching en ligne, preparation boxe et plans nutritionnels."
   },
   es: {
@@ -516,35 +457,20 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     bookingTitle: "Elige una sesion o empieza con un plan online.",
     bookingCardTitle: "Contacto directo",
     bookingCardText:
-      "Envia tus datos, tu objetivo y tu dia preferido. Despues recibiras confirmacion y los siguientes pasos.",
+      "Por ahora, los pagos se organizan individualmente despues del contacto directo. Una vez confirmado el servicio, recibes el precio final y el metodo de pago adecuado.",
     bookingItems: [
       "Contacto por WhatsApp para organizar rapido",
       "Confirmación clara del plan, precio e inicio"
     ],
     paymentInfoBadge: "pago",
-    paymentInfoTitle: "Pago bancario seguro",
-    paymentInfoText: "El pago se realizara mediante un sitio autorizado para pagos bancarios, con la opcion de transferencia bancaria directa despues de confirmar el plan elegido.",
-    paymentInfoItems: ["precio final antes del pago", "pagina de pago autorizada", "opcion de transferencia bancaria directa"],
+    paymentInfoTitle: "Enlace Stripe individual o transferencia bancaria",
+    paymentInfoText: "Cada pago de cliente se enviara como un enlace de pago Stripe generado individualmente para el servicio confirmado. Tambien puede ofrecerse transferencia bancaria directa despues de la confirmacion.",
+    paymentInfoItems: ["precio final antes del pago", "enlace Stripe personal", "opcion de transferencia bancaria directa"],
     nutritionOfferBadge: "plan listo",
     nutritionOfferTitle: "Plan nutricional con precio final",
     nutritionOfferText: "Empieza directamente con un plan nutricional personal, creado alrededor de tu horario, objetivo y habitos reales. Es el pago del plan completo con precio final claro.",
     nutritionOfferItems: ["plan nutricional individual", "reglas claras y menus de ejemplo", "comunicacion online para detalles"],
     directContact: `Directo: ${whatsappDisplay}`,
-    form: {
-      ...content.en.form,
-      name: "Nombre",
-      namePlaceholder: "Tu nombre",
-      contact: "WhatsApp o email",
-      contactPlaceholder: "+44 ... o email",
-      service: "Servicio",
-      servicePlaceholder: "Elige un servicio",
-      day: "Dia preferido",
-      dayPlaceholder: "Ejemplo: martes",
-      goal: "Objetivo",
-      goalPlaceholder: "Boxeo, fitness, perdida de peso, nutricion...",
-      submit: "Enviar solicitud",
-      serviceOptions: ["Entrenamiento personal", "Boxeo", "Plan online", "Plan nutricional", "Nutrition and diet fitness regime.", "Paquete completo"]
-    },
     footer: "Entrenamiento, coaching online, preparacion de boxeo y planes nutricionales."
   }
 };
@@ -775,8 +701,9 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
       </Section>
 
       <Section eyebrow={copy.bookingEyebrow} title={copy.bookingTitle} className="scroll-mt-24" id="booking">
-        <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
-          <div className="rounded-lg border border-emerald-200/25 bg-black/35 p-7">
+        <div className="rounded-lg border border-emerald-200/25 bg-black/35 p-7 lg:p-9">
+          <div className="grid gap-8 lg:grid-cols-[.85fr_1.15fr] lg:items-start">
+            <div>
             <CalendarCheck className="text-emerald-200" size={36} />
             <h3 className="mt-6 font-display text-4xl">{copy.bookingCardTitle}</h3>
             <p className="mt-5 text-base leading-8 text-white/68">{copy.bookingCardText}</p>
@@ -790,6 +717,7 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
                   {item}
                 </div>
               ))}
+            </div>
             </div>
             <div className="mt-6 rounded-lg border border-emerald-200/20 bg-emerald-200/[.06] p-5">
               <p className="text-xs uppercase tracking-[.26em] text-emerald-100">{copy.paymentInfoBadge}</p>
@@ -805,8 +733,6 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
               </div>
             </div>
           </div>
-
-          <TrainerBookingForm copy={copy.form} lang={lang} />
         </div>
       </Section>
 
