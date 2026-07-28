@@ -250,7 +250,7 @@ const content = {
     ],
     headerCta: "Book",
     heroEyebrow: "training, boxing and nutrition",
-    heroTitle: "A personal plan for strength, body and discipline",
+    heroTitle: "Individual training and nutrition plans, precisely built around your daily schedule.",
     heroText: "A standalone system for private boxing sessions, online fitness instructions, nutrition plans, booking, deposits and payment.",
     heroPrimary: "Book a consultation",
     heroSecondary: "View services",
@@ -637,14 +637,6 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
             <Link href={href(lang, "booking")} className="rounded-full border border-emerald-200/40 px-3 py-2 text-sm text-emerald-100 transition hover:bg-emerald-200 hover:text-black sm:px-4">
               {copy.headerCta}
             </Link>
-            <a
-              href="https://music.youtube.com/watch?v=0wMxFFMOxU0"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex max-w-[58vw] shrink-0 truncate rounded-full bg-emerald-200 px-3 py-2 text-sm font-semibold text-black underline underline-offset-2 transition hover:bg-white sm:max-w-none sm:px-4"
-            >
-              https://music.youtube.com/watch?v=0wMxFFMOxU0
-            </a>
             <Link
               href={whatsappUrl}
               target="_blank"
