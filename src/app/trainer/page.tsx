@@ -212,7 +212,7 @@ const content = {
     process: [
       { icon: icons.assessment, title: "Оценка", text: "Започваме с цел, опит, свободно време, ограничения и текущи навици." },
       { icon: icons.plan, title: "План", text: "Получаваш структура за тренировки, хранене и възстановяване." },
-      { icon: icons.progress, title: "Прогрес", text: "Следим резултатите и настройваме плана, за да вървиш стабилно напред." }
+      { icon: icons.progress, title: "Прогрес", text: "Лично следя резултатите ти и настройвам плана, за да вървиш стабилно напред." }
     ],
     footer: "Тренировки, онлайн инструкции, бокс подготовка и хранителни режими."
   },
@@ -331,7 +331,7 @@ const content = {
     process: [
       { icon: icons.assessment, title: "Assessment", text: "We start with your goal, experience, available time, limitations and current habits." },
       { icon: icons.plan, title: "Plan", text: "You receive a structure for training, nutrition and recovery." },
-      { icon: icons.progress, title: "Progress", text: "We track results and adjust the plan so you keep moving forward." }
+      { icon: icons.progress, title: "Progress", text: "I personally track your results and adjust the plan so you keep moving forward." }
     ],
     footer: "Training, online instructions, boxing preparation and nutrition plans."
   }
