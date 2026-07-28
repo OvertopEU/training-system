@@ -188,7 +188,7 @@ const content = {
       contactPlaceholder: "Контакт",
       service: "Услуга",
       servicePlaceholder: "Избери услуга",
-      serviceOptions: ["Тренировки по бокс", "Онлайн фитнес треньор", "Личен диетичен режим"],
+      serviceOptions: ["Тренировки по бокс", "Онлайн фитнес треньор", "Личен диетичен режим", "Nutrition and diet fitness regime."],
       day: "Предпочитан ден",
       dayPlaceholder: "Например: вторник",
       goal: "Цел",
@@ -322,7 +322,7 @@ const content = {
       contactPlaceholder: "Contact",
       service: "Service",
       servicePlaceholder: "Choose a service",
-      serviceOptions: ["Boxing training", "Online fitness coach", "Personal nutrition plan"],
+      serviceOptions: ["Boxing training", "Online fitness coach", "Personal nutrition plan", "Nutrition and diet fitness regime."],
       day: "Preferred day",
       dayPlaceholder: "Example: Tuesday",
       goal: "Goal",
@@ -431,7 +431,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       goal: "Ziel",
       goalPlaceholder: "Boxen, Fitness, Gewichtsverlust, Ernahrung...",
       submit: "Anfrage senden",
-      serviceOptions: ["Personal Training", "Boxtraining", "Online Trainingsplan", "Ernahrungsplan", "Komplettes Paket"]
+      serviceOptions: ["Personal Training", "Boxtraining", "Online Trainingsplan", "Ernahrungsplan", "Nutrition and diet fitness regime.", "Komplettes Paket"]
     },
     footer: "Training, Online-Anleitung, Boxvorbereitung und Ernahrungsplane."
   },
@@ -490,7 +490,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       goal: "Objectif",
       goalPlaceholder: "Boxe, fitness, perte de poids, nutrition...",
       submit: "Envoyer la demande",
-      serviceOptions: ["Personal training", "Boxe", "Programme en ligne", "Plan nutritionnel", "Pack complet"]
+      serviceOptions: ["Personal training", "Boxe", "Programme en ligne", "Plan nutritionnel", "Nutrition and diet fitness regime.", "Pack complet"]
     },
     footer: "Entrainement, coaching en ligne, preparation boxe et plans nutritionnels."
   },
@@ -549,7 +549,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       goal: "Objetivo",
       goalPlaceholder: "Boxeo, fitness, perdida de peso, nutricion...",
       submit: "Enviar solicitud",
-      serviceOptions: ["Entrenamiento personal", "Boxeo", "Plan online", "Plan nutricional", "Paquete completo"]
+      serviceOptions: ["Entrenamiento personal", "Boxeo", "Plan online", "Plan nutricional", "Nutrition and diet fitness regime.", "Paquete completo"]
     },
     footer: "Entrenamiento, coaching online, preparacion de boxeo y planes nutricionales."
   }
