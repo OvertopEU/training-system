@@ -102,7 +102,7 @@ const content = {
     nav: [
       ["За мен", "about"],
       ["Услуги", "services"],
-      ["Буукинг", "booking"]
+      ["Записване", "booking"]
     ],
     headerCta: "Запази",
     heroEyebrow: "тренировки, бокс и правилно хранене",
@@ -122,13 +122,13 @@ const content = {
     gymPhotoEyebrow: "тренировъчна среда",
     gymPhotoTitle: "Работа в зала с реален ритъм",
     gymPhotoText: "Тренировките се изграждат около техника, дистанция, контрол и постоянно движение в работна среда.",
-    aboutEyebrow: "about",
+    aboutEyebrow: "за мен",
     aboutTitle: "За треньора и тренировъчната общност",
     soloTitle: "Личен подход",
     soloText: "20+ години опит в бокса, полупрофесионален път до професионален ринг, редица постижения и победи с международен опит в над 50 държави. Втори спорт: лека атлетика с 8 национални титли и европейска квота. Работя и в най-висок сектор на охрана с фокус върху анти-терористична сигурност. Ски инструктор съм и съм завършил Национална спортна академия с първо място и най-висок успех.",
     groupTitle: "Групови тренировки",
     groupText: "Среда за хора, които искат движение, бокс техника, мотивация и постоянство в общ ритъм.",
-    groupBadge: "group training",
+    groupBadge: "групови тренировки",
     servicesEyebrow: "услуги",
     servicesTitle: "Основни направления",
     services: [
@@ -173,7 +173,7 @@ const content = {
         details: ["седмичен отчет", "корекции онлайн"]
       }
     ],
-    bookingEyebrow: "буукинг",
+    bookingEyebrow: "записване",
     bookingTitle: "Записване за тренировка или онлайн режим",
     bookingCardTitle: "Избери услуга, цел и удобен график.",
     bookingCardText: "За момента плащанията се уточняват индивидуално след директен контакт. След избор на услуга получаваш крайна цена и персонален начин за плащане.",
@@ -348,42 +348,126 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     ...content.en,
     langLabel: "Sprache",
     nav: [
-      ["Uber mich", "about"],
+      ["Über mich", "about"],
       ["Leistungen", "services"],
       ["Buchung", "booking"]
     ],
     headerCta: "Buchen",
-    heroEyebrow: "Boxen, Fitness und Ernahrung",
-    heroTitle: "Training mit Struktur, Intensitat und messbarem Fortschritt.",
+    heroEyebrow: "Training, Boxen und Ernährung",
+    heroTitle: "Individuelle Trainings- und Ernährungspläne, genau passend zu deinem Tagesablauf.",
     heroText:
-      "Personliches Coaching fur Kunden in England: Boxtechnik, Kraft, Kondition, Online-Programme und Ernahrungsplane mit klarer Kommunikation.",
+      "Ein eigenständiges System für private Boxeinheiten, Online-Fitness-Anleitungen, Ernährungspläne und Diätstruktur.",
     heroPrimary: "Training buchen",
     heroSecondary: "WhatsApp Kontakt",
     whatsappCta: "Auf WhatsApp schreiben",
     soloText: "Mehr als 20 Jahre Boxerfahrung, ein semiprofessioneller Weg bis in den Profiring, zahlreiche Erfolge und Siege sowie internationale Erfahrung in über 50 Ländern. Zweite Sportart: Leichtathletik mit 8 nationalen Titeln und einer europäischen Qualifikation. Zusätzlich arbeite ich in einem hochrangigen Sicherheitsbereich mit Schwerpunkt auf Anti-Terror-Schutz. Ich bin Skilehrer und habe die Nationale Sportakademie als Jahrgangsbester mit dem höchsten akademischen Ergebnis abgeschlossen.",
+    focusTitle: "Boxen + Ernährung",
     stats: [
-      { value: "1:1", label: "Personal Coaching" },
-      { value: "Online", label: "Training und Ernahrung" },
-      { value: "Plan", label: "fester Endpreis" }
+      { value: "12+", label: "Einheiten pro Woche" },
+      { value: "3", label: "Trainingsstufen" },
+      { value: "24/7", label: "Online-Begleitung" }
     ],
-    focusItems: ["Boxtechnik", "Kraft und Kondition", "Online Coaching", "Ernahrungsplanung"],
+    focusItems: ["Technik vor Belastung", "Online-Anleitungen"],
+    coverTitle: "Boxtraining",
+    gymPhotoEyebrow: "Trainingsumgebung",
+    gymPhotoTitle: "Arbeit im Gym mit echtem Trainingsrhythmus",
+    gymPhotoText: "Das Training wird um Technik, Distanz, Kontrolle und konstante Bewegung in einer echten Trainingsumgebung aufgebaut.",
+    aboutEyebrow: "über mich",
+    aboutTitle: "Über den Trainer und die Trainingsgemeinschaft",
+    soloTitle: "Persönlicher Ansatz",
+    groupTitle: "Gruppentraining",
+    groupText: "Ein Umfeld für Menschen, die Bewegung, Boxtechnik, Motivation und Beständigkeit in einem gemeinsamen Rhythmus suchen.",
+    groupBadge: "Gruppentraining",
+    servicesEyebrow: "Leistungen",
+    servicesTitle: "Hauptbereiche",
+    services: [
+      {
+        icon: icons.boxing,
+        title: "Boxtraining",
+        text: "Individuelle Arbeit an Stand, Schlägen, Verteidigung, Bewegung, Reaktion und Kondition.",
+        points: ["Personal Training", "Gruppentraining", "Wettkampfvorbereitung", "Technik- und Konditionstraining"]
+      },
+      {
+        icon: icons.online,
+        title: "Online-Fitness-Coach",
+        text: "Du erhältst Anleitungen, einen Wochenplan und Online-Korrekturen, ohne zwingend im Gym vor Ort zu sein.",
+        points: ["angeleitete Übungen", "Wochenstruktur"]
+      },
+      {
+        icon: icons.nutrition,
+        title: "Persönlicher Ernährungsplan",
+        text: "Praktische Ernährung passend zu deinem Ziel, Alltag, deinen Vorlieben und realen Gewohnheiten.",
+        points: ["Kalorien und Makros", "Beispielmenüs", "wöchentliche Anpassungen"]
+      }
+    ],
+    programsEyebrow: "Programme",
+    programsTitle: "Pläne nach deinem Ziel",
+    programs: [
+      {
+        icon: icons.strength,
+        title: "Kraft und Form",
+        text: "Strukturierte Krafteinheiten für Muskeltonus, Stabilität und sichtbaren Fortschritt ohne zufällige Überlastung.",
+        details: ["3-5 Einheiten pro Woche", "progressive Belastung", "Technikkorrektur"]
+      },
+      {
+        icon: icons.conditioning,
+        title: "Ausdauer und Kondition",
+        text: "Funktionelle Einheiten mit Cardio, Mobilität und Intervallen für mehr Energie und Belastbarkeit.",
+        details: ["HIIT-Blöcke", "aerobe Basis", "Regeneration"]
+      },
+      {
+        icon: icons.instructions,
+        title: "Online-Anleitungen",
+        text: "Ein klarer Plan mit Übungen, Sätzen, Wiederholungen, Tempo und Ausführungshinweisen.",
+        details: ["wöchentlicher Check-in", "Online-Korrekturen"]
+      }
+    ],
     bookingEyebrow: "Buchung",
-    bookingTitle: "Wahle ein Training oder starte mit einem Online-Plan.",
-    bookingCardTitle: "Direkte Kommunikation",
+    bookingTitle: "Buche eine Trainingseinheit oder starte mit einem Online-Plan.",
+    bookingCardTitle: "Wähle Leistung, Ziel und passenden Zeitplan.",
     bookingCardText:
-      "Zahlungen werden vorerst individuell nach direktem Kontakt abgestimmt. Nach Bestatigung der Leistung erhaltst du den Endpreis und die passende Zahlungsmethode.",
+      "Zahlungen werden vorerst individuell nach direktem Kontakt abgestimmt. Nach Bestätigung der Leistung erhältst du den Endpreis und die passende Zahlungsmethode.",
     bookingItems: [
-      "WhatsApp Kontakt fur schnelle Abstimmung",
-      "Klare Abstimmung von Plan, Preis und Start"
+      "Erstberatung",
+      "Private Einheit",
+      "Online-Plan",
+      "Ernährungsplan"
     ],
     paymentInfoBadge: "Zahlung",
-    paymentInfoTitle: "Individueller Stripe-Link oder Bankuberweisung",
-    paymentInfoText: "Jede Kundenzahlung wird als individuell generierter Stripe Payment Link fur die bestatigte Leistung gesendet. Nach Bestatigung ist auch eine direkte Bankuberweisung moglich.",
-    paymentInfoItems: ["Endpreis vor der Zahlung", "personlicher Stripe Payment Link", "Option fur direkte Bankuberweisung"],
+    paymentInfoTitle: "Individueller Stripe-Link oder Banküberweisung",
+    paymentInfoText: "Jede Kundenzahlung wird als individuell generierter Stripe Payment Link für die bestätigte Leistung gesendet. Nach Bestätigung ist auch eine direkte Banküberweisung möglich.",
+    paymentInfoItems: ["Endpreis vor der Zahlung", "persönlicher Stripe Payment Link", "Option für direkte Banküberweisung"],
+    nutritionEyebrow: "Ernährung",
+    nutritionTitle: "Persönlicher Ernährungsplan für bessere Essgewohnheiten",
+    nutritionCardTitle: "Keine Extreme. Klare Regeln.",
+    nutritionCardText: "Der Plan wird nach der Richtung aufgebaut, die der Kunde möchte, und an seinen Tagesablauf angepasst. Ziel sind Kalorienkontrolle, ausreichend Protein, stabile Energie und weniger Improvisation.",
     nutritionOfferBadge: "fertiger Plan",
-    nutritionOfferTitle: "Ernahrungsplan mit festem Endpreis",
-    nutritionOfferText: "Starte direkt mit einem personlichen Ernahrungsplan, der zu deinem Zeitplan, Ziel und deinen realen Gewohnheiten passt. Das ist die Zahlung fur den kompletten Plan, keine Anzahlung.",
-    nutritionOfferItems: ["individueller Ernahrungsplan", "klare Regeln und Beispielmenus", "Online-Kommunikation fur Details"],
+    nutritionOfferTitle: "Ernährungsplan mit festem Endpreis",
+    nutritionOfferText: "Starte direkt mit einem persönlichen Ernährungsplan, der zu deinem Zeitplan, Ziel und deinen realen Gewohnheiten passt. Das ist die Zahlung für den kompletten Plan mit klarem Endpreis.",
+    nutritionOfferItems: ["individueller Ernährungsplan", "klare Regeln und Beispielmenüs", "Online-Kommunikation für Details"],
+    nutrition: [
+      { title: "Makro-Balance", text: "Klare tägliche Ziele für Protein, Kohlenhydrate und Fett passend zu Ziel und Zeitplan." },
+      { title: "Echte Lebensmittel", text: "Ein Menü mit verfügbaren Produkten, einfacher Vorbereitung und Optionen für aktivere Tage." },
+      { title: "Gewohnheiten, keine Extreme", text: "Schrittweise Veränderungen, die du halten kannst, ohne kurzfristige Diäten und Erschöpfung." },
+      { title: "Kontrolle", text: "Wöchentliche Anpassungen nach Gewicht, Maßen, Kraft, Schlaf und Energiegefühl." }
+    ],
+    weekEyebrow: "Woche",
+    weekTitle: "Beispiel für eine wöchentliche Trainingsstruktur",
+    week: [
+      ["Montag", "Kraft: Unterkörper + Core", "60 Min"],
+      ["Dienstag", "Boxtechnik + Kondition", "50 Min"],
+      ["Mittwoch", "Mobilität und aktive Regeneration", "35 Min"],
+      ["Donnerstag", "Kraft: Oberkörper + Rücken", "60 Min"],
+      ["Freitag", "Online-Check-in + Anpassungen", "30 Min"],
+      ["Samstag", "Ganzkörper-Komplex", "55 Min"]
+    ],
+    methodEyebrow: "Methode",
+    methodTitle: "Ein kontrollierter Prozess, nicht nur Motivation",
+    process: [
+      { icon: icons.assessment, title: "Analyse", text: "Wir beginnen mit Ziel, Erfahrung, verfügbarer Zeit, Einschränkungen und aktuellen Gewohnheiten." },
+      { icon: icons.plan, title: "Plan", text: "Du erhältst eine Struktur für Training, Ernährung und Regeneration." },
+      { icon: icons.progress, title: "Fortschritt", text: "Ich verfolge deine Ergebnisse persönlich und passe den Plan an, damit du weiter vorankommst." }
+    ],
     directContact: `Direkt: ${whatsappDisplay}`,
     footer: "Alles auf dieser Website wurde von mir, Svetoslav Milushev, persönlich erstellt und bestätigt. Die Pläne und die gesamte Struktur werden direkt von mir bereitgestellt."
   },
@@ -393,40 +477,124 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     nav: [
       ["Profil", "about"],
       ["Services", "services"],
-      ["Reservation", "booking"]
+      ["Réservation", "booking"]
     ],
-    headerCta: "Reserver",
+    headerCta: "Réserver",
     heroEyebrow: "Boxe, fitness et nutrition",
-    heroTitle: "Un entrainement structure, intense et mesurable.",
+    heroTitle: "Des plans individuels d'entraînement et de nutrition, précisément adaptés à ton emploi du temps.",
     heroText:
-      "Coaching personnel pour clients en Angleterre: technique de boxe, force, condition physique, programmes en ligne et plans nutritionnels avec communication claire.",
-    heroPrimary: "Reserver une seance",
+      "Un système autonome pour séances privées de boxe, instructions fitness en ligne, plans nutritionnels et régime alimentaire structuré.",
+    heroPrimary: "Réserver une séance",
     heroSecondary: "Contact WhatsApp",
-    whatsappCta: "Ecrire sur WhatsApp",
+    whatsappCta: "Écrire sur WhatsApp",
     soloText: "Plus de 20 ans d'expérience en boxe, un parcours semi-professionnel jusqu'au ring professionnel, de nombreux résultats et victoires, ainsi qu'une expérience internationale dans plus de 50 pays. Deuxième discipline: l'athlétisme, avec 8 titres nationaux et une qualification européenne. Je travaille également dans un secteur de sécurité de haut niveau, axé sur la protection antiterroriste. Je suis aussi moniteur de ski et diplômé de l'Académie nationale des sports avec la première place et le meilleur résultat académique.",
+    focusTitle: "Boxe + nutrition",
     stats: [
-      { value: "1:1", label: "Coaching prive" },
-      { value: "Online", label: "Training et nutrition" },
-      { value: "Prix", label: "final clair" }
+      { value: "12+", label: "séances par semaine" },
+      { value: "3", label: "niveaux d'entraînement" },
+      { value: "24/7", label: "guidance en ligne" }
     ],
-    focusItems: ["Technique de boxe", "Force et condition", "Coaching en ligne", "Plan nutritionnel"],
-    bookingEyebrow: "Reservation",
-    bookingTitle: "Choisis une seance ou commence avec un plan en ligne.",
-    bookingCardTitle: "Contact direct",
+    focusItems: ["La technique avant la charge", "Instructions en ligne"],
+    coverTitle: "Entraînement de boxe",
+    gymPhotoEyebrow: "environnement d'entraînement",
+    gymPhotoTitle: "Travail en salle avec un vrai rythme d'entraînement",
+    gymPhotoText: "L'entraînement est construit autour de la technique, de la distance, du contrôle et du mouvement constant dans un environnement de travail réel.",
+    aboutEyebrow: "profil",
+    aboutTitle: "À propos du coach et de la communauté d'entraînement",
+    soloTitle: "Approche personnelle",
+    groupTitle: "Entraînement en groupe",
+    groupText: "Un environnement pour les personnes qui veulent du mouvement, de la technique de boxe, de la motivation et de la régularité.",
+    groupBadge: "entraînement en groupe",
+    servicesEyebrow: "services",
+    servicesTitle: "Axes principaux",
+    services: [
+      {
+        icon: icons.boxing,
+        title: "Entraînement de boxe",
+        text: "Travail individuel sur la garde, les coups, la défense, le déplacement, la réaction et la condition physique.",
+        points: ["entraînement personnel", "entraînement en groupe", "préparation compétition", "technique et condition physique"]
+      },
+      {
+        icon: icons.online,
+        title: "Coach fitness en ligne",
+        text: "Tu reçois des instructions, un plan hebdomadaire et des corrections en ligne, sans présence obligatoire en salle.",
+        points: ["exercices guidés", "planning hebdomadaire"]
+      },
+      {
+        icon: icons.nutrition,
+        title: "Plan nutritionnel personnel",
+        text: "Nutrition pratique selon ton objectif, ton quotidien, tes préférences et tes habitudes réelles.",
+        points: ["calories et macros", "exemples de menus", "ajustements hebdomadaires"]
+      }
+    ],
+    programsEyebrow: "programmes",
+    programsTitle: "Plans selon ton objectif",
+    programs: [
+      {
+        icon: icons.strength,
+        title: "Force et forme",
+        text: "Séances de force structurées pour le tonus musculaire, la stabilité et un progrès visible sans surcharge aléatoire.",
+        details: ["3-5 séances par semaine", "charge progressive", "correction technique"]
+      },
+      {
+        icon: icons.conditioning,
+        title: "Endurance et condition",
+        text: "Séances fonctionnelles avec cardio, mobilité et intervalles pour plus d'énergie et de résistance.",
+        details: ["blocs HIIT", "base aérobie", "récupération"]
+      },
+      {
+        icon: icons.instructions,
+        title: "Instructions en ligne",
+        text: "Un plan clair avec exercices, séries, répétitions, tempo et notes d'exécution.",
+        details: ["bilan hebdomadaire", "corrections en ligne"]
+      }
+    ],
+    bookingEyebrow: "réservation",
+    bookingTitle: "Réserver une séance ou commencer avec un plan en ligne",
+    bookingCardTitle: "Choisis un service, un objectif et un horaire adapté.",
     bookingCardText:
-      "Pour le moment, les paiements sont organises individuellement apres un contact direct. Une fois le service confirme, tu recois le prix final et le mode de paiement adapte.",
+      "Pour le moment, les paiements sont organisés individuellement après un contact direct. Une fois le service confirmé, tu reçois le prix final et le mode de paiement adapté.",
     bookingItems: [
-      "Contact WhatsApp pour organiser rapidement",
-      "Confirmation claire du plan, du prix et du début"
+      "Première consultation",
+      "Séance privée",
+      "Plan en ligne",
+      "Plan nutritionnel"
     ],
     paymentInfoBadge: "paiement",
     paymentInfoTitle: "Lien Stripe individuel ou virement bancaire",
-    paymentInfoText: "Chaque paiement client sera envoye sous forme de lien Stripe genere individuellement pour le service confirme. Un virement bancaire direct pourra aussi etre propose apres confirmation.",
+    paymentInfoText: "Chaque paiement client sera envoyé sous forme de lien Stripe généré individuellement pour le service confirmé. Un virement bancaire direct pourra aussi être proposé après confirmation.",
     paymentInfoItems: ["prix final avant paiement", "lien Stripe personnel", "option de virement bancaire direct"],
-    nutritionOfferBadge: "plan pret",
+    nutritionEyebrow: "nutrition",
+    nutritionTitle: "Plan nutritionnel personnel pour mieux manger",
+    nutritionCardTitle: "Pas d'extrêmes. Des règles claires.",
+    nutritionCardText: "Le plan est construit dans la direction souhaitée par le client et adapté à son emploi du temps quotidien. L'objectif est le contrôle des calories, suffisamment de protéines, une énergie stable et moins d'improvisation.",
+    nutritionOfferBadge: "plan prêt",
     nutritionOfferTitle: "Plan nutritionnel avec prix final",
-    nutritionOfferText: "Commence directement avec un plan nutritionnel personnel, adapte a ton emploi du temps, ton objectif et tes habitudes reelles. C'est le paiement du plan complet, pas un acompte.",
-    nutritionOfferItems: ["plan nutritionnel individuel", "regles claires et exemples de menus", "communication en ligne pour les details"],
+    nutritionOfferText: "Commence directement avec un plan nutritionnel personnel, adapté à ton emploi du temps, ton objectif et tes habitudes réelles. C'est le paiement du plan complet avec un prix final clair.",
+    nutritionOfferItems: ["plan nutritionnel individuel", "règles claires et exemples de menus", "communication en ligne pour les détails"],
+    nutrition: [
+      { title: "Équilibre des macros", text: "Objectifs quotidiens clairs pour protéines, glucides et lipides selon ton objectif et ton planning." },
+      { title: "Aliments réels", text: "Un menu avec des produits accessibles, une préparation simple et des options pour les jours plus actifs." },
+      { title: "Habitudes, pas extrêmes", text: "Des changements progressifs que tu peux maintenir sans régimes courts et épuisement." },
+      { title: "Suivi", text: "Ajustements hebdomadaires selon le poids, les mensurations, la force, le sommeil et l'énergie." }
+    ],
+    weekEyebrow: "semaine",
+    weekTitle: "Exemple de structure hebdomadaire d'entraînement",
+    week: [
+      ["Lundi", "Force: bas du corps + tronc", "60 min"],
+      ["Mardi", "Technique de boxe + condition", "50 min"],
+      ["Mercredi", "Mobilité et récupération active", "35 min"],
+      ["Jeudi", "Force: haut du corps + dos", "60 min"],
+      ["Vendredi", "Bilan en ligne + ajustements", "30 min"],
+      ["Samedi", "Complexe corps complet", "55 min"]
+    ],
+    methodEyebrow: "méthode",
+    methodTitle: "Un processus contrôlé, pas seulement de la motivation",
+    process: [
+      { icon: icons.assessment, title: "Évaluation", text: "Nous commençons par ton objectif, ton expérience, ton temps disponible, tes limites et tes habitudes actuelles." },
+      { icon: icons.plan, title: "Plan", text: "Tu reçois une structure pour l'entraînement, la nutrition et la récupération." },
+      { icon: icons.progress, title: "Progrès", text: "Je suis personnellement tes résultats et j'ajuste le plan pour que tu continues d'avancer." }
+    ],
     directContact: `Direct: ${whatsappDisplay}`,
     footer: "Tout ce qui se trouve sur ce site est construit et confirmé personnellement par moi, Svetoslav Milushev. Les plans et toute la structure sont fournis directement par moi."
   },
@@ -434,42 +602,125 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     ...content.en,
     langLabel: "Idioma",
     nav: [
-      ["Sobre mi", "about"],
+      ["Sobre mí", "about"],
       ["Servicios", "services"],
       ["Reserva", "booking"]
     ],
     headerCta: "Reservar",
-    heroEyebrow: "Boxeo, fitness y nutricion",
-    heroTitle: "Entrenamiento con estructura, intensidad y progreso medible.",
+    heroEyebrow: "Boxeo, fitness y nutrición",
+    heroTitle: "Planes individuales de entrenamiento y nutrición, adaptados con precisión a tu horario diario.",
     heroText:
-      "Coaching personal para clientes en Inglaterra: tecnica de boxeo, fuerza, condicion fisica, planes online y nutricion con comunicacion clara.",
+      "Un sistema independiente para sesiones privadas de boxeo, instrucciones fitness online, planes nutricionales y régimen alimenticio.",
     heroPrimary: "Reservar entrenamiento",
     heroSecondary: "Contacto WhatsApp",
     whatsappCta: "Escribir por WhatsApp",
     soloText: "Más de 20 años de experiencia en boxeo, una trayectoria semiprofesional hasta el ring profesional, numerosos logros y victorias, y experiencia internacional en más de 50 países. Segundo deporte: atletismo, con 8 títulos nacionales y una clasificación europea. También trabajo en un sector de seguridad de alto nivel, enfocado en la protección antiterrorista. Soy instructor de esquí y me gradué en la Academia Nacional de Deportes en primer lugar, con el mejor resultado académico.",
     stats: [
-      { value: "1:1", label: "Coaching personal" },
-      { value: "Online", label: "Training y nutricion" },
-      { value: "Precio", label: "final claro" }
+      { value: "12+", label: "sesiones semanales" },
+      { value: "3", label: "niveles de entrenamiento" },
+      { value: "24/7", label: "guía online" }
     ],
-    focusItems: ["Tecnica de boxeo", "Fuerza y condicion", "Coaching online", "Plan nutricional"],
-    bookingEyebrow: "Reserva",
-    bookingTitle: "Elige una sesion o empieza con un plan online.",
-    bookingCardTitle: "Contacto directo",
+    focusItems: ["Técnica antes de la carga", "Instrucciones online"],
+    coverTitle: "Entrenamiento de boxeo",
+    gymPhotoEyebrow: "entorno de entrenamiento",
+    gymPhotoTitle: "Trabajo en gimnasio con ritmo real de entrenamiento",
+    gymPhotoText: "El entrenamiento se construye alrededor de técnica, distancia, control y movimiento constante en un entorno real de trabajo.",
+    aboutEyebrow: "sobre mí",
+    aboutTitle: "Sobre el coach y la comunidad de entrenamiento",
+    soloTitle: "Enfoque personal",
+    groupTitle: "Entrenamiento en grupo",
+    groupText: "Un entorno para personas que buscan movimiento, técnica de boxeo, motivación y constancia en un ritmo común.",
+    groupBadge: "entrenamiento en grupo",
+    servicesEyebrow: "servicios",
+    servicesTitle: "Áreas principales",
+    services: [
+      {
+        icon: icons.boxing,
+        title: "Entrenamiento de boxeo",
+        text: "Trabajo individual sobre guardia, golpes, defensa, movimiento, reacción y condición física.",
+        points: ["entrenamiento personal", "entrenamiento en grupo", "preparación para competición", "técnica y condición física"]
+      },
+      {
+        icon: icons.online,
+        title: "Coach fitness online",
+        text: "Recibes instrucciones, un plan semanal y correcciones online, sin presencia obligatoria en gimnasio.",
+        points: ["ejercicios guiados", "horario semanal"]
+      },
+      {
+        icon: icons.nutrition,
+        title: "Plan nutricional personal",
+        text: "Nutrición práctica basada en tu objetivo, rutina diaria, preferencias y hábitos reales.",
+        points: ["calorías y macros", "menús de ejemplo", "ajustes semanales"]
+      }
+    ],
+    programsEyebrow: "programas",
+    programsTitle: "Planes según tu objetivo",
+    programs: [
+      {
+        icon: icons.strength,
+        title: "Fuerza y forma",
+        text: "Sesiones de fuerza estructuradas para tono muscular, estabilidad y progreso visible sin sobrecarga aleatoria.",
+        details: ["3-5 sesiones semanales", "carga progresiva", "corrección técnica"]
+      },
+      {
+        icon: icons.conditioning,
+        title: "Resistencia y condición",
+        text: "Sesiones funcionales con cardio, movilidad e intervalos para más energía y resistencia.",
+        details: ["bloques HIIT", "base aeróbica", "recuperación"]
+      },
+      {
+        icon: icons.instructions,
+        title: "Instrucciones online",
+        text: "Un plan claro con ejercicios, series, repeticiones, tempo y notas de ejecución.",
+        details: ["revisión semanal", "correcciones online"]
+      }
+    ],
+    bookingEyebrow: "reserva",
+    bookingTitle: "Reserva una sesión o empieza con un plan online",
+    bookingCardTitle: "Elige un servicio, objetivo y horario adecuado.",
     bookingCardText:
-      "Por ahora, los pagos se organizan individualmente despues del contacto directo. Una vez confirmado el servicio, recibes el precio final y el metodo de pago adecuado.",
+      "Por ahora, los pagos se organizan individualmente después del contacto directo. Una vez confirmado el servicio, recibes el precio final y el método de pago adecuado.",
     bookingItems: [
-      "Contacto por WhatsApp para organizar rapido",
-      "Confirmación clara del plan, precio e inicio"
+      "Primera consulta",
+      "Sesión privada",
+      "Plan online",
+      "Plan nutricional"
     ],
     paymentInfoBadge: "pago",
     paymentInfoTitle: "Enlace Stripe individual o transferencia bancaria",
-    paymentInfoText: "Cada pago de cliente se enviara como un enlace de pago Stripe generado individualmente para el servicio confirmado. Tambien puede ofrecerse transferencia bancaria directa despues de la confirmacion.",
-    paymentInfoItems: ["precio final antes del pago", "enlace Stripe personal", "opcion de transferencia bancaria directa"],
+    paymentInfoText: "Cada pago de cliente se enviará como un enlace de pago Stripe generado individualmente para el servicio confirmado. También puede ofrecerse transferencia bancaria directa después de la confirmación.",
+    paymentInfoItems: ["precio final antes del pago", "enlace Stripe personal", "opción de transferencia bancaria directa"],
+    nutritionEyebrow: "nutrición",
+    nutritionTitle: "Plan nutricional personal para comer mejor",
+    nutritionCardTitle: "Sin extremos. Reglas claras.",
+    nutritionCardText: "El plan se construye en la dirección que desea el cliente, adaptado a su horario diario. El objetivo es control calórico, suficiente proteína, energía estable y menos improvisación.",
     nutritionOfferBadge: "plan listo",
     nutritionOfferTitle: "Plan nutricional con precio final",
-    nutritionOfferText: "Empieza directamente con un plan nutricional personal, creado alrededor de tu horario, objetivo y habitos reales. Es el pago del plan completo con precio final claro.",
-    nutritionOfferItems: ["plan nutricional individual", "reglas claras y menus de ejemplo", "comunicacion online para detalles"],
+    nutritionOfferText: "Empieza directamente con un plan nutricional personal, creado alrededor de tu horario, objetivo y hábitos reales. Es el pago del plan completo con precio final claro.",
+    nutritionOfferItems: ["plan nutricional individual", "reglas claras y menús de ejemplo", "comunicación online para detalles"],
+    nutrition: [
+      { title: "Equilibrio de macros", text: "Objetivos diarios claros de proteínas, carbohidratos y grasas según tu objetivo y horario." },
+      { title: "Comida real", text: "Un menú con productos accesibles, preparación sencilla y opciones para días más activos." },
+      { title: "Hábitos, no extremos", text: "Cambios graduales que puedes mantener sin dietas cortas ni agotamiento." },
+      { title: "Seguimiento", text: "Ajustes semanales según peso, medidas, fuerza, sueño y sensación de energía." }
+    ],
+    weekEyebrow: "semana",
+    weekTitle: "Ejemplo de estructura semanal de entrenamiento",
+    week: [
+      ["Lunes", "Fuerza: tren inferior + core", "60 min"],
+      ["Martes", "Técnica de boxeo + condición", "50 min"],
+      ["Miércoles", "Movilidad y recuperación activa", "35 min"],
+      ["Jueves", "Fuerza: tren superior + espalda", "60 min"],
+      ["Viernes", "Revisión online + ajustes", "30 min"],
+      ["Sábado", "Complejo de cuerpo completo", "55 min"]
+    ],
+    methodEyebrow: "método",
+    methodTitle: "Un proceso controlado, no solo motivación",
+    process: [
+      { icon: icons.assessment, title: "Evaluación", text: "Empezamos con tu objetivo, experiencia, tiempo disponible, limitaciones y hábitos actuales." },
+      { icon: icons.plan, title: "Plan", text: "Recibes una estructura para entrenamiento, nutrición y recuperación." },
+      { icon: icons.progress, title: "Progreso", text: "Sigo personalmente tus resultados y ajusto el plan para que sigas avanzando." }
+    ],
     directContact: `Directo: ${whatsappDisplay}`,
     footer: "Todo lo que aparece en este sitio está creado y confirmado personalmente por mí, Svetoslav Milushev. Los planes y toda la estructura son proporcionados directamente por mí."
   }
