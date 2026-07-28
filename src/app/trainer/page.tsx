@@ -171,7 +171,7 @@ const content = {
         icon: icons.instructions,
         title: "Онлайн инструкции",
         text: "План с ясно подредени упражнения, серии, повторения, темпо и бележки за изпълнение.",
-        details: ["видео насоки", "седмичен отчет", "корекции онлайн"]
+        details: ["седмичен отчет", "корекции онлайн"]
       }
     ],
     bookingEyebrow: "буукинг",
@@ -300,7 +300,7 @@ const content = {
         icon: icons.instructions,
         title: "Online instructions",
         text: "A clear plan with exercises, sets, reps, tempo and execution notes.",
-        details: ["video guidance", "weekly check-in", "online corrections"]
+        details: ["weekly check-in", "online corrections"]
       }
     ],
     bookingEyebrow: "booking",
