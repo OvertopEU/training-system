@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import { Section } from "@/components/section";
 
-type Lang = "en" | "bg" | "de" | "fr" | "es";
+type Lang = "en" | "bg" | "de" | "fr" | "es" | "ua";
 
 export const metadata: Metadata = {
   applicationName: "TS",
@@ -38,7 +38,8 @@ export const metadata: Metadata = {
       bg: "/trainer?lang=bg",
       de: "/trainer?lang=de",
       fr: "/trainer?lang=fr",
-      es: "/trainer?lang=es"
+      es: "/trainer?lang=es",
+      "uk-UA": "/trainer?lang=ua"
     }
   },
   openGraph: {
@@ -337,7 +338,7 @@ const content = {
   }
 };
 
-const supportedLangs = ["en", "bg", "de", "fr", "es"] as const;
+const supportedLangs = ["en", "bg", "de", "fr", "es", "ua"] as const;
 const defaultLang: Lang = "en";
 type TrainerCopy = typeof content.en;
 
@@ -615,6 +616,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     heroSecondary: "Contacto WhatsApp",
     whatsappCta: "Escribir por WhatsApp",
     soloText: "Más de 20 años de experiencia en boxeo, una trayectoria semiprofesional hasta el ring profesional, numerosos logros y victorias, y experiencia internacional en más de 50 países. Segundo deporte: atletismo, con 8 títulos nacionales y una clasificación europea. También trabajo en un sector de seguridad de alto nivel, enfocado en la protección antiterrorista. Soy instructor de esquí y me gradué en la Academia Nacional de Deportes en primer lugar, con el mejor resultado académico.",
+    focusTitle: "Boxeo + nutrición",
     stats: [
       { value: "12+", label: "sesiones semanales" },
       { value: "3", label: "niveles de entrenamiento" },
@@ -723,6 +725,126 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     ],
     directContact: `Directo: ${whatsappDisplay}`,
     footer: "Todo lo que aparece en este sitio está creado y confirmado personalmente por mí, Svetoslav Milushev. Los planes y toda la estructura son proporcionados directamente por mí."
+  },
+  ua: {
+    ...content.en,
+    langLabel: "Мова",
+    nav: [
+      ["Про мене", "about"],
+      ["Послуги", "services"],
+      ["Запис", "booking"]
+    ],
+    headerCta: "Запис",
+    heroEyebrow: "тренування, бокс і харчування",
+    heroTitle: "Індивідуальні тренувальні та харчові плани, точно побудовані під твій щоденний графік.",
+    heroText: "Самостійна система для приватних занять з боксу, онлайн-фітнес інструкцій, планів харчування та дієтичного режиму.",
+    heroPrimary: "Записатися на консультацію",
+    heroSecondary: "Переглянути послуги",
+    whatsappCta: "Написати в WhatsApp",
+    focusTitle: "Бокс + харчування",
+    stats: [
+      { value: "12+", label: "занять на тиждень" },
+      { value: "3", label: "рівні тренування" },
+      { value: "24/7", label: "онлайн-супровід" }
+    ],
+    focusItems: ["Техніка перед навантаженням", "Онлайн-інструкції"],
+    coverTitle: "Тренування з боксу",
+    gymPhotoEyebrow: "тренувальне середовище",
+    gymPhotoTitle: "Робота в залі з реальним тренувальним ритмом",
+    gymPhotoText: "Тренування будується навколо техніки, дистанції, контролю та постійного руху в реальному робочому середовищі.",
+    aboutEyebrow: "про мене",
+    aboutTitle: "Про тренера і тренувальну спільноту",
+    soloTitle: "Особистий підхід",
+    soloText: "20+ років досвіду в боксі, напівпрофесійний шлях до професійного рингу, численні досягнення та перемоги з міжнародним досвідом у понад 50 країнах. Другий спорт: легка атлетика з 8 національними титулами та європейською квотою. Також працюю у високому секторі безпеки з фокусом на антитерористичний захист. Я лижний інструктор і закінчив Національну спортивну академію з першим місцем та найвищим результатом.",
+    groupTitle: "Групові тренування",
+    groupText: "Середовище для людей, які хочуть рух, техніку боксу, мотивацію та сталість у спільному ритмі.",
+    groupBadge: "групові тренування",
+    servicesEyebrow: "послуги",
+    servicesTitle: "Основні напрями",
+    services: [
+      {
+        icon: icons.boxing,
+        title: "Тренування з боксу",
+        text: "Індивідуальна робота над стійкою, ударами, захистом, рухом, реакцією та кондицією.",
+        points: ["персональні тренування", "групові тренування", "підготовка до змагань", "техніка та кондиційна підготовка"]
+      },
+      {
+        icon: icons.online,
+        title: "Онлайн-фітнес тренер",
+        text: "Ти отримуєш інструкції, тижневий план і онлайн-корекції без обов'язкової присутності в залі.",
+        points: ["вправи з інструкціями", "тижневий графік"]
+      },
+      {
+        icon: icons.nutrition,
+        title: "Особистий план харчування",
+        text: "Практичне харчування відповідно до твоєї цілі, щоденного режиму, уподобань і реальних звичок.",
+        points: ["калорії та макроси", "приклади меню", "щотижневі корекції"]
+      }
+    ],
+    programsEyebrow: "програми",
+    programsTitle: "Плани відповідно до твоєї цілі",
+    programs: [
+      {
+        icon: icons.strength,
+        title: "Сила і форма",
+        text: "Структуровані силові заняття для м'язового тонусу, стабільності та видимого прогресу без хаотичного навантаження.",
+        details: ["3-5 занять на тиждень", "прогресивне навантаження", "корекція техніки"]
+      },
+      {
+        icon: icons.conditioning,
+        title: "Витривалість і кондиція",
+        text: "Функціональні заняття з кардіо, мобільністю та інтервалами для кращої енергії й стійкості.",
+        details: ["HIIT-блоки", "аеробна база", "відновлення"]
+      },
+      {
+        icon: icons.instructions,
+        title: "Онлайн-інструкції",
+        text: "Чіткий план з вправами, підходами, повтореннями, темпом і нотатками щодо виконання.",
+        details: ["щотижневий звіт", "онлайн-корекції"]
+      }
+    ],
+    bookingEyebrow: "запис",
+    bookingTitle: "Запис на тренування або онлайн-план",
+    bookingCardTitle: "Обери послугу, ціль і зручний графік.",
+    bookingCardText: "Наразі оплата узгоджується індивідуально після прямого контакту. Після підтвердження послуги ти отримуєш кінцеву ціну та відповідний спосіб оплати.",
+    bookingItems: ["Перша консультація", "Приватне заняття", "Онлайн-план", "План харчування"],
+    paymentInfoBadge: "оплата",
+    paymentInfoTitle: "Індивідуальне Stripe-посилання або банківський переказ",
+    paymentInfoText: "Кожен платіж клієнта надсилатиметься як індивідуально згенероване Stripe payment link для підтвердженої послуги. Після підтвердження також може бути доступний прямий банківський переказ.",
+    paymentInfoItems: ["кінцева ціна перед оплатою", "персональне Stripe payment link", "можливість прямого банківського переказу"],
+    directContact: `Для прямого контакту напиши в WhatsApp: ${whatsappDisplay}.`,
+    nutritionEyebrow: "харчування",
+    nutritionTitle: "Особистий план харчування для кращих звичок",
+    nutritionCardTitle: "Без крайнощів. Чіткі правила.",
+    nutritionCardText: "План будується в напрямі, якого хоче клієнт, і підлаштовується під його щоденний графік. Мета — контроль калорій, достатньо білка, стабільна енергія та менше імпровізації.",
+    nutritionOfferBadge: "готовий план",
+    nutritionOfferTitle: "План харчування з кінцевою ціною",
+    nutritionOfferText: "Почни напряму з особистого плану харчування, побудованого навколо твого графіка, цілі та реальних звичок. Це оплата за весь план з чіткою кінцевою ціною.",
+    nutritionOfferItems: ["індивідуальний план харчування", "чіткі правила та приклади меню", "онлайн-комунікація для уточнень"],
+    nutrition: [
+      { title: "Баланс макросів", text: "Чіткі щоденні цілі щодо білків, вуглеводів і жирів відповідно до твоєї цілі та графіка." },
+      { title: "Реальна їжа", text: "Меню з доступними продуктами, простою підготовкою та варіантами для більш активних днів." },
+      { title: "Звички, не крайнощі", text: "Поступові зміни, які можна підтримувати без коротких дієт і виснаження." },
+      { title: "Відстеження", text: "Щотижневі корекції за вагою, вимірами, силою, сном і відчуттям енергії." }
+    ],
+    weekEyebrow: "тиждень",
+    weekTitle: "Приклад тижневої структури тренувань",
+    week: [
+      ["Понеділок", "Сила: нижня частина тіла + кор", "60 хв"],
+      ["Вівторок", "Техніка боксу + кондиція", "50 хв"],
+      ["Середа", "Мобільність і активне відновлення", "35 хв"],
+      ["Четвер", "Сила: верхня частина тіла + спина", "60 хв"],
+      ["П'ятниця", "Онлайн-звіт + корекції", "30 хв"],
+      ["Субота", "Комплекс на все тіло", "55 хв"]
+    ],
+    methodEyebrow: "метод",
+    methodTitle: "Контрольований процес, не просто мотивація",
+    process: [
+      { icon: icons.assessment, title: "Оцінка", text: "Починаємо з твоєї цілі, досвіду, доступного часу, обмежень і поточних звичок." },
+      { icon: icons.plan, title: "План", text: "Ти отримуєш структуру для тренувань, харчування та відновлення." },
+      { icon: icons.progress, title: "Прогрес", text: "Я особисто відстежую твої результати й коригую план, щоб ти стабільно рухався вперед." }
+    ],
+    footer: "Усе на цьому сайті створено й підтверджено особисто мною, Svetoslav Milushev. Плани та вся структура надаються безпосередньо мною."
   }
 };
 
