@@ -131,7 +131,7 @@ const content = {
     aboutEyebrow: "about",
     aboutTitle: "За треньора и тренировъчната общност",
     soloTitle: "Личен подход",
-    soloText: "20+ години опит в бокса, полупрофесионален път до професионален ринг, редица постижения и победи с международен опит в над 50 държави. Втори спорт: лека атлетика с 8 национални титли и европейска квота.",
+    soloText: "20+ години опит в бокса, полупрофесионален път до професионален ринг, редица постижения и победи с международен опит в над 50 държави. Втори спорт: лека атлетика с 8 национални титли и европейска квота. Работя и в най-висок сектор на охрана с фокус върху анти-терористична сигурност. Ски инструктор съм и съм завършил Национална спортна академия с първо място и най-висок успех.",
     groupTitle: "Групови тренировки",
     groupText: "Среда за хора, които искат движение, бокс техника, мотивация и постоянство в общ ритъм.",
     groupBadge: "group training",
@@ -269,7 +269,7 @@ const content = {
     aboutEyebrow: "about",
     aboutTitle: "About the coach and training community",
     soloTitle: "Personal approach",
-    soloText: "20+ years of boxing experience, a semi-professional path up to the professional ring, multiple achievements and wins with international experience across 50+ countries. Second sport: athletics with 8 national titles and a European quota.",
+    soloText: "20+ years of boxing experience, a semi-professional path up to the professional ring, multiple achievements and wins with international experience across 50+ countries. Second sport: athletics with 8 national titles and a European quota. I also work in a high-level security sector focused on anti-terrorism protection. I am a ski instructor and graduated from the National Sports Academy in first place with the highest academic result.",
     groupTitle: "Group training",
     groupText: "A training environment for people who want movement, boxing technique, motivation and consistency.",
     groupBadge: "group training",
@@ -404,6 +404,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     heroPrimary: "Training buchen",
     heroSecondary: "WhatsApp Kontakt",
     whatsappCta: "Auf WhatsApp schreiben",
+    soloText: "Mehr als 20 Jahre Boxerfahrung, ein semiprofessioneller Weg bis in den Profiring, zahlreiche Erfolge und Siege sowie internationale Erfahrung in über 50 Ländern. Zweite Sportart: Leichtathletik mit 8 nationalen Titeln und einer europäischen Qualifikation. Zusätzlich arbeite ich in einem hochrangigen Sicherheitsbereich mit Schwerpunkt auf Anti-Terror-Schutz. Ich bin Skilehrer und habe die Nationale Sportakademie als Jahrgangsbester mit dem höchsten akademischen Ergebnis abgeschlossen.",
     stats: [
       { value: "1:1", label: "Personal Coaching" },
       { value: "Online", label: "Training und Ernahrung" },
@@ -467,6 +468,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     heroPrimary: "Reserver une seance",
     heroSecondary: "Contact WhatsApp",
     whatsappCta: "Ecrire sur WhatsApp",
+    soloText: "Plus de 20 ans d'expérience en boxe, un parcours semi-professionnel jusqu'au ring professionnel, de nombreux résultats et victoires, ainsi qu'une expérience internationale dans plus de 50 pays. Deuxième discipline: l'athlétisme, avec 8 titres nationaux et une qualification européenne. Je travaille également dans un secteur de sécurité de haut niveau, axé sur la protection antiterroriste. Je suis aussi moniteur de ski et diplômé de l'Académie nationale des sports avec la première place et le meilleur résultat académique.",
     stats: [
       { value: "1:1", label: "Coaching prive" },
       { value: "Online", label: "Training et nutrition" },
@@ -530,6 +532,7 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     heroPrimary: "Reservar entrenamiento",
     heroSecondary: "Contacto WhatsApp",
     whatsappCta: "Escribir por WhatsApp",
+    soloText: "Más de 20 años de experiencia en boxeo, una trayectoria semiprofesional hasta el ring profesional, numerosos logros y victorias, y experiencia internacional en más de 50 países. Segundo deporte: atletismo, con 8 títulos nacionales y una clasificación europea. También trabajo en un sector de seguridad de alto nivel, enfocado en la protección antiterrorista. Soy instructor de esquí y me gradué en la Academia Nacional de Deportes en primer lugar, con el mejor resultado académico.",
     stats: [
       { value: "1:1", label: "Coaching personal" },
       { value: "Online", label: "Training y nutricion" },
