@@ -108,7 +108,7 @@ const content = {
     headerCta: "Запази",
     heroEyebrow: "тренировки, бокс и правилно хранене",
     heroTitle: "Индивидуални тренировъчни и хранителни планове, изградени точно около твоя дневен график.",
-    heroText: "Самостоятелна система за лични бокс тренировки, онлайн фитнес инструкции, хранителни режими и чисти планове с крайна цена.",
+    heroText: "Самостоятелна система за лични бокс тренировки, онлайн фитнес инструкции, хранителни режими и чисти персонални планове.",
     heroPrimary: "Запази консултация",
     heroSecondary: "Виж услугите",
     whatsappCta: "Пиши в WhatsApp",
@@ -177,20 +177,16 @@ const content = {
     bookingEyebrow: "записване",
     bookingTitle: "Записване за тренировка или онлайн режим",
     bookingCardTitle: "Избери услуга, цел и удобен график.",
-    bookingCardText: "За момента плащанията се уточняват индивидуално след директен контакт. След избор на услуга получаваш крайна цена и персонален начин за плащане.",
+    bookingCardText: "За момента всички детайли се уточняват индивидуално след директен контакт. След избор на услуга получаваш лична насока, график и следващи стъпки.",
     bookingItems: ["Първа консултация", "Индивидуална тренировка", "Онлайн режим", "Хранителен план"],
-    paymentInfoBadge: "плащане",
-    paymentInfoTitle: "Индивидуален Stripe линк или банков трансфер",
-    paymentInfoText: "Всеки конкретен пеймент към клиент ще се изпраща като индивидуално генериран Stripe payment link за съответната услуга. При нужда ще има и възможност за директен банков трансфер след потвърждение.",
-    paymentInfoItems: ["крайна цена преди плащане", "персонален Stripe payment link", "възможност за директен банков трансфер"],
     directContact: `За директна връзка пиши в WhatsApp: ${whatsappDisplay}.`,
     nutritionEyebrow: "хранене",
     nutritionTitle: "Личен диетичен режим за правилно хранене",
     nutritionCardTitle: "Без крайности. С ясни правила.",
     nutritionCardText: "Режимът се изгражда в насоката, която клиентът желае, спрямо неговия дневен график. Целта е контрол върху калориите, достатъчно протеин, стабилна енергия и по-малко импровизация.",
     nutritionOfferBadge: "готов план",
-    nutritionOfferTitle: "Хранителен режим с крайна цена",
-    nutritionOfferText: "Започни директно с персонален режим, изграден около твоя график, цел и реални навици. Плащането е за целия план с ясна крайна цена.",
+    nutritionOfferTitle: "Персонален хранителен режим",
+    nutritionOfferText: "Започни директно с персонален режим, изграден около твоя график, цел и реални навици. Детайлите се уточняват лично преди старт.",
     nutritionOfferItems: ["индивидуален хранителен режим", "ясни правила и примерни менюта", "онлайн комуникация за уточнения"],
     nutrition: [
       { title: "Баланс на макроси", text: "Ясен дневен прием на протеин, въглехидрати и мазнини според целта и графика." },
@@ -296,20 +292,16 @@ const content = {
     bookingEyebrow: "booking",
     bookingTitle: "Book a training session or online plan",
     bookingCardTitle: "Choose a service, goal and schedule.",
-    bookingCardText: "For now, payments are arranged individually after direct contact. Once the service is confirmed, you receive the final price and the right payment method.",
+    bookingCardText: "For now, every detail is arranged individually after direct contact. Once the service is chosen, you receive personal guidance, scheduling and next steps.",
     bookingItems: ["Initial consultation", "Private session", "Online plan", "Nutrition plan"],
-    paymentInfoBadge: "payment",
-    paymentInfoTitle: "Individual Stripe link or bank transfer",
-    paymentInfoText: "Each client payment will be sent as an individually generated Stripe payment link for the confirmed service. A direct bank transfer option can also be provided after confirmation.",
-    paymentInfoItems: ["final price before payment", "personal Stripe payment link", "direct bank transfer option"],
     directContact: `For direct contact, message on WhatsApp: ${whatsappDisplay}.`,
     nutritionEyebrow: "nutrition",
     nutritionTitle: "Personal nutrition plan for better eating",
     nutritionCardTitle: "No extremes. Clear rules.",
     nutritionCardText: "The plan is built around the direction the client wants, matched to their daily schedule. The goal is calorie control, enough protein, steady energy and less improvisation.",
     nutritionOfferBadge: "ready plan",
-    nutritionOfferTitle: "Nutrition plan with final price",
-    nutritionOfferText: "Start directly with a personal nutrition plan built around your schedule, goal and real habits. This is full-plan payment with a clear final price.",
+    nutritionOfferTitle: "Personal nutrition plan",
+    nutritionOfferText: "Start directly with a personal nutrition plan built around your schedule, goal and real habits. Details are confirmed personally before starting.",
     nutritionOfferItems: ["individual nutrition plan", "clear rules and sample menus", "online communication for details"],
     nutrition: [
       { title: "Macro balance", text: "Clear daily protein, carbohydrate and fat targets based on your goal and schedule." },
@@ -427,24 +419,20 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     bookingTitle: "Buche eine Trainingseinheit oder starte mit einem Online-Plan.",
     bookingCardTitle: "Wähle Leistung, Ziel und passenden Zeitplan.",
     bookingCardText:
-      "Zahlungen werden vorerst individuell nach direktem Kontakt abgestimmt. Nach Bestätigung der Leistung erhältst du den Endpreis und die passende Zahlungsmethode.",
+      "Alle Details werden vorerst individuell nach direktem Kontakt abgestimmt. Nach Auswahl der Leistung erhältst du persönliche Orientierung, Zeitplanung und nächste Schritte.",
     bookingItems: [
       "Erstberatung",
       "Private Einheit",
       "Online-Plan",
       "Ernährungsplan"
     ],
-    paymentInfoBadge: "Zahlung",
-    paymentInfoTitle: "Individueller Stripe-Link oder Banküberweisung",
-    paymentInfoText: "Jede Kundenzahlung wird als individuell generierter Stripe Payment Link für die bestätigte Leistung gesendet. Nach Bestätigung ist auch eine direkte Banküberweisung möglich.",
-    paymentInfoItems: ["Endpreis vor der Zahlung", "persönlicher Stripe Payment Link", "Option für direkte Banküberweisung"],
     nutritionEyebrow: "Ernährung",
     nutritionTitle: "Persönlicher Ernährungsplan für bessere Essgewohnheiten",
     nutritionCardTitle: "Keine Extreme. Klare Regeln.",
     nutritionCardText: "Der Plan wird nach der Richtung aufgebaut, die der Kunde möchte, und an seinen Tagesablauf angepasst. Ziel sind Kalorienkontrolle, ausreichend Protein, stabile Energie und weniger Improvisation.",
     nutritionOfferBadge: "fertiger Plan",
-    nutritionOfferTitle: "Ernährungsplan mit festem Endpreis",
-    nutritionOfferText: "Starte direkt mit einem persönlichen Ernährungsplan, der zu deinem Zeitplan, Ziel und deinen realen Gewohnheiten passt. Das ist die Zahlung für den kompletten Plan mit klarem Endpreis.",
+    nutritionOfferTitle: "Persönlicher Ernährungsplan",
+    nutritionOfferText: "Starte direkt mit einem persönlichen Ernährungsplan, der zu deinem Zeitplan, Ziel und deinen realen Gewohnheiten passt. Details werden vor dem Start persönlich bestätigt.",
     nutritionOfferItems: ["individueller Ernährungsplan", "klare Regeln und Beispielmenüs", "Online-Kommunikation für Details"],
     nutrition: [
       { title: "Makro-Balance", text: "Klare tägliche Ziele für Protein, Kohlenhydrate und Fett passend zu Ziel und Zeitplan." },
@@ -554,24 +542,20 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     bookingTitle: "Réserver une séance ou commencer avec un plan en ligne",
     bookingCardTitle: "Choisis un service, un objectif et un horaire adapté.",
     bookingCardText:
-      "Pour le moment, les paiements sont organisés individuellement après un contact direct. Une fois le service confirmé, tu reçois le prix final et le mode de paiement adapté.",
+      "Pour le moment, tous les détails sont organisés individuellement après un contact direct. Une fois le service choisi, tu reçois une orientation personnelle, un planning et les prochaines étapes.",
     bookingItems: [
       "Première consultation",
       "Séance privée",
       "Plan en ligne",
       "Plan nutritionnel"
     ],
-    paymentInfoBadge: "paiement",
-    paymentInfoTitle: "Lien Stripe individuel ou virement bancaire",
-    paymentInfoText: "Chaque paiement client sera envoyé sous forme de lien Stripe généré individuellement pour le service confirmé. Un virement bancaire direct pourra aussi être proposé après confirmation.",
-    paymentInfoItems: ["prix final avant paiement", "lien Stripe personnel", "option de virement bancaire direct"],
     nutritionEyebrow: "nutrition",
     nutritionTitle: "Plan nutritionnel personnel pour mieux manger",
     nutritionCardTitle: "Pas d'extrêmes. Des règles claires.",
     nutritionCardText: "Le plan est construit dans la direction souhaitée par le client et adapté à son emploi du temps quotidien. L'objectif est le contrôle des calories, suffisamment de protéines, une énergie stable et moins d'improvisation.",
     nutritionOfferBadge: "plan prêt",
-    nutritionOfferTitle: "Plan nutritionnel avec prix final",
-    nutritionOfferText: "Commence directement avec un plan nutritionnel personnel, adapté à ton emploi du temps, ton objectif et tes habitudes réelles. C'est le paiement du plan complet avec un prix final clair.",
+    nutritionOfferTitle: "Plan nutritionnel personnel",
+    nutritionOfferText: "Commence directement avec un plan nutritionnel personnel, adapté à ton emploi du temps, ton objectif et tes habitudes réelles. Les détails sont confirmés personnellement avant le départ.",
     nutritionOfferItems: ["plan nutritionnel individuel", "règles claires et exemples de menus", "communication en ligne pour les détails"],
     nutrition: [
       { title: "Équilibre des macros", text: "Objectifs quotidiens clairs pour protéines, glucides et lipides selon ton objectif et ton planning." },
@@ -681,24 +665,20 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     bookingTitle: "Reserva una sesión o empieza con un plan online",
     bookingCardTitle: "Elige un servicio, objetivo y horario adecuado.",
     bookingCardText:
-      "Por ahora, los pagos se organizan individualmente después del contacto directo. Una vez confirmado el servicio, recibes el precio final y el método de pago adecuado.",
+      "Por ahora, todos los detalles se organizan individualmente después del contacto directo. Una vez elegido el servicio, recibes orientación personal, horario y próximos pasos.",
     bookingItems: [
       "Primera consulta",
       "Sesión privada",
       "Plan online",
       "Plan nutricional"
     ],
-    paymentInfoBadge: "pago",
-    paymentInfoTitle: "Enlace Stripe individual o transferencia bancaria",
-    paymentInfoText: "Cada pago de cliente se enviará como un enlace de pago Stripe generado individualmente para el servicio confirmado. También puede ofrecerse transferencia bancaria directa después de la confirmación.",
-    paymentInfoItems: ["precio final antes del pago", "enlace Stripe personal", "opción de transferencia bancaria directa"],
     nutritionEyebrow: "nutrición",
     nutritionTitle: "Plan nutricional personal para comer mejor",
     nutritionCardTitle: "Sin extremos. Reglas claras.",
     nutritionCardText: "El plan se construye en la dirección que desea el cliente, adaptado a su horario diario. El objetivo es control calórico, suficiente proteína, energía estable y menos improvisación.",
     nutritionOfferBadge: "plan listo",
-    nutritionOfferTitle: "Plan nutricional con precio final",
-    nutritionOfferText: "Empieza directamente con un plan nutricional personal, creado alrededor de tu horario, objetivo y hábitos reales. Es el pago del plan completo con precio final claro.",
+    nutritionOfferTitle: "Plan nutricional personal",
+    nutritionOfferText: "Empieza directamente con un plan nutricional personal, creado alrededor de tu horario, objetivo y hábitos reales. Los detalles se confirman personalmente antes de empezar.",
     nutritionOfferItems: ["plan nutricional individual", "reglas claras y menús de ejemplo", "comunicación online para detalles"],
     nutrition: [
       { title: "Equilibrio de macros", text: "Objetivos diarios claros de proteínas, carbohidratos y grasas según tu objetivo y horario." },
@@ -806,20 +786,16 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     bookingEyebrow: "запис",
     bookingTitle: "Запис на тренування або онлайн-план",
     bookingCardTitle: "Обери послугу, ціль і зручний графік.",
-    bookingCardText: "Наразі оплата узгоджується індивідуально після прямого контакту. Після підтвердження послуги ти отримуєш кінцеву ціну та відповідний спосіб оплати.",
+    bookingCardText: "Наразі всі деталі узгоджуються індивідуально після прямого контакту. Після вибору послуги ти отримуєш особисті поради, графік і наступні кроки.",
     bookingItems: ["Перша консультація", "Приватне заняття", "Онлайн-план", "План харчування"],
-    paymentInfoBadge: "оплата",
-    paymentInfoTitle: "Індивідуальне Stripe-посилання або банківський переказ",
-    paymentInfoText: "Кожен платіж клієнта надсилатиметься як індивідуально згенероване Stripe payment link для підтвердженої послуги. Після підтвердження також може бути доступний прямий банківський переказ.",
-    paymentInfoItems: ["кінцева ціна перед оплатою", "персональне Stripe payment link", "можливість прямого банківського переказу"],
     directContact: `Для прямого контакту напиши в WhatsApp: ${whatsappDisplay}.`,
     nutritionEyebrow: "харчування",
     nutritionTitle: "Особистий план харчування для кращих звичок",
     nutritionCardTitle: "Без крайнощів. Чіткі правила.",
     nutritionCardText: "План будується в напрямі, якого хоче клієнт, і підлаштовується під його щоденний графік. Мета — контроль калорій, достатньо білка, стабільна енергія та менше імпровізації.",
     nutritionOfferBadge: "готовий план",
-    nutritionOfferTitle: "План харчування з кінцевою ціною",
-    nutritionOfferText: "Почни напряму з особистого плану харчування, побудованого навколо твого графіка, цілі та реальних звичок. Це оплата за весь план з чіткою кінцевою ціною.",
+    nutritionOfferTitle: "Особистий план харчування",
+    nutritionOfferText: "Почни напряму з особистого плану харчування, побудованого навколо твого графіка, цілі та реальних звичок. Деталі підтверджуються особисто перед стартом.",
     nutritionOfferItems: ["індивідуальний план харчування", "чіткі правила та приклади меню", "онлайн-комунікація для уточнень"],
     nutrition: [
       { title: "Баланс макросів", text: "Чіткі щоденні цілі щодо білків, вуглеводів і жирів відповідно до твоєї цілі та графіка." },
@@ -1079,8 +1055,7 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
 
       <Section eyebrow={copy.bookingEyebrow} title={copy.bookingTitle} className="scroll-mt-24" id="booking">
         <div className="rounded-lg border border-emerald-200/25 bg-black/35 p-7 lg:p-9">
-          <div className="grid gap-8 lg:grid-cols-[.85fr_1.15fr] lg:items-start">
-            <div>
+          <div>
             <CalendarCheck className="text-emerald-200" size={36} />
             <h3 className="mt-6 font-display text-4xl">{copy.bookingCardTitle}</h3>
             <p className="mt-5 text-base leading-8 text-white/68">{copy.bookingCardText}</p>
@@ -1094,20 +1069,6 @@ export default function TrainerPage({ searchParams }: { searchParams?: TrainerSe
                   {item}
                 </div>
               ))}
-            </div>
-            </div>
-            <div className="mt-6 rounded-lg border border-emerald-200/20 bg-emerald-200/[.06] p-5">
-              <p className="text-xs uppercase tracking-[.26em] text-emerald-100">{copy.paymentInfoBadge}</p>
-              <h4 className="mt-3 font-display text-3xl text-white">{copy.paymentInfoTitle}</h4>
-              <p className="mt-4 text-sm leading-7 text-white/68">{copy.paymentInfoText}</p>
-              <div className="mt-5 grid gap-2">
-                {copy.paymentInfoItems.map((item) => (
-                  <p key={item} className="flex items-center gap-3 rounded-md border border-white/10 bg-black/25 px-3 py-2 text-sm text-white/72">
-                    <CheckCircle2 size={16} className="shrink-0 text-emerald-200" />
-                    {item}
-                  </p>
-                ))}
-              </div>
             </div>
           </div>
         </div>
