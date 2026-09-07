@@ -141,9 +141,9 @@ const content = {
       },
       {
         icon: icons.online,
-        title: "Онлайн фитнес треньор",
-        text: "Получаваш инструкции, седмичен план и корекции онлайн, без задължително присъствие в зала.",
-        points: ["упражнения с инструкции", "седмичен график"]
+        title: "Online fitness coach",
+        text: "Get instructions, a weekly plan and online personal guides.",
+        points: ["Guided exercises", "Weekly schedule", "Personal training routine"]
       },
       {
         icon: icons.nutrition,
@@ -258,7 +258,7 @@ const content = {
         icon: icons.online,
         title: "Online fitness coach",
         text: "Get instructions, a weekly plan and online personal guides.",
-        points: ["guided exercises", "weekly schedule"]
+        points: ["Guided exercises", "Weekly schedule", "Personal training routine"]
       },
       {
         icon: icons.nutrition,
@@ -382,9 +382,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       },
       {
         icon: icons.online,
-        title: "Online-Fitness-Coach",
-        text: "Du erhältst Anleitungen, einen Wochenplan und Online-Korrekturen, ohne zwingend im Gym vor Ort zu sein.",
-        points: ["angeleitete Übungen", "Wochenstruktur"]
+        title: "Online fitness coach",
+        text: "Get instructions, a weekly plan and online personal guides.",
+        points: ["Guided exercises", "Weekly schedule", "Personal training routine"]
       },
       {
         icon: icons.nutrition,
@@ -505,9 +505,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       },
       {
         icon: icons.online,
-        title: "Coach fitness en ligne",
-        text: "Tu reçois des instructions, un plan hebdomadaire et des corrections en ligne, sans présence obligatoire en salle.",
-        points: ["exercices guidés", "planning hebdomadaire"]
+        title: "Online fitness coach",
+        text: "Get instructions, a weekly plan and online personal guides.",
+        points: ["Guided exercises", "Weekly schedule", "Personal training routine"]
       },
       {
         icon: icons.nutrition,
@@ -628,9 +628,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       },
       {
         icon: icons.online,
-        title: "Coach fitness online",
-        text: "Recibes instrucciones, un plan semanal y correcciones online, sin presencia obligatoria en gimnasio.",
-        points: ["ejercicios guiados", "horario semanal"]
+        title: "Online fitness coach",
+        text: "Get instructions, a weekly plan and online personal guides.",
+        points: ["Guided exercises", "Weekly schedule", "Personal training routine"]
       },
       {
         icon: icons.nutrition,
@@ -750,9 +750,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       },
       {
         icon: icons.online,
-        title: "Онлайн-фітнес тренер",
-        text: "Ти отримуєш інструкції, тижневий план і онлайн-корекції без обов'язкової присутності в залі.",
-        points: ["вправи з інструкціями", "тижневий графік"]
+        title: "Online fitness coach",
+        text: "Get instructions, a weekly plan and online personal guides.",
+        points: ["Guided exercises", "Weekly schedule", "Personal training routine"]
       },
       {
         icon: icons.nutrition,
