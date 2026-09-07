@@ -114,7 +114,6 @@ const content = {
     whatsappCta: "Пиши в WhatsApp",
     focusTitle: "Бокс + хранене",
     stats: [
-      { value: "12+", label: "седмични сесии" },
       { value: "3", label: "нива на натоварване" },
       { value: "24/7", label: "онлайн насоки" }
     ],
@@ -229,7 +228,6 @@ const content = {
     whatsappCta: "Message on WhatsApp",
     focusTitle: "Boxing + nutrition",
     stats: [
-      { value: "12+", label: "weekly sessions" },
       { value: "3", label: "training levels" },
       { value: "24/7", label: "online guidance" }
     ],
@@ -356,7 +354,6 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     soloText: "Mehr als 20 Jahre Boxerfahrung, ein semiprofessioneller Weg bis in den Profiring, zahlreiche Erfolge und Siege sowie internationale Erfahrung in über 50 Ländern. Zweite Sportart: Leichtathletik mit 8 nationalen Titeln und einer europäischen Qualifikation. Zusätzlich arbeite ich in einem hochrangigen Sicherheitsbereich mit Schwerpunkt auf Anti-Terror-Schutz. Ich bin Skilehrer und habe die Nationale Sportakademie als Jahrgangsbester mit dem höchsten akademischen Ergebnis abgeschlossen.",
     focusTitle: "Boxen + Ernährung",
     stats: [
-      { value: "12+", label: "Einheiten pro Woche" },
       { value: "3", label: "Trainingsstufen" },
       { value: "24/7", label: "Online-Begleitung" }
     ],
@@ -479,7 +476,6 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     soloText: "Plus de 20 ans d'expérience en boxe, un parcours semi-professionnel jusqu'au ring professionnel, de nombreux résultats et victoires, ainsi qu'une expérience internationale dans plus de 50 pays. Deuxième discipline: l'athlétisme, avec 8 titres nationaux et une qualification européenne. Je travaille également dans un secteur de sécurité de haut niveau, axé sur la protection antiterroriste. Je suis aussi moniteur de ski et diplômé de l'Académie nationale des sports avec la première place et le meilleur résultat académique.",
     focusTitle: "Boxe + nutrition",
     stats: [
-      { value: "12+", label: "séances par semaine" },
       { value: "3", label: "niveaux d'entraînement" },
       { value: "24/7", label: "guidance en ligne" }
     ],
@@ -602,7 +598,6 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     soloText: "Más de 20 años de experiencia en boxeo, una trayectoria semiprofesional hasta el ring profesional, numerosos logros y victorias, y experiencia internacional en más de 50 países. Segundo deporte: atletismo, con 8 títulos nacionales y una clasificación europea. También trabajo en un sector de seguridad de alto nivel, enfocado en la protección antiterrorista. Soy instructor de esquí y me gradué en la Academia Nacional de Deportes en primer lugar, con el mejor resultado académico.",
     focusTitle: "Boxeo + nutrición",
     stats: [
-      { value: "12+", label: "sesiones semanales" },
       { value: "3", label: "niveles de entrenamiento" },
       { value: "24/7", label: "guía online" }
     ],
@@ -723,7 +718,6 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     whatsappCta: "Написати в WhatsApp",
     focusTitle: "Бокс + харчування",
     stats: [
-      { value: "12+", label: "занять на тиждень" },
       { value: "3", label: "рівні тренування" },
       { value: "24/7", label: "онлайн-супровід" }
     ],
