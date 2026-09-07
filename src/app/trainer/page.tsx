@@ -147,9 +147,9 @@ const content = {
       },
       {
         icon: icons.nutrition,
-        title: "Личен диетичен режим",
-        text: "Правилно хранене според целта, ежедневието, предпочитанията и реалните ти навици.",
-        points: ["калории и макроси", "примерни менюта", "седмични корекции"]
+        title: "Personal nutrition plan",
+        text: "Practical nutrition based on your goal, daily routine, preferences and real habits.",
+        points: ["Food regime on purpose and macros", "Sample menu for each individual", "Weekly adjustments and check up"]
       }
     ],
     programsEyebrow: "програми",
@@ -264,7 +264,7 @@ const content = {
         icon: icons.nutrition,
         title: "Personal nutrition plan",
         text: "Practical nutrition based on your goal, daily routine, preferences and real habits.",
-        points: ["calories and macros", "sample menus", "weekly adjustments"]
+        points: ["Food regime on purpose and macros", "Sample menu for each individual", "Weekly adjustments and check up"]
       }
     ],
     programsEyebrow: "programs",
@@ -388,9 +388,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       },
       {
         icon: icons.nutrition,
-        title: "Persönlicher Ernährungsplan",
-        text: "Praktische Ernährung passend zu deinem Ziel, Alltag, deinen Vorlieben und realen Gewohnheiten.",
-        points: ["Kalorien und Makros", "Beispielmenüs", "wöchentliche Anpassungen"]
+        title: "Personal nutrition plan",
+        text: "Practical nutrition based on your goal, daily routine, preferences and real habits.",
+        points: ["Food regime on purpose and macros", "Sample menu for each individual", "Weekly adjustments and check up"]
       }
     ],
     programsEyebrow: "Programme",
@@ -511,9 +511,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       },
       {
         icon: icons.nutrition,
-        title: "Plan nutritionnel personnel",
-        text: "Nutrition pratique selon ton objectif, ton quotidien, tes préférences et tes habitudes réelles.",
-        points: ["calories et macros", "exemples de menus", "ajustements hebdomadaires"]
+        title: "Personal nutrition plan",
+        text: "Practical nutrition based on your goal, daily routine, preferences and real habits.",
+        points: ["Food regime on purpose and macros", "Sample menu for each individual", "Weekly adjustments and check up"]
       }
     ],
     programsEyebrow: "programmes",
@@ -634,9 +634,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       },
       {
         icon: icons.nutrition,
-        title: "Plan nutricional personal",
-        text: "Nutrición práctica basada en tu objetivo, rutina diaria, preferencias y hábitos reales.",
-        points: ["calorías y macros", "menús de ejemplo", "ajustes semanales"]
+        title: "Personal nutrition plan",
+        text: "Practical nutrition based on your goal, daily routine, preferences and real habits.",
+        points: ["Food regime on purpose and macros", "Sample menu for each individual", "Weekly adjustments and check up"]
       }
     ],
     programsEyebrow: "programas",
@@ -756,9 +756,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       },
       {
         icon: icons.nutrition,
-        title: "Особистий план харчування",
-        text: "Практичне харчування відповідно до твоєї цілі, щоденного режиму, уподобань і реальних звичок.",
-        points: ["калорії та макроси", "приклади меню", "щотижневі корекції"]
+        title: "Personal nutrition plan",
+        text: "Practical nutrition based on your goal, daily routine, preferences and real habits.",
+        points: ["Food regime on purpose and macros", "Sample menu for each individual", "Weekly adjustments and check up"]
       }
     ],
     programsEyebrow: "програми",
