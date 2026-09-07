@@ -136,8 +136,8 @@ const content = {
       {
         icon: icons.boxing,
         title: "Personal Boxing Session",
-        text: "Individual training session",
-        points: ["In a gym of client choice", "Outside training"]
+        text: "Training session in environment depends",
+        points: ["In a gym of client choice", "Outside training", "Home session", "Group Training"]
       },
       {
         icon: icons.online,
@@ -251,8 +251,8 @@ const content = {
       {
         icon: icons.boxing,
         title: "Personal Boxing Session",
-        text: "Individual training session",
-        points: ["In a gym of client choice", "Outside training"]
+        text: "Training session in environment depends",
+        points: ["In a gym of client choice", "Outside training", "Home session", "Group Training"]
       },
       {
         icon: icons.online,
@@ -377,8 +377,8 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       {
         icon: icons.boxing,
         title: "Personal Boxing Session",
-        text: "Individual training session",
-        points: ["In a gym of client choice", "Outside training"]
+        text: "Training session in environment depends",
+        points: ["In a gym of client choice", "Outside training", "Home session", "Group Training"]
       },
       {
         icon: icons.online,
@@ -500,8 +500,8 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       {
         icon: icons.boxing,
         title: "Personal Boxing Session",
-        text: "Individual training session",
-        points: ["In a gym of client choice", "Outside training"]
+        text: "Training session in environment depends",
+        points: ["In a gym of client choice", "Outside training", "Home session", "Group Training"]
       },
       {
         icon: icons.online,
@@ -623,8 +623,8 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       {
         icon: icons.boxing,
         title: "Personal Boxing Session",
-        text: "Individual training session",
-        points: ["In a gym of client choice", "Outside training"]
+        text: "Training session in environment depends",
+        points: ["In a gym of client choice", "Outside training", "Home session", "Group Training"]
       },
       {
         icon: icons.online,
@@ -745,8 +745,8 @@ const localizedContent: Record<Lang, TrainerCopy> = {
       {
         icon: icons.boxing,
         title: "Personal Boxing Session",
-        text: "Individual training session",
-        points: ["In a gym of client choice", "Outside training"]
+        text: "Training session in environment depends",
+        points: ["In a gym of client choice", "Outside training", "Home session", "Group Training"]
       },
       {
         icon: icons.online,
