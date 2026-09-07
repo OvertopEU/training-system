@@ -135,9 +135,9 @@ const content = {
     services: [
       {
         icon: icons.boxing,
-        title: "Тренировки по бокс",
-        text: "Индивидуална работа върху стойка, удари, защита, движение, реакция и кондиция.",
-        points: ["персонални тренировки", "групови тренировки", "подготовки за състезание", "техника и кондиционни тренировки"]
+        title: "Personal Boxing Session",
+        text: "Individual training session",
+        points: ["In a gym of client choice", "Outside training"]
       },
       {
         icon: icons.online,
@@ -250,9 +250,9 @@ const content = {
     services: [
       {
         icon: icons.boxing,
-        title: "Boxing training",
-        text: "One-to-one work on stance, punches, defense, movement, reaction and conditioning.",
-        points: ["personal training", "group training", "competition preparation", "technique and conditioning training"]
+        title: "Personal Boxing Session",
+        text: "Individual training session",
+        points: ["In a gym of client choice", "Outside training"]
       },
       {
         icon: icons.online,
@@ -376,9 +376,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     services: [
       {
         icon: icons.boxing,
-        title: "Boxtraining",
-        text: "Individuelle Arbeit an Stand, Schlägen, Verteidigung, Bewegung, Reaktion und Kondition.",
-        points: ["Personal Training", "Gruppentraining", "Wettkampfvorbereitung", "Technik- und Konditionstraining"]
+        title: "Personal Boxing Session",
+        text: "Individual training session",
+        points: ["In a gym of client choice", "Outside training"]
       },
       {
         icon: icons.online,
@@ -499,9 +499,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     services: [
       {
         icon: icons.boxing,
-        title: "Entraînement de boxe",
-        text: "Travail individuel sur la garde, les coups, la défense, le déplacement, la réaction et la condition physique.",
-        points: ["entraînement personnel", "entraînement en groupe", "préparation compétition", "technique et condition physique"]
+        title: "Personal Boxing Session",
+        text: "Individual training session",
+        points: ["In a gym of client choice", "Outside training"]
       },
       {
         icon: icons.online,
@@ -622,9 +622,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     services: [
       {
         icon: icons.boxing,
-        title: "Entrenamiento de boxeo",
-        text: "Trabajo individual sobre guardia, golpes, defensa, movimiento, reacción y condición física.",
-        points: ["entrenamiento personal", "entrenamiento en grupo", "preparación para competición", "técnica y condición física"]
+        title: "Personal Boxing Session",
+        text: "Individual training session",
+        points: ["In a gym of client choice", "Outside training"]
       },
       {
         icon: icons.online,
@@ -744,9 +744,9 @@ const localizedContent: Record<Lang, TrainerCopy> = {
     services: [
       {
         icon: icons.boxing,
-        title: "Тренування з боксу",
-        text: "Індивідуальна робота над стійкою, ударами, захистом, рухом, реакцією та кондицією.",
-        points: ["персональні тренування", "групові тренування", "підготовка до змагань", "техніка та кондиційна підготовка"]
+        title: "Personal Boxing Session",
+        text: "Individual training session",
+        points: ["In a gym of client choice", "Outside training"]
       },
       {
         icon: icons.online,
